@@ -9,7 +9,7 @@ namespace engine
 		
 	}
 
-	void Render::run()
+	void Render::run(float time)
 	{
 		std::cout << "render   -   priority: " << this->priority << std::endl;
 

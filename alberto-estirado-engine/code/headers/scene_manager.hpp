@@ -25,9 +25,11 @@ namespace engine
 			scenes.push_back(newscene);
 		}
 
+		void initialize();
+
 	private:
 
-		Scene_manager() = default;
+		Scene_manager();
 
 		~Scene_manager() = default;
 

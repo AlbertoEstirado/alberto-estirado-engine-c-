@@ -4,7 +4,7 @@
 namespace engine
 {
 
-	void Read_input::run()
+	void Read_input::run(float time)
 	{
 		std::cout << "read input   -   priority: " << this->priority << std::endl;
 

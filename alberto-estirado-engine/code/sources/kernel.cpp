@@ -20,7 +20,7 @@ namespace engine
 	{
 		for(auto task : tasks)
 		{
-			task->run();
+			task->run(0);
 		}
 	}
 

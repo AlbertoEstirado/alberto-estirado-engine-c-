@@ -20,7 +20,7 @@ namespace engine
 			this->priority = priority;
 		}
 
-		virtual void run() = 0;
+		virtual void run(float time) = 0;
 		virtual void initialize() = 0;
 		virtual void end() = 0;
 

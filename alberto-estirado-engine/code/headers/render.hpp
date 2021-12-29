@@ -17,7 +17,7 @@ namespace engine
 		}
 
 		void initialize();
-		void run();
+		void run(float time);
 		void end();
 
 	};
