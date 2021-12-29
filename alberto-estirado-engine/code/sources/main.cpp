@@ -1,7 +1,23 @@
 #include <SDL.h>
+#include <ciso646>
+#include <iostream>
 
-int main(int, char **)
+#include "../headers/kernel.hpp"
+#include "../headers/scene.hpp"
+
+using namespace engine;
+
+int main(int, char**)
 {
-	
-	return 0;
+    Scene* main_scene = new Scene("main_scene");
+
+    Kernel::instance().initialization();
+    do
+    {
+        Kernel::instance().execute();
+    } while (not Kernel::instance().window->exit);
+
+    Kernel::instance().end();
+    
+    return 0;
 }
