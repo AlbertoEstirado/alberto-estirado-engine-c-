@@ -1,9 +1,10 @@
+#ifndef KERNEL
+#define KERNEL
+
 #include <set>
 
 #include "window.hpp"
-#include "update.hpp"
-#include "read_input.hpp"
-#include "render.hpp"
+#include "task.hpp"
 
 #include <iostream>
 
@@ -11,6 +12,8 @@
 
 namespace engine
 {
+	class Render;
+
 	class Kernel
 	{
 
@@ -24,7 +27,7 @@ namespace engine
 
 		std::set<Task*> tasks;  //Esto deberia de ser unique_ptr?
 
-		Window * window = nullptr;
+		Window* window = nullptr;
 
 		Kernel();
 
@@ -36,4 +39,8 @@ namespace engine
 		void add_task(Task*);
 
 	};
+
+	
 }
+
+#endif

@@ -1,11 +1,12 @@
-#include <iostream>
+#ifndef TASK
+#define TASK
 
+#include <iostream>
 
 #pragma once
 
 namespace engine
 {
-
 	class Task
 	{
 
@@ -29,4 +30,7 @@ namespace engine
 		}
 
 	};
+
 }
+
+#endif // !TASK

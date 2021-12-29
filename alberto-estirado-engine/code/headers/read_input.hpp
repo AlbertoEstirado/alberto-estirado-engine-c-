@@ -1,4 +1,5 @@
 #include "task.hpp"
+#include "kernel.hpp"
 
 namespace engine
 {
@@ -11,6 +12,9 @@ namespace engine
 		Read_input(int priority) : Task(priority)
 		{
 			this->priority = priority;
+
+			Kernel::instance().add_task(this);
+
 		}
 
 		void initialize() {};

@@ -8,7 +8,7 @@ namespace engine
 	{
 		std::cout << "read input   -   priority: " << this->priority << std::endl;
 
-		//Kernel::instance().window->handle_events();
+		Kernel::instance().window->handle_events();
 	}
 }
 

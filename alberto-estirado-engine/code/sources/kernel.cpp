@@ -10,15 +10,6 @@ namespace engine
 
 	void Kernel::initialization()
 	{
-		
-		Update* update = new Update(20);
-		Render* render = new Render(30);
-		Read_input* read_input = new Read_input(10);
-
-		add_task(update);
-		add_task(render);
-		add_task(read_input);
-
         for (auto task : tasks)
         {
             task->initialize();

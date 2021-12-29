@@ -12,14 +12,14 @@ namespace engine
 	void Render::run()
 	{
 		std::cout << "render   -   priority: " << this->priority << std::endl;
-		
-		//Kernel::instance().window->render();
+
+		Kernel::instance().window->render();
 		
 	}
 
 	void Render::end()
 	{
-		//Kernel::instance().window->end();
+		Kernel::instance().window->end();
 	}
 }
 
