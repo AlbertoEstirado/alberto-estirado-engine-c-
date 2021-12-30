@@ -1,3 +1,8 @@
+#ifndef TRANSFORM
+#define TRANSFORM
+
+#pragma once
+
 #include "component.hpp"
 
 namespace engine
@@ -12,6 +17,13 @@ namespace engine
 		float position[3];
 		float rotation[4];
 		float scale[3];
+
+		//Transform();
+
+		void awake();
+		void start();
+		void update(float time);
+
 
 		float get_position_x()
 		{
@@ -61,3 +73,5 @@ namespace engine
 	};
 
 }
+
+#endif

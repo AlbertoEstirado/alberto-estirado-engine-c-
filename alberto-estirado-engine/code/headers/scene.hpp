@@ -23,7 +23,7 @@ namespace engine
 
 		STATE state;
 
-		std::map<Entity, Id> entities;
+		std::map<Id, Entity*> entities;
 
 	public:
 
@@ -32,6 +32,17 @@ namespace engine
 		Scene(std::string name);
 
 		void load_scene();
+		void awake();
+		void start();
+		void update(float time);
+		void render();
+
+		void add_entity(Entity *);
+		
+		std::string get_name ()
+		{
+			return name;
+		}
 	
 	};
 

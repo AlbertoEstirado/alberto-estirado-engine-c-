@@ -1,11 +1,15 @@
+#pragma once
+
+#include <map>
 #include <vector>
 #include <iostream>
 
-#pragma once
 
 namespace engine
 {
 	class Scene;
+
+	typedef std::string Id;
 
 	class Scene_manager
 	{
@@ -19,13 +23,13 @@ namespace engine
 		}
 
 		std::vector<Scene *> scenes; //smartpointer??
+		//std::map<Id, Scene *> scenes;
 
-		void add_scene(Scene * newscene)
-		{
-			scenes.push_back(newscene);
-		}
+		Scene* current_scene;
 
+		void add_scene(Scene* newscene);
 		void initialize();
+		void run_scene(Scene* scene);
 
 	private:
 

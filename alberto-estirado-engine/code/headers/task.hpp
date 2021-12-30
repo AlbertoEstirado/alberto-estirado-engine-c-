@@ -1,9 +1,9 @@
 #ifndef TASK
 #define TASK
 
-#include <iostream>
-
 #pragma once
+
+#include <iostream>
 
 namespace engine
 {

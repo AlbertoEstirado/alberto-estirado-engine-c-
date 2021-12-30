@@ -1,4 +1,6 @@
 #include "../headers/render.hpp"
+#include "../headers/scene_manager.hpp"
+#include "../headers/scene.hpp"
 
 namespace engine
 {
@@ -11,9 +13,11 @@ namespace engine
 
 	void Render::run(float time)
 	{
-		std::cout << "render   -   priority: " << this->priority << std::endl;
+		//std::cout << "render   -   priority: " << this->priority << std::endl;
 
 		Kernel::instance().window->render();
+
+		//Scene_manager::instance().current_scene->render();
 		
 	}
 

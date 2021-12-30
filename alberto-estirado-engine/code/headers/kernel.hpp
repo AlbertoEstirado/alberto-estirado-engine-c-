@@ -1,6 +1,8 @@
 #ifndef KERNEL
 #define KERNEL
 
+#pragma once
+
 #include <set>
 
 #include "window.hpp"
@@ -8,7 +10,6 @@
 
 #include <iostream>
 
-#pragma once
 
 namespace engine
 {
