@@ -17,11 +17,12 @@ namespace engine
 	//	}
 	//}
 
-	Entity::Entity(std::string id, Component* component)
+	Entity::Entity(std::string id, Component* transform)
 	{
 		this->id = id;
 
-		add_component(component);
+		this->transform = transform;
+		add_component(transform);
 	}
 
 	void Entity::awake()

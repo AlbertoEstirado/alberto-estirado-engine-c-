@@ -9,6 +9,7 @@
 #include "../headers/update.hpp"
 #include "../headers/transform.hpp"
 
+
 using namespace engine;
 
 int main(int, char**)
@@ -23,8 +24,12 @@ int main(int, char**)
     Scene* main_scene = new Scene("main_scene");
     Transform* player_transform = new Transform();
     Entity* player = new Entity("player", player_transform);
+    //Renderer * player_renderer = new Renderer("../../assets/sphere.obj")
+    //player->add_component(player_renderer);
 
     main_scene->add_entity(player);
+
+     
 
 
     Scene_manager::instance().run_scene(main_scene);
