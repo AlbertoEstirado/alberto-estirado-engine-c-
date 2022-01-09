@@ -1,0 +1,2 @@
+C:\Users\Alberto\Desktop\alberto-estirado-engine-c++\alberto-estirado-engine\projects\vs-2019\x64\Debug\alberto-estirado-engine.exe
+C:\Users\Alberto\Desktop\alberto-estirado-engine-c++\alberto-estirado-engine\projects\vs-2019\x64\Debug\alberto-estirado-engine.pdb
