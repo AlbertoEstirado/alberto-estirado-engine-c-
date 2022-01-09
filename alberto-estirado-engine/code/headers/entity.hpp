@@ -13,7 +13,7 @@ namespace engine
 
 		std::string id;
 
-		std::vector<Component*> componets;
+		std::vector<Component*> components;
 
 		Component* transform = nullptr;
 
@@ -24,8 +24,10 @@ namespace engine
 		Entity();
 		//Entity(std::string id, std::vector<Component*> components);
 		Entity(std::string id, Component* transform);
+		Entity(std::string id);
 
 		void add_component(Component* new_component);
+		void add_transform(Component* new_component);
 
 	};
 }

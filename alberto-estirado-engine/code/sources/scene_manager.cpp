@@ -31,7 +31,7 @@ namespace engine
 	void Scene_manager::run_scene(Scene * scene)
 	{
 		current_scene = scene;
-		scene->awake();
+		scene->load_scene();
 	}
 
 

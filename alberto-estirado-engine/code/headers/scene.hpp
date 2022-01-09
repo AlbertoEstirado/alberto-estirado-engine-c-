@@ -3,6 +3,7 @@
 
 #include "entity.hpp"
 #include "scene_manager.hpp"
+#include "../../rapidxml/rapidxml.hpp"
 
 #pragma once
 
@@ -36,6 +37,8 @@ namespace engine
 		void start();
 		void update(float time);
 		void render();
+
+		void save_scene();
 
 		void add_entity(Entity *);
 		

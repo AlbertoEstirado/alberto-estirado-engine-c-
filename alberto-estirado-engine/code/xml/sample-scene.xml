@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<scene id="sample-scene">
+	<entities>
+        <entity id="player">
+            <component id="transform">[0,0,0]</component>
+            <component id="sprite"></component>
+        </entity>
+        <entity id="enemie">
+            <component id="transform">[0,0,0]</component>
+        </entity>
+    </entities>
+</scene>

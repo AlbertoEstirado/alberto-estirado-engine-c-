@@ -31,7 +31,7 @@ namespace engine
 
 	void Transform::update(float time)
 	{
-		std::cout << "Transform update" << std::endl;
+		//std::cout << "Transform update" << std::endl;
 	}
 
 

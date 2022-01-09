@@ -25,33 +25,49 @@ namespace engine
 		add_component(transform);
 	}
 
+	Entity::Entity(std::string id)
+	{
+		this->id = id;
+
+		this->transform = nullptr;
+	}
+
+
 	void Entity::awake()
 	{
-		for (size_t i = 0; i < componets.size(); i++)
+		for (size_t i = 0; i < components.size(); i++)
 		{
-			componets[i]->awake();
+			std::cout << id << "	:";
+			components[i]->awake();
 		}
 	}
 
 	void Entity::start()
 	{
-		for (size_t i = 0; i < componets.size(); i++)
+		for (size_t i = 0; i < components.size(); i++)
 		{
-			componets[i]->start();
+			std::cout << id << "	:";
+			components[i]->start();
 		}
 	}
 
 	void Entity::update(float time)
 	{
-		for (size_t i = 0; i < componets.size(); i++)
+		for (size_t i = 0; i < components.size(); i++)
 		{
-			componets[i]->update(time);
+			components[i]->update(time);
 		}
 	}
 
 	void Entity::add_component(Component * new_component)
 	{
-		componets.push_back(new_component);
+		components.push_back(new_component);
+	}
+
+	void Entity::add_transform(Component* new_component)
+	{
+		transform = new_component;
+		components.push_back(new_component);
 	}
 
 }
