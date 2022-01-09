@@ -1,12 +1,15 @@
 #include <iostream>
 
 #include "../headers/window.hpp"
+#include <cassert>
+
 
 namespace engine
 {
-	Window::Window(size_t width, size_t height)
+	Window::Window(const std::string& title, size_t width, size_t height, bool fullscreen)
 	{
 		exit = false;
+		gl_context = nullptr;
 
 		if (SDL_Init(SDL_INIT_VIDEO) < 0)
 		{
@@ -14,7 +17,10 @@ namespace engine
 		}
 		else
 		{
-			window = SDL_CreateWindow("engine", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, width, height, SDL_WINDOW_SHOWN);
+			SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, 3);
+			SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, 2);
+
+			window = SDL_CreateWindow(title.c_str(), SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, width, height, SDL_WINDOW_OPENGL | SDL_WINDOW_SHOWN);
 		}
 
 		if (not window)
@@ -24,9 +30,17 @@ namespace engine
 		else
 		{
 			SDL_Surface* surface = SDL_GetWindowSurface(window);
+			gl_context = SDL_GL_CreateContext(window);
+
+			assert(gl_context != nullptr);
+
+			if (fullscreen)
+			{
+				SDL_SetWindowFullscreen(window, SDL_WINDOW_FULLSCREEN_DESKTOP);
+			}
+			
 		}
 	}
-
 
 	void Window::render()
 	{
@@ -54,6 +68,26 @@ namespace engine
 				exit = true;
 			}
 		}
+	}
+
+	void Window::enable_vsync()
+	{
+		if (gl_context) SDL_GL_SetSwapInterval(1);
+	}
+
+	void Window::disable_vsync()
+	{
+		if (gl_context) SDL_GL_SetSwapInterval(0);
+	}
+
+	void Window::clear() const
+	{
+		//if (gl_context) glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+	}
+
+	void Window::swap_buffers() const
+	{
+		if (gl_context) SDL_GL_SwapWindow(window);
 	}
 
 }

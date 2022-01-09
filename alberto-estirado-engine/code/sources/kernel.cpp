@@ -5,7 +5,8 @@ namespace engine
 {
 	Kernel::Kernel()
 	{
-		window = new Window(800, 600);
+		window = new Window("engine",800, 600);
+		window->enable_vsync();
 	}
 
 	void Kernel::initialization()

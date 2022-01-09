@@ -21,17 +21,17 @@ namespace engine
 
 	void Transform::awake()
 	{
-		std::cout << "Transform awake";
+		std::cout << "Transform awake" << std::endl;
 	}
 
 	void Transform::start()
 	{
-		std::cout << "Transform start";
+		std::cout << "Transform start" << std::endl;
 	}
 
 	void Transform::update(float time)
 	{
-		std::cout << "Transform update";
+		std::cout << "Transform update" << std::endl;
 	}
 
 

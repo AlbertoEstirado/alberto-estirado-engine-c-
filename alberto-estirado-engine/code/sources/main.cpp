@@ -7,6 +7,7 @@
 #include "../headers/render.hpp"
 #include "../headers/read_input.hpp"
 #include "../headers/update.hpp"
+#include "../headers/transform.hpp"
 
 using namespace engine;
 
@@ -20,10 +21,10 @@ int main(int, char**)
 
    
     Scene* main_scene = new Scene("main_scene");
-    //Transform* player_transform = new Transform();
-    //Entity* player = new Entity("player", player_transform);
+    Transform* player_transform = new Transform();
+    Entity* player = new Entity("player", player_transform);
 
-    //main_scene->add_entity(player);
+    main_scene->add_entity(player);
 
 
     Scene_manager::instance().run_scene(main_scene);

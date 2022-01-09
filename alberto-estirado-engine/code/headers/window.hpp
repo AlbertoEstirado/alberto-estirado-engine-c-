@@ -18,11 +18,17 @@ namespace engine
 
 		SDL_Window* window = nullptr;
 		SDL_Surface* surface = nullptr;
+		SDL_GLContext gl_context;
 
-		Window(size_t  width, size_t height);
+		Window(const std::string& title, size_t  width, size_t height, bool fullscreen = false);
 
 		void render();
 		void end();
 		void handle_events();
+
+		void enable_vsync();
+		void disable_vsync();
+		void clear() const;
+		void swap_buffers() const;
 	};
 }
