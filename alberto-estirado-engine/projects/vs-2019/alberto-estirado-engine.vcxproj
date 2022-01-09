@@ -97,7 +97,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>..\..\..\libraries\windows\sdl2-vs\include;..\..\..\libraries\windows\opengl-toolkit\headers</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\..\libraries\windows\sdl2-vs\include;..\..\..\libraries\windows\opengl-toolkit\headers;..\..\code\headers</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
