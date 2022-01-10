@@ -22,7 +22,7 @@ namespace engine
 		state = LOADING;
 
 		xml_document<> doc;
-		ifstream file("../../code/xml/sample-scene.xml");
+		ifstream file("../../code/xml/sample-scene.xml");//fstream::binary?
 		stringstream buffer;
 		buffer << file.rdbuf();
 		file.close();

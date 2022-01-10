@@ -17,6 +17,8 @@ namespace engine
 
 		Component* transform = nullptr;
 
+		//referencia a la scene
+
 		void awake();
 		void start();
 		void update(float time);
