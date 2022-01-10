@@ -24,6 +24,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\code\headers\component.hpp" />
+    <ClInclude Include="..\..\code\headers\controller.hpp" />
     <ClInclude Include="..\..\code\headers\entity.hpp" />
     <ClInclude Include="..\..\code\headers\kernel.hpp" />
     <ClInclude Include="..\..\code\headers\read_input.hpp" />
@@ -80,12 +81,12 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>..\..\..\libraries\windows\sdl2-vs\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\..\libraries\windows\sdl2-vs\include;..\..\..\libraries\windows\opengl-toolkitl\headers</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>..\..\..\libraries\windows\sdl2-vs\lib\x64</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>..\..\..\libraries\windows\sdl2-vs\lib\x64;..\..\..\libraries\windows\opengl-toolkit\lib\x64</AdditionalLibraryDirectories>
       <AdditionalDependencies>SDL2.lib;sdl2main.lib;Setupapi.lib;imm32.lib;winmm.lib;opengl32.lib;version.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
