@@ -3,7 +3,9 @@
 
 #include "entity.hpp"
 #include "scene_manager.hpp"
-#include "../../rapidxml/rapidxml.hpp"
+#include <rapidxml.hpp>
+
+#include <renderer_system.hpp>
 
 #pragma once
 
@@ -26,11 +28,13 @@ namespace engine
 
 		std::map<Id, Entity*> entities;
 
+		//Renderer_System* renderer_system;
+
 	public:
 
 		std::string name;
 	
-		Scene(std::string name);
+		Scene(std::string name/*, Window window*/);
 
 		void load_scene();
 		void awake();

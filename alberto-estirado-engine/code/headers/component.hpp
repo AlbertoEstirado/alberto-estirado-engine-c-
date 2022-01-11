@@ -1,3 +1,5 @@
+#ifndef COMPONENT
+#define COMPONENT
 
 #pragma once
 
@@ -6,6 +8,7 @@ namespace engine
 	class Component
 	{
 	protected:
+
 		virtual ~Component() = default;
 
 
@@ -17,8 +20,9 @@ namespace engine
 
 		//Component() {};
 
-
+		
 	};
 
-
 }
+
+#endif

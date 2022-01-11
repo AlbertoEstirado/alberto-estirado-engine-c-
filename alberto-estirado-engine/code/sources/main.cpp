@@ -20,8 +20,10 @@ int main(int, char**)
     Update* update = new Update(20);
     //***********
 
-   
-    Scene* main_scene = new Scene("main_scene");
+    Kernel::instance().initialization();
+
+
+    Scene* main_scene = new Scene("main_scene"/*, *Kernel::instance().window*/);
     Transform* player_transform = new Transform();
     //Entity* player = new Entity("player", player_transform);
     //Renderer * player_renderer = new Renderer("../../assets/sphere.obj")
@@ -32,7 +34,7 @@ int main(int, char**)
 
     Scene_manager::instance().run_scene(main_scene);
 
-    Kernel::instance().initialization();
+    
     do
     {
         Kernel::instance().execute();

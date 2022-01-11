@@ -3,18 +3,21 @@
 #include <sstream>
 #include <iostream>
 #include <transform.hpp>
+#include <kernel.hpp>
 
 using namespace rapidxml;
 using namespace std;
 
 namespace engine
 {
-	Scene::Scene(std::string name)
+	Scene::Scene(std::string name/*, Window window*/)
 	{
 		this->name = name;
 		state = UNINITIALIZED;
 		std::cout << "New scene has been created: " << name << std::endl;
 		Scene_manager::instance().add_scene(this);
+
+		//renderer_system = new Renderer_System(window);
 	}
 
 	void Scene::load_scene()
@@ -113,7 +116,7 @@ namespace engine
 
 	void Scene::render()
 	{
-		
+		//renderer_system->run();
 	}
 
 	void Scene::save_scene()
