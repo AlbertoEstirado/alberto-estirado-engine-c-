@@ -1,6 +1,6 @@
 #include <iostream>
 
-#include "../headers/window.hpp"
+#include <window.hpp>
 #include <cassert>
 
 

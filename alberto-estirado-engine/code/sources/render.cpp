@@ -1,11 +1,10 @@
-#include "../headers/render.hpp"
-#include "../headers/scene_manager.hpp"
-#include "../headers/scene.hpp"
+#include <render.hpp>
+#include <scene_manager.hpp>
+#include <scene.hpp>
 
 namespace engine
 {
 	
-
 	void Render::initialize()
 	{
 		

@@ -2,13 +2,12 @@
 #include <ciso646>
 #include <iostream>
 
-#include "../headers/kernel.hpp"
-#include "../headers/scene.hpp"
-#include "../headers/render.hpp"
-#include "../headers/read_input.hpp"
-#include "../headers/update.hpp"
-#include "../headers/transform.hpp"
-
+#include <kernel.hpp>
+#include <scene.hpp>
+#include <render.hpp>
+#include <read_input.hpp>
+#include <update.hpp>
+#include <transform.hpp>
 
 
 using namespace engine;

@@ -1,6 +1,6 @@
-#include "../headers/update.hpp"
-#include "../headers/scene_manager.hpp"
-#include "../headers/scene.hpp"
+#include <update.hpp>
+#include <scene_manager.hpp>
+#include <scene.hpp>
 namespace engine
 {
 	

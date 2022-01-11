@@ -1,5 +1,5 @@
-#include "../headers/scene_manager.hpp"
-#include "../headers/scene.hpp"
+#include <scene_manager.hpp>
+#include <scene.hpp>
 
 namespace engine
 {

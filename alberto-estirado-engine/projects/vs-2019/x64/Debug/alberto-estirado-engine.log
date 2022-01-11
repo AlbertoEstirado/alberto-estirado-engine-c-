@@ -1,2 +1,12 @@
-﻿  scene.cpp
+﻿  entity.cpp
+  kernel.cpp
+  read_input.cpp
+  render.cpp
+  scene.cpp
+  scene_manager.cpp
+  transform.cpp
+  update.cpp
+  window.cpp
+C:\Users\Alberto\Desktop\alberto-estirado-engine-c++\alberto-estirado-engine\code\sources\window.cpp(23,146): warning C4267: 'argumento': conversión de 'size_t' a 'int'; posible pérdida de datos
+  Generando código...
   alberto-estirado-engine.vcxproj -> C:\Users\Alberto\Desktop\alberto-estirado-engine-c++\alberto-estirado-engine\projects\vs-2019\x64\Debug\alberto-estirado-engine.exe

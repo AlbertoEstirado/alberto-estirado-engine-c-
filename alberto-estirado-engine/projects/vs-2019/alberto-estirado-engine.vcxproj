@@ -81,7 +81,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>..\..\..\libraries\windows\sdl2-vs\include;..\..\..\libraries\windows\opengl-toolkitl\headers</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\..\libraries\windows\sdl2-vs\include;..\..\..\libraries\windows\rapidxml;..\..\code\headers;..\..\..\libraries\windows\opengl-toolkit\headers</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -98,7 +98,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>..\..\..\libraries\windows\sdl2-vs\include;..\..\..\libraries\windows\opengl-toolkit\headers;..\..\code\headers;..\..\..\libraries\windows\rapidxml</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\..\libraries\windows\sdl2-vs\include;..\..\..\libraries\windows\rapidxml;..\..\code\headers;..\..\..\libraries\windows\opengl-toolkit\headers</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>

@@ -1,8 +1,8 @@
-#include "../headers/scene.hpp"
+#include <scene.hpp>
 #include <fstream>
 #include <sstream>
 #include <iostream>
-#include "../headers/transform.hpp"
+#include <transform.hpp>
 
 using namespace rapidxml;
 using namespace std;
