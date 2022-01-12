@@ -30,5 +30,8 @@ namespace engine
 		void disable_vsync();
 		void clear() const;
 		void swap_buffers() const;
+
+		unsigned get_width() const;
+		unsigned get_height() const;
 	};
 }

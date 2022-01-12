@@ -1,3 +1,5 @@
+#ifndef RENDERER_SYSTEM
+#define RENDERER_SYSTEM
 
 #pragma once
 
@@ -16,10 +18,12 @@ namespace engine
 
 		//std::shared_ptr< Window > window;
 		Window* window;
-		std::unique_ptr < glt::Render_Node > render_node;
 		//glt::Render_Node* render_node = nullptr;
 	
 	public:
+		std::unique_ptr < glt::Render_Node > render_node;
+
+		void run(float) override;
 
 		Renderer_System(Window& window) ;
 
@@ -29,3 +33,5 @@ namespace engine
 	};
 
 }
+
+#endif

@@ -15,6 +15,20 @@ namespace engine
 	}
 	
 
+	void Renderer_System::run(float time = 0)
+	{
+		GLsizei width = GLsizei(window->get_width());
+		GLsizei height = GLsizei(window->get_height());
+
+		render_node->get_active_camera()->set_aspect_ratio(float(width) / height);
+
+		glViewport(0, 0, width, height);
+
+		window->clear();
+		render_node->render();
+		window->swap_buffers();
+	}
+
 	//Renderer_System::Renderer_System(Window& window)
 	//{
 	//	//this->window = &window;

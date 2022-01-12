@@ -12,4 +12,9 @@ namespace engine
 		}
 	}
 
+	void System::add_component(Component * new_component)
+	{
+		components.push_back(new_component);
+	}
+
 }

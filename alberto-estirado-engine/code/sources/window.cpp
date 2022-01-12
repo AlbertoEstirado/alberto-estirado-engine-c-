@@ -90,4 +90,22 @@ namespace engine
 		if (gl_context) SDL_GL_SwapWindow(window);
 	}
 
+	unsigned Window::get_width() const
+	{
+		int width = 0, height;
+
+		if (window) SDL_GetWindowSize(window, &width, &height);
+
+		return unsigned(width);
+	}
+
+	unsigned Window::get_height() const
+	{
+		int width, height = 0;
+
+		if (window) SDL_GetWindowSize(window, &width, &height);
+
+		return unsigned(height);
+	}
+
 }

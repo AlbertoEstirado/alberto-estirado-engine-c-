@@ -20,5 +20,7 @@ namespace engine
 		void end(){}
 
 		//virtual ~System() = 0;
+
+		void add_component(Component*);
 	};
 }
