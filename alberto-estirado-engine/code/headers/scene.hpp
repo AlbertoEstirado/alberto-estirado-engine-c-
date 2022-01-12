@@ -28,13 +28,13 @@ namespace engine
 
 		std::map<Id, Entity*> entities;
 
-		//Renderer_System* renderer_system;
+		Renderer_System* renderer_system = nullptr;
 
 	public:
 
 		std::string name;
 	
-		Scene(std::string name/*, Window window*/);
+		Scene(std::string name, Window window);
 
 		void load_scene();
 		void awake();

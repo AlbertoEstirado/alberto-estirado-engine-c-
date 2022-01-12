@@ -10,14 +10,14 @@ using namespace std;
 
 namespace engine
 {
-	Scene::Scene(std::string name/*, Window window*/)
+	Scene::Scene(std::string name, Window window)
 	{
 		this->name = name;
 		state = UNINITIALIZED;
 		std::cout << "New scene has been created: " << name << std::endl;
 		Scene_manager::instance().add_scene(this);
 
-		//renderer_system = new Renderer_System(window);
+		renderer_system = new Renderer_System(window);
 	}
 
 	void Scene::load_scene()
@@ -116,7 +116,7 @@ namespace engine
 
 	void Scene::render()
 	{
-		//renderer_system->run();
+		renderer_system->run(0);
 	}
 
 	void Scene::save_scene()

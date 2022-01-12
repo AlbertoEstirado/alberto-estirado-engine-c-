@@ -11,7 +11,7 @@ namespace engine
 
 		Scene* scene;
 
-		std::vector<Component> components;
+		std::vector<Component*> components;
 
 		System() = default;
 
@@ -19,6 +19,6 @@ namespace engine
 		void run(float time);
 		void end(){}
 
-		virtual ~System() = 0;
+		//virtual ~System() = 0;
 	};
 }

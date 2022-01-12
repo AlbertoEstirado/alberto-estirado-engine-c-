@@ -23,7 +23,7 @@ int main(int, char**)
     Kernel::instance().initialization();
 
 
-    Scene* main_scene = new Scene("main_scene"/*, *Kernel::instance().window*/);
+    Scene* main_scene = new Scene("main_scene", *Kernel::instance().window);
     Transform* player_transform = new Transform();
     //Entity* player = new Entity("player", player_transform);
     //Renderer * player_renderer = new Renderer("../../assets/sphere.obj")

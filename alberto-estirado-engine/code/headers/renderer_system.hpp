@@ -3,7 +3,8 @@
 
 #include <system.hpp>
 #include <window.hpp>
-#include <renderer.hpp>
+#include <Render_Node.hpp>
+#include <memory>
 
 
 namespace engine
@@ -13,15 +14,16 @@ namespace engine
 	class Renderer_System : public System
 	{
 
-		std::shared_ptr< Window > window;
-		//std::unique_ptr < glt::Render_Node > render_node;
-		glt::Render_Node* render_node;
+		//std::shared_ptr< Window > window;
+		Window* window;
+		std::unique_ptr < glt::Render_Node > render_node;
+		//glt::Render_Node* render_node = nullptr;
 	
 	public:
 
 		Renderer_System(Window& window) ;
 
-		~Renderer_System() {};
+		~Renderer_System();
 
 
 	};

@@ -7,10 +7,12 @@ using namespace glt;
 
 namespace engine 
 {
-	//Renderer_System::Renderer_System(Window& w)
-	//{
-	//	
-	//}
+	Renderer_System::Renderer_System(Window& w)
+	{
+		window = &w;
+		//render_node = nullptr;
+		render_node.reset(new Render_Node);
+	}
 	
 
 	//Renderer_System::Renderer_System(Window& window)
@@ -21,9 +23,9 @@ namespace engine
 	//}
 
 
-	//Renderer_System::~Renderer_System()
-	//{
-	//
-	//}
+	Renderer_System::~Renderer_System()
+	{
+	
+	}
 
 }
