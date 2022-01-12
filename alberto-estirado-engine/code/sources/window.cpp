@@ -29,7 +29,7 @@ namespace engine
 		}
 		else
 		{
-			SDL_Surface* surface = SDL_GetWindowSurface(window);
+			surface = SDL_GetWindowSurface(window);
 			gl_context = SDL_GL_CreateContext(window);
 
 			assert(gl_context != nullptr);
@@ -46,7 +46,7 @@ namespace engine
 	{
 		if(surface)
 		{
-			SDL_FillRect(surface, 0, SDL_MapRGB(surface->format, 225, 225, 225));
+			SDL_FillRect(surface, 0, SDL_MapRGB(surface->format, 0, 0, 0));
 			SDL_UpdateWindowSurface(window);
 		}
 	}

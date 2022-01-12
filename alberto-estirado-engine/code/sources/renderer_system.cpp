@@ -7,10 +7,10 @@ using namespace glt;
 
 namespace engine 
 {
-	Renderer_System::Renderer_System(Window& w)
-	{
-		
-	}
+	//Renderer_System::Renderer_System(Window& w)
+	//{
+	//	
+	//}
 	
 
 	//Renderer_System::Renderer_System(Window& window)
