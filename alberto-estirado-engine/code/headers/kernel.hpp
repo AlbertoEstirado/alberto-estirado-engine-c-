@@ -26,7 +26,7 @@ namespace engine
 			return kernel;
 		}
 
-		std::set<Task*> tasks;  //Esto deberia de ser unique_ptr?
+		std::set<Task*, Task::Compare> tasks;  //Esto deberia de ser unique_ptr? //task
 
 		Window* window = nullptr;
 

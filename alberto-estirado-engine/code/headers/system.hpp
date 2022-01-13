@@ -19,7 +19,7 @@ namespace engine
 		void run(float time);
 		void end(){}
 
-		//virtual ~System() = 0;
+		virtual ~System() = default;
 
 		void add_component(Component*);
 	};

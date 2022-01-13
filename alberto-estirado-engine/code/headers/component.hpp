@@ -14,10 +14,6 @@ namespace engine
 
 	public:
 
-		virtual void awake() = 0;
-		virtual void start() = 0;
-		virtual void update(float time) = 0;
-
 		//Component() {};
 
 		

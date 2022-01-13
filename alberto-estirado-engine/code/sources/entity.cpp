@@ -17,7 +17,7 @@ namespace engine
 	//	}
 	//}
 
-	Entity::Entity(std::string id, Component* transform)
+	Entity::Entity(std::string & id, Component* transform)
 	{
 		this->id = id;
 
@@ -25,38 +25,11 @@ namespace engine
 		add_component(transform);
 	}
 
-	Entity::Entity(std::string id)
+	Entity::Entity(std::string & id)
 	{
 		this->id = id;
 
 		this->transform = nullptr;
-	}
-
-
-	void Entity::awake()
-	{
-		for (size_t i = 0; i < components.size(); i++)
-		{
-			std::cout << id << "	:";
-			components[i]->awake();
-		}
-	}
-
-	void Entity::start()
-	{
-		for (size_t i = 0; i < components.size(); i++)
-		{
-			std::cout << id << "	:";
-			components[i]->start();
-		}
-	}
-
-	void Entity::update(float time)
-	{
-		for (size_t i = 0; i < components.size(); i++)
-		{
-			components[i]->update(time);
-		}
 	}
 
 	void Entity::add_component(Component * new_component)

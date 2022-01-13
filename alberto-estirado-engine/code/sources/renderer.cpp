@@ -11,7 +11,7 @@ namespace engine
 {
 	Renderer::Renderer(std::string path, Renderer_System * render_system)
 	{ 
-		//model = new Model_Obj(path);
+		//model.reset( new Model_Obj(path));
 	
 		shared_ptr< Model  > cube(new Model);
 		cube->add(shared_ptr< Drawable >(new Cube), Material::default_material());

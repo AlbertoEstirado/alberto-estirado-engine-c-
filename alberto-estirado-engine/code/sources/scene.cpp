@@ -10,7 +10,7 @@ using namespace std;
 
 namespace engine
 {
-	Scene::Scene(std::string name, Window window)
+	Scene::Scene(const std::string & name, Window & window)
 	{
 		this->name = name;
 		state = UNINITIALIZED;
@@ -67,7 +67,7 @@ namespace engine
 				}
 				if (strCValue == "renderer")
 				{
-					newEntity->add_component(new Renderer(component->value(), renderer_system));
+					//newEntity->add_component(new Renderer(component->value(), renderer_system));
 					//renderer_system->add_component(newEntity->components.back());
 				}
 
@@ -95,33 +95,22 @@ namespace engine
 	{
 		state = ONGOIN;
 
-		for (auto& e : entities)
-		{
-			e.second->awake();
-		}
-
 		start();
 	}
 
 	void Scene::start()
 	{
-		for (auto& e : entities)
-		{
-			e.second->start();
-		}
+		
 	}
 
 	void Scene::update(float time)
 	{
-		for(auto & e : entities)
-		{
-			e.second->update(time);
-		}
+		
 	}
 
 	void Scene::render()
 	{
-		renderer_system->run(0);
+
 	}
 
 	void Scene::save_scene()

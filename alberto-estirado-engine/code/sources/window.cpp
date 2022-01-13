@@ -6,6 +6,8 @@
 
 namespace engine
 {
+	
+
 	Window::Window(const std::string& title, size_t width, size_t height, bool fullscreen)
 	{
 		exit = false;

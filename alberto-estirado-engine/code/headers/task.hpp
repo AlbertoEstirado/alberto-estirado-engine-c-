@@ -14,6 +14,14 @@ namespace engine
 
 		int priority;
 
+		struct Compare
+		{
+			bool operator () (const Task * a, const Task * b) const
+			{
+				return  a->priority < b->priority;
+			}
+		};
+
 
 		Task(int priority = 0)
 		{

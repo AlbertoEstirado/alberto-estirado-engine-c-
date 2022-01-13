@@ -11,7 +11,7 @@
 
 namespace engine
 {
-	class glt::Render_Node;
+	//class glt::Render_Node;
 
 	class Renderer_System : public System
 	{
@@ -23,9 +23,9 @@ namespace engine
 	public:
 		std::unique_ptr < glt::Render_Node > render_node;
 
-		void run(float) override;
+		Renderer_System(Window& window);
 
-		Renderer_System(Window& window) ;
+		void run(float) override;
 
 		~Renderer_System();
 

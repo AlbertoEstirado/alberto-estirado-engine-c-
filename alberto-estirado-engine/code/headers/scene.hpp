@@ -11,6 +11,8 @@
 
 namespace engine
 {
+	class Window;
+
 	typedef std::string Id;
 
 	class Scene
@@ -34,7 +36,7 @@ namespace engine
 
 		std::string name;
 	
-		Scene(std::string name, Window window);
+		Scene(const std::string & name, Window & window);
 
 		void load_scene();
 		void awake();

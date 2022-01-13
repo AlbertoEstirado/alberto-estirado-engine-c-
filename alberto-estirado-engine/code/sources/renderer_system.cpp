@@ -19,11 +19,11 @@ namespace engine
 	{
 		GLsizei width = GLsizei(window->get_width());
 		GLsizei height = GLsizei(window->get_height());
-
+		
 		render_node->get_active_camera()->set_aspect_ratio(float(width) / height);
-
+		
 		glViewport(0, 0, width, height);
-
+		
 		window->clear();
 		render_node->render();
 		window->swap_buffers();

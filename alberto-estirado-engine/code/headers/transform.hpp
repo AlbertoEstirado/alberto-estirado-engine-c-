@@ -20,10 +20,6 @@ namespace engine
 
 		//Transform();
 
-		void awake();
-		void start();
-		void update(float time);
-
 
 		float get_position_x()
 		{

@@ -8,15 +8,14 @@
 
 namespace engine
 {
-
-	class Renderer : public Component
+	class Renderer : public Component //cambiar name
 	{
 
 		~Renderer() = default;
 
 	public:
 
-		//std::shared_ptr< glt::Model*  > model;
+		std::shared_ptr< glt::Model*  > model;
 		//glt::Model* model;
 
 		Renderer(std::string, Renderer_System *);

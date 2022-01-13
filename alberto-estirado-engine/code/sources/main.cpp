@@ -24,7 +24,7 @@ int main(int, char**)
 
 
     Scene* main_scene = new Scene("main_scene", *Kernel::instance().window);
-    Transform* player_transform = new Transform();
+    //Transform* player_transform = new Transform();
     //Entity* player = new Entity("player", player_transform);
     //Renderer * player_renderer = new Renderer("../../assets/sphere.obj")
     //player->add_component(player_renderer);
@@ -34,7 +34,6 @@ int main(int, char**)
 
     Scene_manager::instance().run_scene(main_scene);
 
-    
     do
     {
         Kernel::instance().execute();
