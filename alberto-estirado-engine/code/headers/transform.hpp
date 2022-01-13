@@ -20,6 +20,10 @@ namespace engine
 
 		//Transform();
 
+		Transform(Entity* e) 
+		{
+			entity = e;
+		}
 
 		float get_position_x()
 		{

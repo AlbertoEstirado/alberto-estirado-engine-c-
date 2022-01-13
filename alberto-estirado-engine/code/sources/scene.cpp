@@ -63,11 +63,11 @@ namespace engine
 				cout << "value :" << component->value() << "\n";
 				if(strCValue == "transform")
 				{
-					newEntity->add_transform(new Transform());
+					newEntity->add_transform(new Transform(newEntity));
 				}
 				if (strCValue == "render_component")
 				{
-					//newEntity->add_component(new Render_Component(component->value(), *renderer_system));
+					newEntity->add_component(new Render_Component(newEntity, component->value(), *renderer_system));
 					//renderer_system->add_component(newEntity->components.back());
 				}
 
@@ -110,35 +110,11 @@ namespace engine
 
 	void Scene::render()
 	{
-
+		renderer_system->run(0);
 	}
 
 	void Scene::save_scene()
 	{
 
 	}
-
-	/*void parse_scene_node(rapidxml::xml_node< >* scene_node)
-	{
-		// Se recorre toda la lista de nodos anidados dentro de <scene> (solo el primer nivel):
-
-		for (xml_node<>* child = scene_node->first_node(); child; child = child->next_sibling())
-		{
-			if (child->type() == node_element)
-			{
-				string name(child->name());
-
-				if (name == "point")
-				{
-					parse_point_node(child);
-				}
-				else if (name == "rectangle")
-				{
-					parse_rectangle_node(child);
-				}
-			}
-		}
-	}*/
-
-
 }

@@ -29,11 +29,10 @@ namespace engine
 		STATE state;
 
 		std::map<Id, Entity*> entities;
-
-		Renderer_System* renderer_system = nullptr;
-
+		
 	public:
 
+		Renderer_System* renderer_system = nullptr;
 		std::string name;
 	
 		Scene(const std::string & name, Window & window);

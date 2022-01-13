@@ -15,9 +15,9 @@ namespace engine
 
 	public:
 
-		std::shared_ptr< glt::Model > model;
+		std::shared_ptr< glt::Model > model = nullptr;
 
-		Render_Component(const std::string &, Renderer_System *);
+		Render_Component(Entity* e, const std::string &, Renderer_System &);
 	};
 }
 

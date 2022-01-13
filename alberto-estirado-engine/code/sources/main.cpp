@@ -8,9 +8,11 @@
 #include <read_input.hpp>
 #include <update.hpp>
 #include <transform.hpp>
+#include <Light.hpp>
 
 
 using namespace engine;
+using namespace glt;
 
 int main(int, char**)
 {
@@ -22,7 +24,6 @@ int main(int, char**)
 
     Kernel::instance().initialization();
 
-
     Scene* main_scene = new Scene("main_scene", *Kernel::instance().window);
     //Transform* player_transform = new Transform();
     //Entity* player = new Entity("player", player_transform);
@@ -31,6 +32,16 @@ int main(int, char**)
 
     //main_scene->add_entity(player);
 
+    std::shared_ptr< Model > cube(new Model);
+    std::shared_ptr< Light > light(new Light);
+    std::shared_ptr< Camera > camera(new Camera(20.f, 1.f, 50.f, 1.f));
+
+    main_scene->renderer_system->render_node->add("camera", camera);
+    main_scene->renderer_system->render_node->add("light", light);
+    main_scene->renderer_system->render_node->add("cube", cube);
+
+    main_scene->renderer_system->render_node->get("camera")->translate(Vector3(0.f, 0.f, 5.f));
+    main_scene->renderer_system->render_node->get("light")->translate(Vector3(10.f, 10.f, 10.f));
 
     Scene_manager::instance().run_scene(main_scene);
 

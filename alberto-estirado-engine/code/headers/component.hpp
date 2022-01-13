@@ -6,6 +6,7 @@
 
 namespace engine
 {
+	class Entity;
 
 	class Component
 	{
@@ -14,6 +15,8 @@ namespace engine
 		virtual ~Component() = default;
 
 	public:
+
+		Entity* entity = nullptr;
 
 	};
 

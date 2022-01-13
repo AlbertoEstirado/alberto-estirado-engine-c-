@@ -17,6 +17,8 @@ namespace engine
 
 	void Renderer_System::run(float time = 0)
 	{
+		std::cout << "rendering..";
+
 		GLsizei width = GLsizei(window->get_width());
 		GLsizei height = GLsizei(window->get_height());
 		

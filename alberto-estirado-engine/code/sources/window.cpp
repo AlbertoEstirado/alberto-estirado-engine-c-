@@ -13,6 +13,9 @@ namespace engine
 		exit = false;
 		gl_context = nullptr;
 
+		this->width = width;
+		this->height = height;
+
 		if (SDL_Init(SDL_INIT_VIDEO) < 0)
 		{
 			SDL_Log("Error SDL2.");
