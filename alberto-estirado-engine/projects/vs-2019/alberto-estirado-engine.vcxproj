@@ -15,8 +15,11 @@
     <ClCompile Include="..\..\code\sources\kernel.cpp" />
     <ClCompile Include="..\..\code\sources\read_input.cpp" />
     <ClCompile Include="..\..\code\sources\render.cpp" />
+    <ClCompile Include="..\..\code\sources\renderer.cpp" />
+    <ClCompile Include="..\..\code\sources\renderer_system.cpp" />
     <ClCompile Include="..\..\code\sources\scene.cpp" />
     <ClCompile Include="..\..\code\sources\scene_manager.cpp" />
+    <ClCompile Include="..\..\code\sources\system.cpp" />
     <ClCompile Include="..\..\code\sources\transform.cpp" />
     <ClCompile Include="..\..\code\sources\update.cpp" />
     <ClCompile Include="..\..\code\sources\main.cpp" />
@@ -25,16 +28,23 @@
   <ItemGroup>
     <ClInclude Include="..\..\code\headers\component.hpp" />
     <ClInclude Include="..\..\code\headers\controller.hpp" />
+    <ClInclude Include="..\..\code\headers\declarations.hpp" />
     <ClInclude Include="..\..\code\headers\entity.hpp" />
     <ClInclude Include="..\..\code\headers\kernel.hpp" />
     <ClInclude Include="..\..\code\headers\read_input.hpp" />
     <ClInclude Include="..\..\code\headers\render.hpp" />
+    <ClInclude Include="..\..\code\headers\renderer.hpp" />
+    <ClInclude Include="..\..\code\headers\renderer_system.hpp" />
     <ClInclude Include="..\..\code\headers\scene.hpp" />
     <ClInclude Include="..\..\code\headers\scene_manager.hpp" />
+    <ClInclude Include="..\..\code\headers\system.hpp" />
     <ClInclude Include="..\..\code\headers\task.hpp" />
     <ClInclude Include="..\..\code\headers\transform.hpp" />
     <ClInclude Include="..\..\code\headers\update.hpp" />
     <ClInclude Include="..\..\code\headers\window.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
@@ -87,7 +97,7 @@
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>..\..\..\libraries\windows\sdl2-vs\lib\x64;..\..\..\libraries\windows\opengl-toolkit\lib\x64</AdditionalLibraryDirectories>
-      <AdditionalDependencies>SDL2.lib;sdl2main.lib;Setupapi.lib;imm32.lib;winmm.lib;opengl32.lib;version.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>SDL2.lib;sdl2main.lib;Setupapi.lib;imm32.lib;winmm.lib;opengl32.lib;version.lib;opengl-toolkit-debug.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -106,7 +116,7 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>..\..\..\libraries\windows\sdl2-vs\lib\x64;..\..\..\libraries\windows\opengl-toolkit\lib\x64</AdditionalLibraryDirectories>
-      <AdditionalDependencies>SDL2.lib;sdl2main.lib;Setupapi.lib;imm32.lib;winmm.lib;opengl32.lib;version.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>SDL2.lib;sdl2main.lib;Setupapi.lib;imm32.lib;winmm.lib;opengl32.lib;version.lib;opengl-toolkit-release.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
