@@ -65,9 +65,9 @@ namespace engine
 				{
 					newEntity->add_transform(new Transform());
 				}
-				if (strCValue == "renderer")
+				if (strCValue == "render_component")
 				{
-					//newEntity->add_component(new Renderer(component->value(), renderer_system));
+					//newEntity->add_component(new Render_Component(component->value(), *renderer_system));
 					//renderer_system->add_component(newEntity->components.back());
 				}
 

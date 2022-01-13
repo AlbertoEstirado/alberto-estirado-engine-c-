@@ -5,7 +5,7 @@
 #include "scene_manager.hpp"
 #include <rapidxml.hpp>
 
-#include <renderer.hpp>
+#include <render_component.hpp>
 
 #pragma once
 

@@ -1,3 +1,4 @@
+
 #ifndef COMPONENT
 #define COMPONENT
 
@@ -5,18 +6,15 @@
 
 namespace engine
 {
+
 	class Component
 	{
 	protected:
 
 		virtual ~Component() = default;
 
-
 	public:
 
-		//Component() {};
-
-		
 	};
 
 }

@@ -4,7 +4,7 @@
         <entity id="player">
             <component id="transform">[0,0,0]</component>
             <component id="sprite"></component>
-            <component id="renderer">../../assets/stanford-bunny.obj</component>
+            <component id="render_component">../../assets/stanford-bunny.obj</component>
         </entity>
         <entity id="enemie">
             <component id="transform">[0,0,0]</component>
