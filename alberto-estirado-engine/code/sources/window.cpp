@@ -2,12 +2,12 @@
 
 #include <window.hpp>
 #include <cassert>
+#include <OpenGL.hpp>
+#include <SDL.h>
 
 
 namespace engine
 {
-	
-
 	Window::Window(const std::string& title, size_t width, size_t height, bool fullscreen)
 	{
 		exit = false;
@@ -39,11 +39,13 @@ namespace engine
 
 			assert(gl_context != nullptr);
 
-			if (fullscreen)
+			if(gl_context && glt::initialize_opengl_extensions())
 			{
-				SDL_SetWindowFullscreen(window, SDL_WINDOW_FULLSCREEN_DESKTOP);
+				if (fullscreen)
+				{
+					SDL_SetWindowFullscreen(window, SDL_WINDOW_FULLSCREEN_DESKTOP);
+				}
 			}
-			
 		}
 	}
 
@@ -87,7 +89,8 @@ namespace engine
 
 	void Window::clear() const
 	{
-		//if (gl_context) glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+		//glClearColor(1, 1, 1, 1);
+		if (gl_context) glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	}
 
 	void Window::swap_buffers() const

@@ -13,7 +13,7 @@ namespace engine
 	{ 
 		entity = e;
 
-		//model.reset( new Model_Obj(path));
+		model.reset( new Model_Obj(path));
 	
 		render_system.add_component(this);
 	}

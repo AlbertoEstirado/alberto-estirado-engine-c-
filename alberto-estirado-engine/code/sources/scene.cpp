@@ -68,7 +68,7 @@ namespace engine
 				if (strCValue == "render_component")
 				{
 					newEntity->add_component(new Render_Component(newEntity, component->value(), *renderer_system));
-					//renderer_system->add_component(newEntity->components.back());
+					renderer_system->add_component(newEntity->components.back());
 				}
 
 			}

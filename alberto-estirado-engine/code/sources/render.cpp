@@ -14,9 +14,9 @@ namespace engine
 	{
 		//std::cout << "render   -   priority: " << this->priority << std::endl;
 
-		Kernel::instance().window->render();
-		//Si descomento me da error
-		//Scene_manager::instance().current_scene->render();
+		//Kernel::instance().window->render();
+
+		Scene_manager::instance().current_scene->render();
 	}
 
 	void Render::end()
