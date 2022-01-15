@@ -5,6 +5,9 @@
 
 namespace engine
 {
+
+	class Transform;
+
 	class Light_Component : public Component
 	{
 
@@ -15,6 +18,7 @@ namespace engine
 		std::shared_ptr< glt::Light > light = nullptr;
 
 		Light_Component(Entity* e, Renderer_System&);
+		Light_Component(Entity* e, Renderer_System&, Transform*);
 	};
 }
 

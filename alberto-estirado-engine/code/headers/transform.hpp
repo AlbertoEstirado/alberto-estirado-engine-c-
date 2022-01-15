@@ -5,6 +5,7 @@
 
 #include "component.hpp"
 
+
 namespace engine
 {
 	class Transform: public Component
@@ -23,6 +24,33 @@ namespace engine
 		Transform(Entity* e) 
 		{
 			entity = e;
+			parent = nullptr;
+			position[0] = 0;
+			position[1] = 0;
+			position[2] = 0;
+			rotation[0] = 0;
+			rotation[1] = 0;
+			rotation[2] = 0;
+			rotation[3] = 1;
+			scale[0] = 0;
+			scale[1] = 0;
+			scale[2] = 0;
+		}
+
+		Transform(Entity* e, float x, float y, float z)
+		{
+			entity = e;
+			parent = nullptr;
+			position[0] = x;
+			position[1] = y;
+			position[2] = z;
+			rotation[0] = 0;
+			rotation[1] = 0;
+			rotation[2] = 0;
+			rotation[3] = 1;
+			scale[0] = 0;
+			scale[1] = 0;
+			scale[2] = 0;
 		}
 
 		float get_position_x()

@@ -2,19 +2,35 @@
 <scene id="sample-scene">
 	<entities>
         <entity id="player">
-            <component id="transform">[0,0,0]</component>
+            <component id="transform">
+                <position id="x">0</position>
+                <position id="y">0</position>
+                <position id="z">0</position>
+            </component>
             <component id="render_component">../../assets/stanford-bunny.obj</component>
         </entity>
         <entity id="camera">
-            <component id="transform">[0,0,0]</component>
+            <component id="transform">
+                <position id="x">0</position>
+                <position id="y">0</position>
+                <position id="z">6</position>
+            </component>
             <component id="camera_component"></component>
         </entity>
         <entity id="light">
-            <component id="transform">[0,0,0]</component>
+            <component id="transform">
+                <position id="x">10</position>
+                <position id="y">10</position>
+                <position id="z">10</position>
+            </component>
             <component id="light_component"></component>
         </entity>
         <entity id="enemie">
-            <component id="transform">[0,0,0]</component>
+            <component id="transform">
+                <position id="x">0</position>
+                <position id="y">0</position>
+                <position id="z">0</position>
+            </component>
         </entity>
     </entities>
 </scene>

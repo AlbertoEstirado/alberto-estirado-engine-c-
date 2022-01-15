@@ -1,4 +1,5 @@
 #include <entity.hpp>
+#include <transform.hpp>
 
 namespace engine
 {
@@ -17,7 +18,7 @@ namespace engine
 	//	}
 	//}
 
-	Entity::Entity(std::string & id, Component* transform)
+	Entity::Entity(std::string & id, Transform* transform)
 	{
 		this->id = id;
 
@@ -37,10 +38,15 @@ namespace engine
 		components.push_back(new_component);
 	}
 
-	void Entity::add_transform(Component* new_component)
+	void Entity::add_transform(Transform* new_component)
 	{
 		transform = new_component;
 		components.push_back(new_component);
+	}
+
+	Transform * Entity::get_transform()
+	{
+		return this->transform;
 	}
 
 }

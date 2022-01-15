@@ -79,9 +79,13 @@ namespace engine
 			std::string strCValue = cAttr->value();
 			cout << "	**** " << component->name() << "  id:" << strCValue;
 			cout << "value :" << component->value() << "\n";
+
 			if (strCValue == "transform")
 			{
-				newEntity->add_transform(new Transform(newEntity));
+				float x = std::stoi(component->first_node()->value());
+				float y = std::stoi(component->first_node()->next_sibling()->value());
+				float z = std::stoi(component->last_node()->value());
+				newEntity->add_transform(new Transform(newEntity, x, y, z));
 			}
 			else if (strCValue == "render_component")
 			{
@@ -90,11 +94,11 @@ namespace engine
 			}
 			else if(strCValue == "camera_component")
 			{
-				newEntity->add_component(new Camera_Component(newEntity, *renderer_system));
+				newEntity->add_component(new Camera_Component(newEntity, *renderer_system, newEntity->get_transform()));
 			}
 			else if (strCValue == "light_component")
 			{
-				newEntity->add_component(new Light_Component(newEntity, *renderer_system));
+				newEntity->add_component(new Light_Component(newEntity, *renderer_system, newEntity->get_transform()));
 			}
 		}
 
