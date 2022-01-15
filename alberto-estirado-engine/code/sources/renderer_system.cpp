@@ -14,11 +14,8 @@ namespace engine
 		render_node.reset(new Render_Node);
 	}
 	
-
 	void Renderer_System::run(float time = 0)
 	{
-		std::cout << "rendering..";
-
 		GLsizei width = GLsizei(window->get_width());
 		GLsizei height = GLsizei(window->get_height());
 		
@@ -30,14 +27,6 @@ namespace engine
 		render_node->render();
 		window->swap_buffers();
 	}
-
-	//Renderer_System::Renderer_System(Window& window)
-	//{
-	//	//this->window = &window;
-	//	
-	//	//renderer.reset(new Render_Node);
-	//}
-
 
 	Renderer_System::~Renderer_System()
 	{

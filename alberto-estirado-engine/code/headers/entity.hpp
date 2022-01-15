@@ -1,3 +1,6 @@
+#ifndef ENTITY
+#define ENTITY
+
 #include <vector>
 #include <iostream>
 
@@ -29,3 +32,5 @@ namespace engine
 
 	};
 }
+
+#endif

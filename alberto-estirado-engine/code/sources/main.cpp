@@ -35,16 +35,16 @@ int main(int, char**)
 
     //std::shared_ptr< Model > cube(new Model);
     //cube->add(std::shared_ptr< Drawable >(new Cube), Material::default_material());
-    std::shared_ptr< Light > light(new Light);
-    std::shared_ptr< Camera > camera(new Camera(20.f, 1.f, 50.f, 1.f));
-    std::shared_ptr< Model  > bunny(new Model_Obj("../../assets/stanford-bunny.obj"));
+    //std::shared_ptr< Light > light(new Light);
+    //std::shared_ptr< Camera > camera(new Camera(20.f, 1.f, 50.f, 1.f));
+    //std::shared_ptr< Model  > bunny(new Model_Obj("../../assets/stanford-bunny.obj"));
 
-    main_scene->renderer_system->render_node->add("camera", camera);
-    main_scene->renderer_system->render_node->add("light", light);
-    main_scene->renderer_system->render_node->add("cube", bunny);
+    //main_scene->renderer_system->render_node->add("camera", camera);
+    //main_scene->renderer_system->render_node->add("light", light);
+    //main_scene->renderer_system->render_node->add("cube", bunny);
 
-    main_scene->renderer_system->render_node->get("camera")->translate(Vector3(0.f, 0.f, 5.f));
-    main_scene->renderer_system->render_node->get("light")->translate(Vector3(10.f, 10.f, 10.f));
+    //main_scene->renderer_system->render_node->get("camera")->translate(Vector3(0.f, 0.f, 5.f));
+    //main_scene->renderer_system->render_node->get("light")->translate(Vector3(10.f, 10.f, 10.f));
 
     Scene_manager::instance().run_scene(main_scene);
 

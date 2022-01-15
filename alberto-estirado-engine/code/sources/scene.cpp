@@ -4,6 +4,8 @@
 #include <iostream>
 #include <transform.hpp>
 #include <kernel.hpp>
+#include <light_component.hpp>
+#include <camera_component.hpp>
 
 using namespace rapidxml;
 using namespace std;
@@ -53,26 +55,8 @@ namespace engine
 
 			Entity* newEntity = new Entity(strValue);
 			
-
-			for (xml_node<>* component = entity->first_node();
-				component; component = component->next_sibling())
-			{
-				xml_attribute<>* cAttr = component->first_attribute("id");
-				std::string strCValue = cAttr->value();
-				cout << "	**** " << component->name() << "  id:" << strCValue;
-				cout << "value :" << component->value() << "\n";
-				if(strCValue == "transform")
-				{
-					newEntity->add_transform(new Transform(newEntity));
-				}
-				if (strCValue == "render_component")
-				{
-					newEntity->add_component(new Render_Component(newEntity, component->value(), *renderer_system));
-					renderer_system->add_component(newEntity->components.back());
-				}
-
-			}
-
+			parse_node_component(entity, newEntity);
+			
 			add_entity(newEntity);
 		}
 
@@ -84,6 +68,36 @@ namespace engine
 		}
 
 		awake();
+	}
+
+	void Scene::parse_node_component(xml_node<>* xml_entity, Entity* newEntity)
+	{
+		for (xml_node<>* component = xml_entity->first_node();
+			component; component = component->next_sibling())
+		{
+			xml_attribute<>* cAttr = component->first_attribute("id");
+			std::string strCValue = cAttr->value();
+			cout << "	**** " << component->name() << "  id:" << strCValue;
+			cout << "value :" << component->value() << "\n";
+			if (strCValue == "transform")
+			{
+				newEntity->add_transform(new Transform(newEntity));
+			}
+			else if (strCValue == "render_component")
+			{
+				newEntity->add_component(new Render_Component(newEntity, component->value(), *renderer_system));
+				renderer_system->add_component(newEntity->components.back());
+			}
+			else if(strCValue == "camera_component")
+			{
+				newEntity->add_component(new Camera_Component(newEntity, *renderer_system));
+			}
+			else if (strCValue == "light_component")
+			{
+				newEntity->add_component(new Light_Component(newEntity, *renderer_system));
+			}
+		}
+
 	}
 
 	void Scene::add_entity(Entity * new_entity)

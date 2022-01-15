@@ -38,11 +38,11 @@ namespace engine
 		Scene(const std::string & name, Window & window);
 
 		void load_scene();
+		void parse_node_component(rapidxml::xml_node<>*, Entity*);
 		void awake();
 		void start();
 		void update(float time);
 		void render();
-
 		void save_scene();
 
 		void add_entity(Entity *);
