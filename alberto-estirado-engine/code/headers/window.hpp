@@ -23,7 +23,6 @@ namespace engine
 
 		Window(const std::string& title, size_t  width, size_t height, bool fullscreen = false);
 
-		void render();
 		void end();
 		void handle_events();
 

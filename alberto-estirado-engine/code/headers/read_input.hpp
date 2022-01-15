@@ -9,8 +9,12 @@ namespace engine
 
 	public:
 
-		Read_input(int priority) : Task(priority)
+		Window* window;
+
+		Read_input(int priority, Window* window) : Task(priority)
 		{
+			this->window = window;
+
 			this->priority = priority;
 
 			Kernel::instance().add_task(this);

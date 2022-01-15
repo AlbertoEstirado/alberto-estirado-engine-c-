@@ -28,7 +28,7 @@ namespace engine
 
 		std::set<Task*, Task::Compare> tasks;  //Esto deberia de ser unique_ptr? //task
 
-		Window* window = nullptr;
+		bool running = true;
 
 		Kernel();
 
@@ -37,6 +37,7 @@ namespace engine
 		void execute();
 		void end();
 
+		void stop_kernel();
 		void add_task(Task*);
 
 	};

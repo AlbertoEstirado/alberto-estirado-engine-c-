@@ -4,6 +4,7 @@
 #include <cassert>
 #include <OpenGL.hpp>
 #include <SDL.h>
+#include <kernel.hpp>
 
 
 namespace engine
@@ -49,15 +50,6 @@ namespace engine
 		}
 	}
 
-	void Window::render()
-	{
-		if(surface)
-		{
-			SDL_FillRect(surface, 0, SDL_MapRGB(surface->format, 0, 0, 0));
-			SDL_UpdateWindowSurface(window);
-		}
-	}
-
 	void Window::end()
 	{
 		SDL_DestroyWindow(window);
@@ -73,6 +65,7 @@ namespace engine
 			if (event.type == SDL_QUIT)
 			{
 				exit = true;
+				Kernel::instance().stop_kernel();
 			}
 		}
 	}

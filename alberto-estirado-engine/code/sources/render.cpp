@@ -12,16 +12,12 @@ namespace engine
 
 	void Render::run(float time)
 	{
-		//std::cout << "render   -   priority: " << this->priority << std::endl;
-
-		//Kernel::instance().window->render();
-
 		Scene_manager::instance().current_scene->render();
 	}
 
 	void Render::end()
 	{
-		Kernel::instance().window->end();
+		Kernel::instance().stop_kernel();
 	}
 }
 

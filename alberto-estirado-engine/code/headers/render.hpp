@@ -9,8 +9,12 @@ namespace engine
 
 	public:
 
-		Render(int priority) : Task(priority)
+		Window* window;
+
+		Render(int priority, Window * window) : Task(priority)
 		{
+			this->window = window;
+
 			this->priority = priority;
 
 			Kernel::instance().add_task(this);

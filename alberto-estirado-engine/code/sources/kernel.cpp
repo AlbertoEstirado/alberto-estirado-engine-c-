@@ -5,8 +5,7 @@ namespace engine
 {
 	Kernel::Kernel()
 	{
-		window = new Window("engine", 800, 600);
-		window->enable_vsync();
+		running = true;
 	}
 
 	void Kernel::initialization()
@@ -38,6 +37,11 @@ namespace engine
 	void Kernel::add_task(Task * new_task)
 	{
 		tasks.insert(new_task);
+	}
+
+	void Kernel::stop_kernel()
+	{
+		running = false;
 	}
 	
 }
