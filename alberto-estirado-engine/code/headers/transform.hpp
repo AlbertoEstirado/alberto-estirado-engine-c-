@@ -37,10 +37,10 @@ namespace engine
 			scale[2] = 0;
 		}
 
-		Transform(Entity* e, float x, float y, float z)
+		Transform(Entity* e, float x, float y, float z, Transform * newParent = nullptr)
 		{
 			entity = e;
-			parent = nullptr;
+			set_parent(newParent);
 			position[0] = x;
 			position[1] = y;
 			position[2] = z;
@@ -51,6 +51,11 @@ namespace engine
 			scale[0] = 0;
 			scale[1] = 0;
 			scale[2] = 0;
+		}
+
+		void set_parent(Transform * newParent)
+		{
+			parent = newParent;
 		}
 
 		float get_position_x()

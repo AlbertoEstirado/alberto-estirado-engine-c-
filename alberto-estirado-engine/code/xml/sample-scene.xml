@@ -26,11 +26,12 @@
             <component id="light_component"></component>
         </entity>
         <entity id="enemie">
-            <component id="transform">
-                <position id="x">0</position>
+            <component id="transform" parent="player">
+                <position id="x">3</position>
                 <position id="y">0</position>
                 <position id="z">0</position>
             </component>
+            <component id="render_component">../../assets/sphere.obj</component>
         </entity>
     </entities>
 </scene>

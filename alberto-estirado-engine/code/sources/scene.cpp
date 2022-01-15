@@ -82,6 +82,8 @@ namespace engine
 
 			if (strCValue == "transform")
 			{
+				if(component->last_attribute("parent"))
+					cout << component->last_attribute("parent")->value() << endl;
 				float x = std::stoi(component->first_node()->value());
 				float y = std::stoi(component->first_node()->next_sibling()->value());
 				float z = std::stoi(component->last_node()->value());
@@ -94,11 +96,11 @@ namespace engine
 			}
 			else if(strCValue == "camera_component")
 			{
-				newEntity->add_component(new Camera_Component(newEntity, *renderer_system, newEntity->get_transform()));
+				newEntity->add_component(new Camera_Component(newEntity, *renderer_system));
 			}
 			else if (strCValue == "light_component")
 			{
-				newEntity->add_component(new Light_Component(newEntity, *renderer_system, newEntity->get_transform()));
+				newEntity->add_component(new Light_Component(newEntity, *renderer_system));
 			}
 		}
 
