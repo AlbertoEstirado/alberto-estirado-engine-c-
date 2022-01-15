@@ -82,12 +82,23 @@ namespace engine
 
 			if (strCValue == "transform")
 			{
+				Entity* parent = nullptr;
 				if(component->last_attribute("parent"))
+				{
 					cout << component->last_attribute("parent")->value() << endl;
+					parent = get_entity(component->last_attribute("parent")->value());
+				}
+
 				float x = std::stoi(component->first_node()->value());
 				float y = std::stoi(component->first_node()->next_sibling()->value());
 				float z = std::stoi(component->last_node()->value());
-				newEntity->add_transform(new Transform(newEntity, x, y, z));
+
+				if(parent)
+					newEntity->add_transform(new Transform(newEntity, x, y, z, parent->get_transform()));
+				else
+					newEntity->add_transform(new Transform(newEntity, x, y, z));
+
+				
 			}
 			else if (strCValue == "render_component")
 			{
@@ -103,7 +114,6 @@ namespace engine
 				newEntity->add_component(new Light_Component(newEntity, *renderer_system));
 			}
 		}
-
 	}
 
 	void Scene::add_entity(Entity * new_entity)
@@ -111,10 +121,20 @@ namespace engine
 		entities.insert(std::pair<Id, Entity*>(new_entity->id, new_entity));
 	}
 
+	Entity * Scene::get_entity(const std::string & id)
+	{
+		for (auto& e : entities)
+		{
+			if(e.first == id)
+			{
+				return e.second;
+			}
+		}
+	}
+
 	void Scene::awake()
 	{
 		state = ONGOIN;
-
 		start();
 	}
 

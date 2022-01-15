@@ -21,37 +21,8 @@ namespace engine
 
 		//Transform();
 
-		Transform(Entity* e) 
-		{
-			entity = e;
-			parent = nullptr;
-			position[0] = 0;
-			position[1] = 0;
-			position[2] = 0;
-			rotation[0] = 0;
-			rotation[1] = 0;
-			rotation[2] = 0;
-			rotation[3] = 1;
-			scale[0] = 0;
-			scale[1] = 0;
-			scale[2] = 0;
-		}
-
-		Transform(Entity* e, float x, float y, float z, Transform * newParent = nullptr)
-		{
-			entity = e;
-			set_parent(newParent);
-			position[0] = x;
-			position[1] = y;
-			position[2] = z;
-			rotation[0] = 0;
-			rotation[1] = 0;
-			rotation[2] = 0;
-			rotation[3] = 1;
-			scale[0] = 0;
-			scale[1] = 0;
-			scale[2] = 0;
-		}
+		Transform(Entity* e);
+		Transform(Entity* e, float x, float y, float z, Transform* newParent = nullptr);
 
 		void set_parent(Transform * newParent)
 		{

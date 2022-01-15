@@ -44,9 +44,10 @@ namespace engine
 		void update(float time);
 		void render();
 		void save_scene();
-
-		void add_entity(Entity *);
 		
+		void add_entity(Entity *);
+		Entity * get_entity(const std::string &);
+
 		std::string get_name ()
 		{
 			return name;
