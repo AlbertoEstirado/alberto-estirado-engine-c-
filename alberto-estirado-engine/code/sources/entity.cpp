@@ -1,5 +1,6 @@
 #include <entity.hpp>
 #include <transform.hpp>
+#include <scene.hpp>
 
 namespace engine
 {
@@ -8,15 +9,11 @@ namespace engine
 		id = "";
 	}
 
-	//Entity::Entity(std::string id, std::vector<Component*> components)
-	//{
-	//	this->id = id;
-	//
-	//	for (size_t i = 0; i < components.size(); i++)
-	//	{
-	//		add_component(components[i]);
-	//	}
-	//}
+	Entity::Entity(std::string& id, Scene * scene)
+	{
+		this->scene = scene;
+		this->id = id;
+	}
 
 	Entity::Entity(std::string & id, Transform* transform)
 	{

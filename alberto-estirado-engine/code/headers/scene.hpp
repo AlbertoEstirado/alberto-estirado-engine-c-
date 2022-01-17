@@ -4,7 +4,7 @@
 #include "entity.hpp"
 #include "scene_manager.hpp"
 #include <rapidxml.hpp>
-
+#include <dispatcher.hpp>
 #include <render_component.hpp>
 
 #pragma once
@@ -32,6 +32,7 @@ namespace engine
 		
 	public:
 
+		Dispatcher* dispatcher = nullptr;
 		Renderer_System* renderer_system = nullptr;
 		std::string name;
 	
@@ -42,11 +43,14 @@ namespace engine
 		void awake();
 		void start();
 		void update(float time);
+		void read_input();
 		void render();
 		void save_scene();
-		
+		Dispatcher* get_dispatcher();
 		void add_entity(Entity *);
 		Entity * get_entity(const std::string &);
+
+		void parse_transform(rapidxml::xml_node<>*, Entity*);
 
 		std::string get_name ()
 		{

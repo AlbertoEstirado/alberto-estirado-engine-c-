@@ -10,7 +10,7 @@
 #include <transform.hpp>
 #include <Light.hpp>
 #include <Cube.hpp>
-
+#include <keyboardcontrol_component.hpp>
 
 using namespace engine;
 using namespace glt;
@@ -32,7 +32,7 @@ int main(int, char**)
     //window->enable_vsync();
 
     Scene* main_scene = new Scene("main_scene", *window);
-   
+
     Scene_manager::instance().run_scene(main_scene);
 
     do

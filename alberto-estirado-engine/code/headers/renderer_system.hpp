@@ -9,9 +9,11 @@
 #include <memory>
 
 
+
 namespace engine
 {
 	//class glt::Render_Node;
+	class Render_Component;
 
 	class Renderer_System : public System
 	{

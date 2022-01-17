@@ -6,6 +6,7 @@
 #include <kernel.hpp>
 #include <light_component.hpp>
 #include <camera_component.hpp>
+#include <keyboardcontrol_component.hpp>
 
 using namespace rapidxml;
 using namespace std;
@@ -20,6 +21,7 @@ namespace engine
 		Scene_manager::instance().add_scene(this);
 
 		renderer_system = new Renderer_System(window);
+		dispatcher = new Dispatcher();
 	}
 
 	void Scene::load_scene()
@@ -53,7 +55,7 @@ namespace engine
 
 			cout << "**** " << entity->name() << "  id:" << strValue << "\n";
 
-			Entity* newEntity = new Entity(strValue);
+			Entity* newEntity = new Entity(strValue, this);
 			
 			parse_node_component(entity, newEntity);
 			
@@ -82,28 +84,11 @@ namespace engine
 
 			if (strCValue == "transform")
 			{
-				Entity* parent = nullptr;
-				if(component->last_attribute("parent"))
-				{
-					cout << component->last_attribute("parent")->value() << endl;
-					parent = get_entity(component->last_attribute("parent")->value());
-				}
-
-				float x = std::stoi(component->first_node()->value());
-				float y = std::stoi(component->first_node()->next_sibling()->value());
-				float z = std::stoi(component->last_node()->value());
-
-				if(parent)
-					newEntity->add_transform(new Transform(newEntity, x, y, z, parent->get_transform()));
-				else
-					newEntity->add_transform(new Transform(newEntity, x, y, z));
-
-				
+				parse_transform(component, newEntity);
 			}
 			else if (strCValue == "render_component")
 			{
 				newEntity->add_component(new Render_Component(newEntity, component->value(), *renderer_system));
-				renderer_system->add_component(newEntity->components.back());
 			}
 			else if(strCValue == "camera_component")
 			{
@@ -113,7 +98,41 @@ namespace engine
 			{
 				newEntity->add_component(new Light_Component(newEntity, *renderer_system));
 			}
+			else if (strCValue == "keyboardcontrol_component")
+			{
+				newEntity->add_component(new Keyboardcontrol_Component(newEntity));
+			}
 		}
+	}
+
+	void Scene::parse_transform(xml_node<>* component, Entity* newEntity)
+	{
+		Entity* parent = nullptr;
+		if (component->last_attribute("parent"))
+		{
+			cout << component->last_attribute("parent")->value() << endl;
+			parent = get_entity(component->last_attribute("parent")->value());
+		}
+
+		Matrix44 transform;
+
+		//Position
+		transform[0][0] = std::stoi(component->first_node()->first_node()->value());
+		transform[0][1] = std::stoi(component->first_node()->first_node()->next_sibling()->value());
+		transform[0][2] = std::stoi(component->first_node()->last_node()->value());
+		//Rotation
+		transform[1][0] = std::stoi(component->first_node()->next_sibling()->first_node()->value());
+		transform[1][1] = std::stoi(component->first_node()->next_sibling()->first_node()->next_sibling()->value());
+		transform[1][2] = std::stoi(component->first_node()->next_sibling()->last_node()->value());
+		//Scale
+		transform[2][0] = std::stoi(component->last_node()->first_node()->value());
+		transform[2][1] = std::stoi(component->last_node()->first_node()->next_sibling()->value());
+		transform[2][2] = std::stoi(component->last_node()->last_node()->value());
+
+		if (parent)
+			newEntity->add_transform(new Transform(newEntity, transform, parent->get_transform()));
+		else
+			newEntity->add_transform(new Transform(newEntity, transform));
 	}
 
 	void Scene::add_entity(Entity * new_entity)
@@ -138,15 +157,9 @@ namespace engine
 		start();
 	}
 
-	void Scene::start()
-	{
-		
-	}
-
-	void Scene::update(float time)
-	{
-		
-	}
+	void Scene::start(){}
+	void Scene::update(float time){}
+	void Scene::read_input(){}
 
 	void Scene::render()
 	{
@@ -156,5 +169,10 @@ namespace engine
 	void Scene::save_scene()
 	{
 
+	}
+
+	Dispatcher* Scene::get_dispatcher()
+	{
+		return dispatcher;
 	}
 }

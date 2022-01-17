@@ -3,33 +3,58 @@
 	<entities>
         <entity id="player">
             <component id="transform">
-                <position id="x">0</position>
-                <position id="y">0</position>
-                <position id="z">0</position>
+                <position>
+                    <x>0</x><y>0</y><z>0</z>
+                </position>
+                <rotation>
+                    <x>0</x><y>0</y><z>0</z>
+                </rotation>
+                <scale>
+                    <x>1</x><y>1</y><z>1</z>
+                </scale>
             </component>
             <component id="render_component">../../assets/stanford-bunny.obj</component>
+            <component id="keyboardcontrol_component"></component>
         </entity>
         <entity id="camera">
             <component id="transform">
-                <position id="x">0</position>
-                <position id="y">0</position>
-                <position id="z">6</position>
+                <position>
+                    <x>0</x><y>1</y><z>6</z>
+                </position>
+                <rotation>
+                    <x>0</x><y>0</y><z>0</z>
+                </rotation>
+                <scale>
+                    <x>1</x><y>1</y><z>1</z>
+                </scale>
             </component>
             <component id="camera_component"></component>
         </entity>
         <entity id="light">
             <component id="transform">
-                <position id="x">10</position>
-                <position id="y">10</position>
-                <position id="z">10</position>
+                <position>
+                    <x>10</x><y>10</y><z>10</z>
+                </position>
+                <rotation>
+                    <x>0</x><y>0</y><z>0</z>
+                </rotation>
+                <scale>
+                    <x>1</x><y>1</y><z>1</z>
+                </scale>
             </component>
             <component id="light_component"></component>
         </entity>
         <entity id="enemie">
             <component id="transform" parent="player">
-                <position id="x">3</position>
-                <position id="y">0</position>
-                <position id="z">0</position>
+                <position>
+                    <x>3</x><y>0</y><z>0</z>
+                </position>
+                <rotation>
+                    <x>0</x><y>0</y><z>0</z>
+                </rotation>
+                <scale>
+                    <x>1</x><y>1</y><z>1</z>
+                </scale>
             </component>
             <component id="render_component">../../assets/sphere.obj</component>
         </entity>

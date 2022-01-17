@@ -12,6 +12,8 @@ namespace engine
 {
 	Render_Component::Render_Component(Entity * e, const std::string & path, Renderer_System & render_system)
 	{ 
+		std::cout << "render component creado" << std::endl;
+
 		entity = e;
 
 		model.reset( new Model_Obj(path));
@@ -25,6 +27,8 @@ namespace engine
 				entity->transform->get_position_z()
 			));
 
+		//render_system.render_node->get(entity->id)->set_transformation(entity->transform->transformation);
+		
 		render_system.add_component(this);
 	}
 	

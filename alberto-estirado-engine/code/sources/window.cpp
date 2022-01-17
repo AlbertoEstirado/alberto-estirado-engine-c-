@@ -5,7 +5,9 @@
 #include <OpenGL.hpp>
 #include <SDL.h>
 #include <kernel.hpp>
-
+#include <keyboard.hpp>
+#include <scene_manager.hpp>
+#include <scene.hpp>
 
 namespace engine
 {
@@ -66,6 +68,12 @@ namespace engine
 			{
 				exit = true;
 				Kernel::instance().stop_kernel();
+			}
+
+			if(event.type == SDL_KEYDOWN)
+			{
+				Message* new_input_message = new Message(Keyboard::instance().sdlk_to_string(event.key.keysym.sym));
+				Scene_manager::instance().current_scene->dispatcher->multicast(*new_input_message);
 			}
 		}
 	}

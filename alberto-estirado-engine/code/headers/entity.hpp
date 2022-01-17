@@ -11,6 +11,7 @@
 namespace engine
 {
 	class Transform;
+	class Scene;
 
 	class Entity
 	{
@@ -22,10 +23,10 @@ namespace engine
 
 		Transform* transform = nullptr;
 
-		//referencia a la scene
+		Scene* scene = nullptr;
 
 		Entity();
-		//Entity(std::string id, std::vector<Component*> components);
+		Entity(std::string& id, Scene* scene);
 		Entity(std::string & id, Transform* transform);
 		Entity(std::string & id);
 

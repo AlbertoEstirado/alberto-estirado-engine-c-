@@ -7,37 +7,56 @@ namespace engine
 	
 	Transform::Transform(Entity* e)
 	{
+		active = true;
 		entity = e;
 		parent = nullptr;
-		position[0] = 0;
-		position[1] = 0;
-		position[2] = 0;
-		rotation[0] = 0;
-		rotation[1] = 0;
-		rotation[2] = 0;
-		rotation[3] = 1;
-		scale[0] = 0;
-		scale[1] = 0;
-		scale[2] = 0;
+		//Position
+		transformation[0][0] = 0;
+		transformation[0][1] = 0;
+		transformation[0][2] = 0;
+		//Rotation
+		transformation[1][0] = 0;
+		transformation[1][1] = 0;
+		transformation[1][2] = 0;
+		transformation[1][3] = 1;
+		//Scale
+		transformation[2][0] = 1;
+		transformation[2][1] = 1;
+		transformation[2][2] = 1;
 	}
 
 	Transform::Transform(Entity* e, float x, float y, float z, Transform* newParent)
 	{
+		active = true;
 		entity = e;
 		set_parent(newParent);
 		if(newParent)
 			std::cout << e->id <<" parent: " << newParent->entity->id << std::endl;
 
-		position[0] = x;
-		position[1] = y;
-		position[2] = z;
-		rotation[0] = 0;
-		rotation[1] = 0;
-		rotation[2] = 0;
-		rotation[3] = 1;
-		scale[0] = 0;
-		scale[1] = 0;
-		scale[2] = 0;
+		//Position
+		transformation[0][0] = x;
+		transformation[0][1] = y;
+		transformation[0][2] = z;
+		//Rotation
+		transformation[1][0] = 0;
+		transformation[1][1] = 0;
+		transformation[1][2] = 0;
+		transformation[1][3] = 1;
+		//Scale
+		transformation[2][0] = 1;
+		transformation[2][1] = 1;
+		transformation[2][2] = 1;
+	}
+
+	Transform::Transform(Entity* e, Matrix44 t, Transform* newParent)
+	{
+		active = true;
+		entity = e;
+		set_parent(newParent);
+		if (newParent)
+			std::cout << e->id << " parent: " << newParent->entity->id << std::endl;
+		
+		transformation = t;
 	}
 	
 }
