@@ -15,13 +15,7 @@ namespace engine
 		light.reset( new Light);
 	
 		render_system.render_node->add(entity->id , light);
-		render_system.render_node->get(entity->id)->translate(
-			Vector3(
-				entity->transform->get_position_x(),
-				entity->transform->get_position_y(),
-				entity->transform->get_position_z()
-			));
-
+		
 		render_system.add_component(this);
 	}
 	

@@ -20,16 +20,7 @@ namespace engine
 	
 		render_system.render_node->add(entity->id , model);
 
-		render_system.render_node->get(entity->id)->translate(
-			Vector3(
-				entity->transform->get_position_x(),
-				entity->transform->get_position_y(),
-				entity->transform->get_position_z()
-			));
-
-		//render_system.render_node->get(entity->id)->set_transformation(entity->transform->transformation);
-		
-		render_system.add_component(this);
+		render_system.add_render_component(this);
 	}
 	
 }

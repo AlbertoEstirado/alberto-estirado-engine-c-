@@ -11,18 +11,17 @@ namespace engine
 		entity = e;
 		parent = nullptr;
 		//Position
-		transformation[0][0] = 0;
-		transformation[0][1] = 0;
-		transformation[0][2] = 0;
+		position.x = 0;
+		position.y = 0;
+		position.z = 0;
 		//Rotation
-		transformation[1][0] = 0;
-		transformation[1][1] = 0;
-		transformation[1][2] = 0;
-		transformation[1][3] = 1;
+		rotation.x = 0;
+		rotation.y = 0;
+		rotation.z = 0;
 		//Scale
-		transformation[2][0] = 1;
-		transformation[2][1] = 1;
-		transformation[2][2] = 1;
+		scale.x = 1;
+		scale.y = 1;
+		scale.z = 1;
 	}
 
 	Transform::Transform(Entity* e, float x, float y, float z, Transform* newParent)
@@ -34,18 +33,17 @@ namespace engine
 			std::cout << e->id <<" parent: " << newParent->entity->id << std::endl;
 
 		//Position
-		transformation[0][0] = x;
-		transformation[0][1] = y;
-		transformation[0][2] = z;
+		position.x = x;
+		position.y = y;
+		position.z = z;
 		//Rotation
-		transformation[1][0] = 0;
-		transformation[1][1] = 0;
-		transformation[1][2] = 0;
-		transformation[1][3] = 1;
+		rotation.x = 0;
+		rotation.y = 0;
+		rotation.z = 0;
 		//Scale
-		transformation[2][0] = 1;
-		transformation[2][1] = 1;
-		transformation[2][2] = 1;
+		scale.x = 1;
+		scale.y = 1;
+		scale.z = 1;
 	}
 
 	Transform::Transform(Entity* e, Matrix44 t, Transform* newParent)
@@ -56,7 +54,20 @@ namespace engine
 		if (newParent)
 			std::cout << e->id << " parent: " << newParent->entity->id << std::endl;
 		
-		transformation = t;
+		//Position
+		position.x = t[0][0];
+		position.y = t[0][1];
+		position.z = t[0][2];
+		//Rotation
+		rotation.x = t[1][0];
+		rotation.y = t[1][1];
+		rotation.z = t[1][2];
+		//Scale		 
+		scale.x = t[2][0];
+		scale.y = t[2][1];
+		scale.z = t[2][2];
+
+		print_transform();
 	}
 	
 }

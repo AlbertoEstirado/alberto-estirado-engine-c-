@@ -23,11 +23,15 @@ namespace engine
 		//glt::Render_Node* render_node = nullptr;
 	
 	public:
+
+		std::vector<Render_Component*> render_components;
+
 		std::unique_ptr < glt::Render_Node > render_node;
 
 		Renderer_System(Window& window);
 
 		void run(float) override;
+		void add_render_component(Render_Component*);
 
 		~Renderer_System();
 

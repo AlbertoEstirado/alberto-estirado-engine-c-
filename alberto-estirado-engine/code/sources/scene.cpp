@@ -120,14 +120,17 @@ namespace engine
 		transform[0][0] = std::stoi(component->first_node()->first_node()->value());
 		transform[0][1] = std::stoi(component->first_node()->first_node()->next_sibling()->value());
 		transform[0][2] = std::stoi(component->first_node()->last_node()->value());
+		std::cout << "position: " << transform[0][0] <<"," << transform[0][1] << "," << transform[0][2] << std::endl;
 		//Rotation
 		transform[1][0] = std::stoi(component->first_node()->next_sibling()->first_node()->value());
 		transform[1][1] = std::stoi(component->first_node()->next_sibling()->first_node()->next_sibling()->value());
 		transform[1][2] = std::stoi(component->first_node()->next_sibling()->last_node()->value());
+		std::cout << "rotation: " << transform[1][0] << "," << transform[1][1] << "," << transform[1][2] << std::endl;
 		//Scale
 		transform[2][0] = std::stoi(component->last_node()->first_node()->value());
 		transform[2][1] = std::stoi(component->last_node()->first_node()->next_sibling()->value());
 		transform[2][2] = std::stoi(component->last_node()->last_node()->value());
+		std::cout << "scale: " << transform[2][0] << "," << transform[2][1] << "," << transform[2][2] << std::endl;
 
 		if (parent)
 			newEntity->add_transform(new Transform(newEntity, transform, parent->get_transform()));

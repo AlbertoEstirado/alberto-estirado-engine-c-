@@ -8,6 +8,7 @@
 #include <glm/gtc/type_ptr.hpp>
 #include <glm/gtx/matrix_decompose.hpp>
 #include <glm/gtc/matrix_transform.hpp>
+#include <iostream>
 
 namespace engine
 {
@@ -18,6 +19,10 @@ namespace engine
 	{
 	
 	public:
+
+		Vector3 position;
+		Vector3 rotation;
+		Vector3 scale;
 
 		Transform* parent;
 
@@ -42,6 +47,18 @@ namespace engine
 			active = state;
 		}
 
+		Matrix44 get_transform_matrix()
+		{
+			Matrix44 matrix(1);
+			matrix = glm::translate(matrix, position);
+			matrix = glm::rotate(matrix, rotation.x, Vector3(1, 0, 0));
+			matrix = glm::rotate(matrix, rotation.y, Vector3(0, 1, 0));
+			matrix = glm::rotate(matrix, rotation.z, Vector3(0, 0, 1));
+			matrix = glm::scale(matrix, scale);
+
+			return matrix;
+		}
+
 		Matrix44 get_total_transformation() const
 		{
 			if (parent)
@@ -62,7 +79,7 @@ namespace engine
 			transformation = glm::translate(transformation, displacement);
 		}
 
-		void scale(float scale)
+		void scale_obj(float scale)
 		{
 			transformation = glm::scale(transformation, Vector3(scale, scale, scale));
 		}
@@ -84,39 +101,46 @@ namespace engine
 
 		float get_position_x()
 		{
-			return transformation[0][0];
+			return position.x;
 		}
 		float get_position_y()
 		{
-			return transformation[0][1];
+			return position.y;
 		}
 		float get_position_z()
 		{
-			return transformation[0][2];
+			return position.z;
 		}
 		float get_rotation_x()
 		{
-			return transformation[1][0];
+			return rotation.x;
 		}
 		float get_rotation_y()
 		{
-			return transformation[1][1];
+			return rotation.y;
 		}
 		float get_rotation_z()
 		{
-			return transformation[1][2];
+			return rotation.z;
 		}
 		float get_scale_x()
 		{
-			return transformation[2][0];
+			return scale.x;
 		}
 		float get_scale_y()
 		{
-			return transformation[2][1];
+			return scale.y;
 		}
 		float get_scale_z()
 		{
-			return transformation[2][2];
+			return scale.z;
+		}
+
+		void print_transform()
+		{
+			std::cout << "Position [" << position.x << "," << position.y << "," << position.z << "]" << std::endl;
+			std::cout << "Rotation [" << rotation.x << "," << rotation.y << "," << rotation.z << "]" << std::endl;
+			std::cout << "Scale    [" << scale.x << "," << scale.y << "," << scale.z << "]" << std::endl;
 		}
 
 	};
