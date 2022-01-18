@@ -3,6 +3,7 @@
 #include <entity.hpp>
 #include <transform.hpp>
 
+
 using namespace glt;
 using namespace std;
 
@@ -16,7 +17,7 @@ namespace engine
 	
 		render_system.render_node->add(entity->id , light);
 		
-		render_system.add_component(this);
+		render_system.add_render_component(this);
 	}
 	
 	

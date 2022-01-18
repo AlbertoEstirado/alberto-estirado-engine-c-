@@ -7,6 +7,7 @@
 #include <light_component.hpp>
 #include <camera_component.hpp>
 #include <keyboardcontrol_component.hpp>
+#include <mesh_component.hpp>
 
 using namespace rapidxml;
 using namespace std;
@@ -86,9 +87,9 @@ namespace engine
 			{
 				parse_transform(component, newEntity);
 			}
-			else if (strCValue == "render_component")
+			else if (strCValue == "mesh_component")
 			{
-				newEntity->add_component(new Render_Component(newEntity, component->value(), *renderer_system));
+				newEntity->add_component(new Mesh_Component(newEntity, component->value(), *renderer_system));
 			}
 			else if(strCValue == "camera_component")
 			{

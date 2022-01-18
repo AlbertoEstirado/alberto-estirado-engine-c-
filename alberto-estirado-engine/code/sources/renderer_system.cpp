@@ -30,15 +30,9 @@ namespace engine
 		{
 			Matrix44 transform_matrix = component->entity->get_transform()->get_transform_matrix();
 			//component->entity->transform->print_transform();
-			component->model->set_transformation(transform_matrix);
+			component->get_node().set_transformation(transform_matrix);
 		}
-		for (auto& component : components)
-		{
-			Matrix44 transform_matrix = component->entity->get_transform()->get_transform_matrix();
-			//component->entity->transform->print_transform();
-			//component->model->set_transformation(transform_matrix);
-			//component->node
-		}
+		
 
 		window->clear();
 		render_node->render();
