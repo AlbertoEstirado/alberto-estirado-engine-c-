@@ -72,7 +72,12 @@ namespace engine
 
 			if(event.type == SDL_KEYDOWN)
 			{
-				Message* new_input_message = new Message(Keyboard::instance().sdlk_to_string(event.key.keysym.sym));
+				Message* new_input_message = new Message(Keyboard::instance().sdlk_to_string(event.key.keysym.sym) + "_keydown");
+				Scene_manager::instance().current_scene->dispatcher->multicast(*new_input_message);
+			}
+			if (event.type == SDL_KEYUP)
+			{
+				Message* new_input_message = new Message(Keyboard::instance().sdlk_to_string(event.key.keysym.sym) + "_keyup");
 				Scene_manager::instance().current_scene->dispatcher->multicast(*new_input_message);
 			}
 		}

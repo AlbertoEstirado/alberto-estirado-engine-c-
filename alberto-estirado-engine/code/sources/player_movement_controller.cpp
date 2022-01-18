@@ -8,14 +8,19 @@ namespace engine
 	Payer_Movement_Controller::Payer_Movement_Controller(Entity* e)
 	{
 		entity = e;
-		speed = 0.01;
+		speed = 0.05;
 		dir[0] = 0;
 		dir[1] = 0;
 
-		entity->scene->get_dispatcher()->add_listener("w", *this);
-		entity->scene->get_dispatcher()->add_listener("a", *this);
-		entity->scene->get_dispatcher()->add_listener("s", *this);
-		entity->scene->get_dispatcher()->add_listener("d", *this);
+		entity->scene->get_dispatcher()->add_listener("w_keydown", *this);
+		entity->scene->get_dispatcher()->add_listener("a_keydown", *this);
+		entity->scene->get_dispatcher()->add_listener("s_keydown", *this);
+		entity->scene->get_dispatcher()->add_listener("d_keydown", *this);
+
+		entity->scene->get_dispatcher()->add_listener("w_keyup", *this);
+		entity->scene->get_dispatcher()->add_listener("a_keyup", *this);
+		entity->scene->get_dispatcher()->add_listener("s_keyup", *this);
+		entity->scene->get_dispatcher()->add_listener("d_keyup", *this);
 	}
 
 	void Payer_Movement_Controller::update()
@@ -29,21 +34,39 @@ namespace engine
 
 	void Payer_Movement_Controller::receptor(Message& message)
 	{
-		if (message.get_Id() == "w")
+		if (message.get_Id() == "w_keydown")
 		{
 			dir[1] = -1;
 		}
-		if (message.get_Id() == "a")
+		if (message.get_Id() == "a_keydown")
 		{
 			dir[0] = -1;
 		}
-		if (message.get_Id() == "s")
+		if (message.get_Id() == "s_keydown")
 		{
 			dir[1] = 1;
 		}
-		if (message.get_Id() == "d")
+		if (message.get_Id() == "d_keydown")
 		{
 			dir[0] = 1;
+		}
+
+
+		if (message.get_Id() == "w_keyup")
+		{
+			dir[1] = 0;
+		}
+		if (message.get_Id() == "a_keyup")
+		{
+			dir[0] = 0;
+		}
+		if (message.get_Id() == "s_keyup")
+		{
+			dir[1] = 0;
+		}
+		if (message.get_Id() == "d_keyup")
+		{
+			dir[0] = 0;
 		}
 	}
 
