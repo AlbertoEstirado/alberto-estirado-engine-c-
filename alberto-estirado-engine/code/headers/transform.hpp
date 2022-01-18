@@ -26,10 +26,6 @@ namespace engine
 
 		Transform* parent;
 
-		Matrix44 transformation;
-		Matrix44 local_scale;
-		Matrix44 local_anchor;
-
 		bool active;
 		//Transform();
 
@@ -50,53 +46,19 @@ namespace engine
 		Matrix44 get_transform_matrix()
 		{
 			Matrix44 matrix(1);
+
 			matrix = glm::translate(matrix, position);
 			matrix = glm::rotate(matrix, rotation.x, Vector3(1, 0, 0));
 			matrix = glm::rotate(matrix, rotation.y, Vector3(0, 1, 0));
 			matrix = glm::rotate(matrix, rotation.z, Vector3(0, 0, 1));
 			matrix = glm::scale(matrix, scale);
 
-			return matrix;
-		}
-
-		Matrix44 get_total_transformation() const
-		{
 			if (parent)
 			{
-				return parent->get_total_transformation() * transformation;
+				return parent->get_transform_matrix() * matrix;
 			}
-			else
-				return transformation;
-		}
 
-		void reset_transformation()
-		{
-			transformation = local_scale * local_anchor;
-		}
-
-		void translate(const Vector3& displacement)
-		{
-			transformation = glm::translate(transformation, displacement);
-		}
-
-		void scale_obj(float scale)
-		{
-			transformation = glm::scale(transformation, Vector3(scale, scale, scale));
-		}
-
-		void rotate_around_x(float angle)
-		{
-			transformation = glm::rotate(transformation, angle, glm::vec3(1.f, 0.f, 0.f));
-		}
-
-		void rotate_around_y(float angle)
-		{
-			transformation = glm::rotate(transformation, angle, glm::vec3(0.f, 1.f, 0.f));
-		}
-
-		void rotate_around_z(float angle)
-		{
-			transformation = glm::rotate(transformation, angle, glm::vec3(0.f, 0.f, 1.f));
+			return matrix;
 		}
 
 		float get_position_x()

@@ -8,6 +8,7 @@
 #include <camera_component.hpp>
 #include <keyboardcontrol_component.hpp>
 #include <mesh_component.hpp>
+#include <player_movement_controller.hpp>
 
 using namespace rapidxml;
 using namespace std;
@@ -22,6 +23,7 @@ namespace engine
 		Scene_manager::instance().add_scene(this);
 
 		renderer_system = new Renderer_System(window);
+		//control_system = new Control_System();
 		dispatcher = new Dispatcher();
 	}
 
@@ -103,6 +105,10 @@ namespace engine
 			{
 				newEntity->add_component(new Keyboardcontrol_Component(newEntity));
 			}
+			//else if (strCValue == "player_movement_controller")
+			//{
+			//	control_system->add_controller(new Payer_Movement_Controller(newEntity));
+			//}
 		}
 	}
 
@@ -118,19 +124,19 @@ namespace engine
 		Matrix44 transform;
 
 		//Position
-		transform[0][0] = std::stoi(component->first_node()->first_node()->value());
-		transform[0][1] = std::stoi(component->first_node()->first_node()->next_sibling()->value());
-		transform[0][2] = std::stoi(component->first_node()->last_node()->value());
+		transform[0][0] = std::stof(component->first_node()->first_node()->value());
+		transform[0][1] = std::stof(component->first_node()->first_node()->next_sibling()->value());
+		transform[0][2] = std::stof(component->first_node()->last_node()->value());
 		std::cout << "position: " << transform[0][0] <<"," << transform[0][1] << "," << transform[0][2] << std::endl;
 		//Rotation
-		transform[1][0] = std::stoi(component->first_node()->next_sibling()->first_node()->value());
-		transform[1][1] = std::stoi(component->first_node()->next_sibling()->first_node()->next_sibling()->value());
-		transform[1][2] = std::stoi(component->first_node()->next_sibling()->last_node()->value());
+		transform[1][0] = std::stof(component->first_node()->next_sibling()->first_node()->value());
+		transform[1][1] = std::stof(component->first_node()->next_sibling()->first_node()->next_sibling()->value());
+		transform[1][2] = std::stof(component->first_node()->next_sibling()->last_node()->value());
 		std::cout << "rotation: " << transform[1][0] << "," << transform[1][1] << "," << transform[1][2] << std::endl;
 		//Scale
-		transform[2][0] = std::stoi(component->last_node()->first_node()->value());
-		transform[2][1] = std::stoi(component->last_node()->first_node()->next_sibling()->value());
-		transform[2][2] = std::stoi(component->last_node()->last_node()->value());
+		transform[2][0] = std::stof(component->last_node()->first_node()->value());
+		transform[2][1] = std::stof(component->last_node()->first_node()->next_sibling()->value());
+		transform[2][2] = std::stof(component->last_node()->last_node()->value());
 		std::cout << "scale: " << transform[2][0] << "," << transform[2][1] << "," << transform[2][2] << std::endl;
 
 		if (parent)

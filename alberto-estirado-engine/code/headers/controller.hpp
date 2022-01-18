@@ -6,7 +6,10 @@ namespace engine
 	{
 
 	public:
-		virtual void update(Entity& entity) = 0;
+
+		Entity* entity = nullptr;
+
+		virtual void update() = 0;
 	};
 
 

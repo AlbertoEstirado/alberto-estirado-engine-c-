@@ -20,7 +20,7 @@ namespace engine
 	{
 		if (message.get_Id() == "w")
 		{
-			entity->get_transform()->position.y += 0.1f;
+			entity->get_transform()->position.z -= 0.1f;
 		}
 		if (message.get_Id() == "a")
 		{
@@ -28,7 +28,7 @@ namespace engine
 		}
 		if (message.get_Id() == "s")
 		{
-			entity->get_transform()->position.y -= 0.1f;
+			entity->get_transform()->position.z += 0.1f;
 		}
 		if (message.get_Id() == "d")
 		{
