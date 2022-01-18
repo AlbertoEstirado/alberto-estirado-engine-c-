@@ -23,7 +23,7 @@ namespace engine
 		Scene_manager::instance().add_scene(this);
 
 		renderer_system = new Renderer_System(window);
-		//control_system = new Control_System();
+		control_system = new Control_System();
 		dispatcher = new Dispatcher();
 	}
 
@@ -105,10 +105,10 @@ namespace engine
 			{
 				newEntity->add_component(new Keyboardcontrol_Component(newEntity));
 			}
-			//else if (strCValue == "player_movement_controller")
-			//{
-			//	control_system->add_controller(new Payer_Movement_Controller(newEntity));
-			//}
+			else if (strCValue == "player_movement_controller")
+			{
+				control_system->add_controller(new Payer_Movement_Controller(newEntity));
+			}
 		}
 	}
 
@@ -168,7 +168,10 @@ namespace engine
 	}
 
 	void Scene::start(){}
-	void Scene::update(float time){}
+	void Scene::update(float time)
+	{
+		control_system->run(time);
+	}
 	void Scene::read_input(){}
 
 	void Scene::render()

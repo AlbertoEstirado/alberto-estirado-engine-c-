@@ -1,3 +1,6 @@
+
+#pragma once
+
 #include <task.hpp>
 #include <vector>
 #include <component.hpp>

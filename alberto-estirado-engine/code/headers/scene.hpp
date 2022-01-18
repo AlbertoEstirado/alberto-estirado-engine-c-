@@ -35,7 +35,7 @@ namespace engine
 
 		Dispatcher* dispatcher = nullptr;
 		Renderer_System* renderer_system = nullptr;
-		//Control_System* control_system = nullptr;
+		Control_System* control_system = nullptr;
 		std::string name;
 	
 		Scene(const std::string & name, Window & window);

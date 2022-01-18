@@ -1,11 +1,11 @@
-/*
+
 #include <control_system.hpp>
 #include <controller.hpp>
 
 
 namespace engine
 {
-	/*
+	
 	void Control_System::run(float t)
 	{
 		for (size_t i = 0; i < controllers.size(); i++)
@@ -20,5 +20,10 @@ namespace engine
 		controllers.push_back(new_controller);
 	}
 
+	Control_System::~Control_System()
+	{
+		
+	}
+
 	
-}*/
+}

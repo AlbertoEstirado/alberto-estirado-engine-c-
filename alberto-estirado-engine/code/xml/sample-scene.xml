@@ -14,7 +14,6 @@
                 </scale>
             </component>
             <component id="mesh_component">../../assets/sphere.obj</component>
-            <component id="keyboardcontrol_component"></component>
             <component id="player_movement_controller"></component>
         </entity>
         <entity id="camera">

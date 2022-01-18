@@ -1,11 +1,11 @@
-/*
+
 #pragma once
 
 #include <system.hpp>
 #include <vector>
 
 namespace engine
-{/*
+{
 	class Controller;
 
 	class Control_System: public System
@@ -19,8 +19,8 @@ namespace engine
 		void run(float) override;
 		void add_controller(Controller*);
 
-		~Control_System() {};
+		~Control_System();
 	
 	};
 
-}*/
+}

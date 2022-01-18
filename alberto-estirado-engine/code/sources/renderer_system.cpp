@@ -49,7 +49,7 @@ namespace engine
 
 	Renderer_System::~Renderer_System()
 	{
-	
+		
 	}
 
 }

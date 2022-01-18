@@ -3,26 +3,23 @@
 
 #include <controller.hpp>
 #include <entity.hpp>
+#include <dispatcher.hpp>
 
 
 namespace engine
 {
-	class Payer_Movement_Controller: public Controller
+	class Payer_Movement_Controller: public Controller, public Dispatcher::Listener
 	{
 	public:
 
 		float speed;
 		int dir[2];
 
-		Payer_Movement_Controller(Entity * e)
-		{
-			entity = e;
-			speed = 1;
-			dir[0] = 0;
-			dir[1] = 0;
-		}
+		Payer_Movement_Controller(Entity* e);
+		
 
 		void update() override;
+		void receptor(Message& message) override;
 
 	};
 
