@@ -13,7 +13,7 @@
                     <x>1</x><y>1</y><z>1</z>
                 </scale>
             </component>
-            <component id="render_component">../../assets/stanford-bunny.obj</component>
+            <component id="mesh_component">../../assets/stanford-bunny.obj</component>
             <component id="keyboardcontrol_component"></component>
         </entity>
         <entity id="camera">
@@ -22,7 +22,7 @@
                     <x>0</x><y>3</y><z>6</z>
                 </position>
                 <rotation>
-                    <x>0</x><y>90</y><z>0</z>
+                    <x>0</x><y>0</y><z>0</z>
                 </rotation>
                 <scale>
                     <x>1</x><y>1</y><z>1</z>
@@ -56,7 +56,7 @@
                     <x>1</x><y>1</y><z>1</z>
                 </scale>
             </component>
-            <component id="render_component">../../assets/sphere.obj</component>
+            <component id="mesh_component">../../assets/sphere.obj</component>
         </entity>
     </entities>
 </scene>

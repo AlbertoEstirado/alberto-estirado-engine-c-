@@ -17,7 +17,7 @@ namespace engine
 
 		render_system.render_node->add(entity->id, camera);
 		
-		render_system.add_component(this);
+		render_system.add_render_component(this);
 	}
 
 
