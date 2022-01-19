@@ -1,3 +1,9 @@
+
+#ifndef CONTROLLER
+#define CONTROLLER
+
+#pragma once
+
 #include "entity.hpp"
 
 namespace engine
@@ -50,3 +56,5 @@ namespace engine
 	
 	*/
 }
+
+#endif

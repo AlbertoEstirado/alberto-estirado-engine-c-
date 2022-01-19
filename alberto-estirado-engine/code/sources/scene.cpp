@@ -9,6 +9,7 @@
 #include <keyboardcontrol_component.hpp>
 #include <mesh_component.hpp>
 #include <player_movement_controller.hpp>
+#include <enemie_behaviour_controller.hpp>
 
 using namespace rapidxml;
 using namespace std;
@@ -108,6 +109,10 @@ namespace engine
 			else if (strCValue == "player_movement_controller")
 			{
 				control_system->add_controller(new Payer_Movement_Controller(newEntity));
+			}
+			else if (strCValue == "enemie_behaviour_controller")
+			{
+				control_system->add_controller(new Enemie_Behaviour_Controller(newEntity));
 			}
 		}
 	}
