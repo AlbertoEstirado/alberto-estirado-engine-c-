@@ -10,7 +10,7 @@ namespace engine
 	Enemie_Behaviour_Controller::Enemie_Behaviour_Controller(Entity* e)
 	{
 		entity = e;
-		speed = 0.03;
+		speed = 0.01;
 		dir.x = 0;
 		dir.y = 0;
 		dir.z = 0;
@@ -26,7 +26,7 @@ namespace engine
 	
 		dir = glm::normalize(dir);
 	
-		std::cout << "Dir: [" << dir.x << "," << dir.z << "]" << std::endl;
+		//std::cout << "Dir: [" << dir.x << "," << dir.z << "]" << std::endl;
 	
 		my_transform->position.x += speed * dir.x;
 		my_transform->position.z += speed * dir.z;
