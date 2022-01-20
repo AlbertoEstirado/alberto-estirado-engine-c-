@@ -17,7 +17,8 @@ namespace engine
 
 		Type type;
 
-		//virtual void im_colliding_with(Collider_Component*) = 0; 
+
+		//virtual void on_collider_enter(Collider_Component* other) = 0;
 	};
 
 }
