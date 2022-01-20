@@ -23,9 +23,9 @@ namespace engine
 	{
 	public:
 
-		Scene* scene;
+		Scene* scene;							//< Scene where the systen remains
 
-		std::vector<Component*> components;
+		std::vector<Component*> components;		//< List of all components
 
 		System() = default;
 
@@ -35,6 +35,19 @@ namespace engine
 
 		virtual ~System() = default;
 
+		/*
+		* Add component to the system
+		* @param Component
+		*/
 		void add_component(Component*);
 	};
 }
+
+
+
+
+
+
+
+
+

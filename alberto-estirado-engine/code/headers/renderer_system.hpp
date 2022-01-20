@@ -24,25 +24,27 @@
 
 namespace engine
 {
-	//class glt::Render_Node;
 	class Render_Component;
 
 	class Renderer_System : public System
 	{
 
-		//std::shared_ptr< Window > window;
-		Window* window;
-		//glt::Render_Node* render_node = nullptr;
-	
+		Window* window;											//< Reference of the curren window
+		
 	public:
 
-		std::vector<Render_Component*> render_components;
+		std::vector<Render_Component*> render_components;		//< List of all render component to process
 
-		std::unique_ptr < glt::Render_Node > render_node;
+		std::unique_ptr < glt::Render_Node > render_node;		//< Render node that process all components
 
 		Renderer_System(Window& window);
 
 		void run(float) override;
+		
+		/*
+		* Add a render component to the list
+		* @param Render_Component
+		*/
 		void add_render_component(Render_Component*);
 
 		~Renderer_System();

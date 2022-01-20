@@ -32,24 +32,36 @@ namespace engine
 
 	public:
 
-		static Kernel& instance()
+		static Kernel& instance()				//< Singletone
 		{
 			static Kernel kernel;
 			return kernel;
 		}
 
-		std::set<Task*, Task::Compare> tasks;  //Esto deberia de ser unique_ptr? //task
+		std::set<Task*, Task::Compare> tasks;  //< Reference to all tasks ordered based on their priority
 
 		bool running = true;
 
 		Kernel();
 
-
+		/*
+		* Initialization of all tasks
+		*/
 		void initialization();
+		/*
+		* Run all tasks
+		*/
 		void execute();
+		/*
+		* End of all tasks
+		*/
 		void end();
 
 		void stop_kernel();
+		/*
+		* Add a new task to kernel
+		* @param Task
+		*/
 		void add_task(Task*);
 
 	};

@@ -23,27 +23,33 @@ namespace engine
 
 	public:
 
-
 		bool exit;
 
 		size_t width = 0;
 		size_t height = 0;
 
-		SDL_Window* window = nullptr;
-		SDL_Surface* surface = nullptr;
+		SDL_Window	* window = nullptr;
+		SDL_Surface	* surface = nullptr;
+		
 		SDL_GLContext gl_context;
 
 		Window(const std::string& title, size_t  width, size_t height, bool fullscreen = false);
+		
+ 		/**
+         * Function called before destroying the window
+         * */
+		void end			();
+		/**
+         * Function where we handle all input events
+         * */
+		void handle_events	();
 
-		void end();
-		void handle_events();
+		void enable_vsync	();
+		void disable_vsync	();
+		void clear			() const;
+		void swap_buffers	() const;
 
-		void enable_vsync();
-		void disable_vsync();
-		void clear() const;
-		void swap_buffers() const;
-
-		unsigned get_width() const;
-		unsigned get_height() const;
+		unsigned get_width	() const;
+		unsigned get_height	() const;
 	};
 }

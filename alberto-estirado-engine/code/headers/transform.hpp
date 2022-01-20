@@ -31,29 +31,40 @@ namespace engine
 	
 	public:
 
-		Vector3 position;
-		Vector3 rotation;
-		Vector3 scale;
+		Vector3 position;			//< Position of the entity on the scene
+		Vector3 rotation;			//< Rotation of the entity on the scene
+		Vector3 scale;				//< Scale of the entity on the scene
 
-		Transform* parent;
+		Transform* parent;			//< Pointer to other transform
 
-		bool active;
+		bool active;				//< Variable that establishes if this entity is active
 		//Transform();
 
 		Transform(Entity* e);
 		Transform(Entity* e, float x, float y, float z, Transform* newParent = nullptr);
 		Transform(Entity* e, Matrix44 t, Transform* newParent = nullptr);
-
+		
+		/*
+		* Set the entity parent
+		* @param newParent
+		*/
 		void set_parent(Transform * newParent)
 		{
 			parent = newParent;
 		}
 
+		/*
+		* Function to activate or deactivate the transform
+		* @param state
+		*/
 		void set_active(bool state)
 		{
 			active = state;
 		}
-
+		
+		/*
+		* Function that calculates the position matrix based on its position, rotation, scale and parent
+		*/
 		Matrix44 get_transform_matrix()
 		{
 			Matrix44 matrix(1);

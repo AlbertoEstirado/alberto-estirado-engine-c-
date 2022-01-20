@@ -24,10 +24,15 @@ namespace engine
 
 	public:
 
-		int priority;
+		int priority;			//< The order of execution in the kernel is based on this value.
 
 		struct Compare
 		{
+			/*
+			* Operator to be able to order based on a priority, it is necessary if we use a map of pointers
+			* @param a
+			* @param b
+			*/
 			bool operator () (const Task * a, const Task * b) const
 			{
 				return  a->priority < b->priority;
@@ -44,6 +49,10 @@ namespace engine
 		virtual void initialize() = 0;
 		virtual void end() = 0;
 
+		/*
+		* Operator to be able to order based on a priority
+		* @param other
+		*/
 		bool operator < (const Task& other) const
 		{
 			return this->priority < other.priority;

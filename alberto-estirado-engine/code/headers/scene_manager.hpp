@@ -28,19 +28,23 @@ namespace engine
 	
 	public:
 
-		static Scene_manager & instance()
+		static Scene_manager & instance()			//< Singletone
 		{
 			static Scene_manager scene_manager;
 			return scene_manager;
 		}
 
-		std::vector<Scene *> scenes; //smartpointer??
-		//std::map<Id, Scene *> scenes;
+		std::vector<Scene *> scenes; 				//< List of al scenes
 
-		Scene* current_scene;
+		Scene* current_scene;						//< Scene that will run in the kernel
 
 		void add_scene(Scene* newscene);
 		void initialize();
+		
+		/*
+		* Will change current_scene to a new scene
+		* @param scene
+		*/
 		void run_scene(Scene* scene);
 
 	private:
