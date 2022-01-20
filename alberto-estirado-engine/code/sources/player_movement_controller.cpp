@@ -42,10 +42,15 @@ namespace engine
 		t->position.x += speed * dir[0];
 		t->position.z += speed * dir[1];
 
+		t->rotation.y += 0.01;
+		t->rotation.z += 0.01;
 	}
 
 	void Payer_Movement_Controller::receptor(Message& message)
 	{
+
+		
+
 		if (message.get_Id() == "w_keydown")
 		{
 			dir[1] = -1;

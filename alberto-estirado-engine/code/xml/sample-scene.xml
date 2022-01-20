@@ -159,11 +159,11 @@
                 <rotation>
                     <x>0</x><y>0</y><z>0</z>
                 </rotation>
-                <scale>
+                <scale>      
                     <x>0.5</x><y>0.5</y><z>0.5</z>
                 </scale>
             </component>
-            <component id="mesh_component">../../assets/stanford-bunny.obj</component>
+            <component id="mesh_component">../../assets/cube_5.obj</component>
             <component id="enemie_behaviour_controller"></component>
             <component id="box_collider_component">
                 <scale_x>0.5</scale_x>
