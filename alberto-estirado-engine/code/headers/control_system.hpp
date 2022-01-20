@@ -23,11 +23,20 @@ namespace engine
 	{
 	public:
 
-		std::vector<Controller*> controllers;
+		std::vector<Controller*> controllers;		//< List of all controllers
 
 		Control_System() {};
-
-		void run(float) override;
+		
+		/*
+		* Will run all controllers of the list
+		* @param float
+		*/
+		void run(float) override;	
+		
+		/*
+		* Add a new controller to the list
+		* @param Controller
+		*/		
 		void add_controller(Controller*);
 
 		~Control_System();
