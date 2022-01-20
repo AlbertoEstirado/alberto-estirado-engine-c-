@@ -1,12 +1,40 @@
-﻿  entity.cpp
-  kernel.cpp
+﻿  box_collider_component.cpp
+  camera_component.cpp
+  colision_system.cpp
+  control_system.cpp
+  enemie_behaviour_controller.cpp
+C:\Users\Alberto\Desktop\alberto-estirado-engine-c++\alberto-estirado-engine\code\sources\enemie_behaviour_controller.cpp(25,15): warning C4305: '=': truncamiento de 'double' a 'float'
+  entity.cpp
+  input_system.cpp
+  keyboard.cpp
+  keyboardcontrol_component.cpp
+  light_component.cpp
+  mesh_component.cpp
+  player_movement_controller.cpp
+C:\Users\Alberto\Desktop\alberto-estirado-engine-c++\alberto-estirado-engine\code\sources\player_movement_controller.cpp(23,15): warning C4305: '=': truncamiento de 'double' a 'float'
   read_input.cpp
   render.cpp
+  renderer_system.cpp
+  render_component.cpp
   scene.cpp
   scene_manager.cpp
-  transform.cpp
   update.cpp
-  window.cpp
-C:\Users\Alberto\Desktop\alberto-estirado-engine-c++\alberto-estirado-engine\code\sources\window.cpp(23,146): warning C4267: 'argumento': conversión de 'size_t' a 'int'; posible pérdida de datos
+  main.cpp
   Generando código...
+C:\Users\Alberto\Desktop\alberto-estirado-engine-c++\alberto-estirado-engine\code\sources\scene.cpp(208): warning C4715: 'engine::Scene::get_entity': no todas las rutas de acceso de control devuelven un valor
+  Compilando...
+  window.cpp
+C:\Users\Alberto\Desktop\alberto-estirado-engine-c++\alberto-estirado-engine\code\sources\window.cpp(43,146): warning C4267: 'argumento': conversión de 'size_t' a 'int'; posible pérdida de datos
+  Generando código...
+LINK : warning LNK4098: la biblioteca predeterminada'MSVCRT' entra en conflicto con otras bibliotecas; use la biblioteca /NODEFAULTLIB:biblioteca
+opengl-toolkit-debug.lib(Light.obj) : warning LNK4099: no se encontró PDB 'OpenGL Toolkit.pdb' con 'opengl-toolkit-debug.lib(Light.obj)' o en 'C:\Users\Alberto\Desktop\alberto-estirado-engine-c++\alberto-estirado-engine\projects\vs-2019\x64\Debug\OpenGL Toolkit.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
+opengl-toolkit-debug.lib(Material.obj) : warning LNK4099: no se encontró PDB 'OpenGL Toolkit.pdb' con 'opengl-toolkit-debug.lib(Material.obj)' o en 'C:\Users\Alberto\Desktop\alberto-estirado-engine-c++\alberto-estirado-engine\projects\vs-2019\x64\Debug\OpenGL Toolkit.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
+opengl-toolkit-debug.lib(Model_Obj.obj) : warning LNK4099: no se encontró PDB 'OpenGL Toolkit.pdb' con 'opengl-toolkit-debug.lib(Model_Obj.obj)' o en 'C:\Users\Alberto\Desktop\alberto-estirado-engine-c++\alberto-estirado-engine\projects\vs-2019\x64\Debug\OpenGL Toolkit.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
+opengl-toolkit-debug.lib(OpenGL.obj) : warning LNK4099: no se encontró PDB 'OpenGL Toolkit.pdb' con 'opengl-toolkit-debug.lib(OpenGL.obj)' o en 'C:\Users\Alberto\Desktop\alberto-estirado-engine-c++\alberto-estirado-engine\projects\vs-2019\x64\Debug\OpenGL Toolkit.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
+opengl-toolkit-debug.lib(Render_Node.obj) : warning LNK4099: no se encontró PDB 'OpenGL Toolkit.pdb' con 'opengl-toolkit-debug.lib(Render_Node.obj)' o en 'C:\Users\Alberto\Desktop\alberto-estirado-engine-c++\alberto-estirado-engine\projects\vs-2019\x64\Debug\OpenGL Toolkit.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
+opengl-toolkit-debug.lib(Shader.obj) : warning LNK4099: no se encontró PDB 'OpenGL Toolkit.pdb' con 'opengl-toolkit-debug.lib(Shader.obj)' o en 'C:\Users\Alberto\Desktop\alberto-estirado-engine-c++\alberto-estirado-engine\projects\vs-2019\x64\Debug\OpenGL Toolkit.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
+opengl-toolkit-debug.lib(Shader_Program.obj) : warning LNK4099: no se encontró PDB 'OpenGL Toolkit.pdb' con 'opengl-toolkit-debug.lib(Shader_Program.obj)' o en 'C:\Users\Alberto\Desktop\alberto-estirado-engine-c++\alberto-estirado-engine\projects\vs-2019\x64\Debug\OpenGL Toolkit.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
+opengl-toolkit-debug.lib(Vertex_Array_Object.obj) : warning LNK4099: no se encontró PDB 'OpenGL Toolkit.pdb' con 'opengl-toolkit-debug.lib(Vertex_Array_Object.obj)' o en 'C:\Users\Alberto\Desktop\alberto-estirado-engine-c++\alberto-estirado-engine\projects\vs-2019\x64\Debug\OpenGL Toolkit.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
+opengl-toolkit-debug.lib(Vertex_Buffer_Object.obj) : warning LNK4099: no se encontró PDB 'OpenGL Toolkit.pdb' con 'opengl-toolkit-debug.lib(Vertex_Buffer_Object.obj)' o en 'C:\Users\Alberto\Desktop\alberto-estirado-engine-c++\alberto-estirado-engine\projects\vs-2019\x64\Debug\OpenGL Toolkit.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
+opengl-toolkit-debug.lib(glad.obj) : warning LNK4099: no se encontró PDB 'OpenGL Toolkit.pdb' con 'opengl-toolkit-debug.lib(glad.obj)' o en 'C:\Users\Alberto\Desktop\alberto-estirado-engine-c++\alberto-estirado-engine\projects\vs-2019\x64\Debug\OpenGL Toolkit.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
   alberto-estirado-engine.vcxproj -> C:\Users\Alberto\Desktop\alberto-estirado-engine-c++\alberto-estirado-engine\projects\vs-2019\x64\Debug\alberto-estirado-engine.exe
