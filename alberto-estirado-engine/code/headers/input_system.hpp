@@ -1,3 +1,11 @@
+/**
+*
+* @author Alberto Estirado López
+*
+* @date 26/01/2022
+*
+*/
+
 #pragma once
 
 #include <system.hpp>
