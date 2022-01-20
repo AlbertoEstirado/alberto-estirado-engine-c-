@@ -10,6 +10,8 @@
 #include <mesh_component.hpp>
 #include <player_movement_controller.hpp>
 #include <enemie_behaviour_controller.hpp>
+#include <box_collider_component.hpp>
+
 
 using namespace rapidxml;
 using namespace std;
@@ -26,6 +28,7 @@ namespace engine
 		renderer_system = new Renderer_System(window);
 		control_system = new Control_System();
 		dispatcher = new Dispatcher();
+		colision_system = new Colision_System();
 	}
 
 	void Scene::load_scene()
@@ -114,6 +117,10 @@ namespace engine
 			{
 				control_system->add_controller(new Enemie_Behaviour_Controller(newEntity));
 			}
+			else if (strCValue == "box_collider_component")
+			{
+				parse_box_collider_component(component, newEntity);
+			}
 		}
 	}
 
@@ -150,6 +157,28 @@ namespace engine
 			newEntity->add_transform(new Transform(newEntity, transform));
 	}
 
+	void Scene::parse_box_collider_component(xml_node<>* component, Entity* newEntity)
+	{
+
+		float scale_x = std::stof(component->first_node()->value());
+		float scale_z = std::stof(component->first_node()->next_sibling()->value());
+
+		std::string s_type = component->last_node()->value();
+
+		engine::Collider_Component::Type type;
+
+		if(s_type == "dynamic")
+		{
+			type = engine::Collider_Component::Type::DYNAMIC;
+		}
+		else
+		{
+			type = engine::Collider_Component::Type::STATIC;
+		}
+
+		colision_system->add_collider(new Box_Collider_Component(newEntity, scale_x, scale_z, type));
+	}
+
 	void Scene::add_entity(Entity * new_entity)
 	{
 		entities.insert(std::pair<Id, Entity*>(new_entity->id, new_entity));
@@ -176,6 +205,7 @@ namespace engine
 	void Scene::update(float time)
 	{
 		control_system->run(time);
+		colision_system->run(time);
 	}
 	void Scene::read_input(){}
 

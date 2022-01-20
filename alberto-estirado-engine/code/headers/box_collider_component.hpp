@@ -1,5 +1,7 @@
-#include <collider_component.hpp>
 
+#pragma once
+
+#include <collider_component.hpp>
 
 namespace engine
 {
@@ -7,11 +9,13 @@ namespace engine
 	{
 	public:
 	
-		float x, y, with, height;
+		float x, y, width, height;
 
 		Box_Collider_Component(Entity* e ,float, float, Type t);
 
-		//void im_colliding_with(Collider_Component*) override;
+		void im_colliding_with(Box_Collider_Component*);
+
+		//void on_collider_enter(Collider_Component* other)override {};
 	};
 
 }

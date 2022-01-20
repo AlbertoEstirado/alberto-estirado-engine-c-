@@ -7,6 +7,7 @@
 #include <dispatcher.hpp>
 #include <render_component.hpp>
 #include <control_system.hpp>
+#include <colision_system.hpp>
 
 #pragma once
 
@@ -36,6 +37,8 @@ namespace engine
 		Dispatcher* dispatcher = nullptr;
 		Renderer_System* renderer_system = nullptr;
 		Control_System* control_system = nullptr;
+		Colision_System* colision_system = nullptr;
+
 		std::string name;
 	
 		Scene(const std::string & name, Window & window);
@@ -53,6 +56,8 @@ namespace engine
 		Entity * get_entity(const std::string &);
 
 		void parse_transform(rapidxml::xml_node<>*, Entity*);
+		void parse_box_collider_component(rapidxml::xml_node<>*, Entity*);
+		//void parse_player_collider_component(rapidxml::xml_node<>*, Entity*);
 
 		std::string get_name ()
 		{
