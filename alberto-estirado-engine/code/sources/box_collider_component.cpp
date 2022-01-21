@@ -54,6 +54,7 @@ namespace engine
 		{
 			std::cout << entity->id << " im colliding with: " << other->entity->id << std::endl;
 			//on_collider_enter(other);
+			//c_h->on_colision(this, other);
 			Scene_manager::instance().current_scene->reload();
 		}
 

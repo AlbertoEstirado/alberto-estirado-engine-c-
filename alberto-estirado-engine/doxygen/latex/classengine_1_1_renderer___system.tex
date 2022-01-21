@@ -1,0 +1,84 @@
+\hypertarget{classengine_1_1_renderer___system}{}\doxysection{engine\+::Renderer\+\_\+\+System Class Reference}
+\label{classengine_1_1_renderer___system}\index{engine::Renderer\_System@{engine::Renderer\_System}}
+
+
+{\ttfamily \#include $<$renderer\+\_\+system.\+hpp$>$}
+
+Inheritance diagram for engine\+::Renderer\+\_\+\+System\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classengine_1_1_renderer___system}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classengine_1_1_renderer___system_a21ed5f656f70c600a8a71452ad34f737}{Renderer\+\_\+\+System}} (\mbox{\hyperlink{classengine_1_1_window}{Window}} \&window)
+\item 
+void \mbox{\hyperlink{classengine_1_1_renderer___system_afce4c522536386495ff05af2a8cf3aa4}{run}} (float) override
+\item 
+void \mbox{\hyperlink{classengine_1_1_renderer___system_a03b2d94ed1991dddca610c934564cbf9}{add\+\_\+render\+\_\+component}} (\mbox{\hyperlink{classengine_1_1_render___component}{Render\+\_\+\+Component}} $\ast$)
+\item 
+\mbox{\hyperlink{classengine_1_1_renderer___system_a9b6ed09c52fc0f19630032b7d91ac40d}{$\sim$\+Renderer\+\_\+\+System}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{classengine_1_1_render___component}{Render\+\_\+\+Component}} $\ast$ $>$ \mbox{\hyperlink{classengine_1_1_renderer___system_a52a438c8949f10ee2dd732dfba0a3c19}{render\+\_\+components}}
+\item 
+std\+::unique\+\_\+ptr$<$ glt\+::\+Render\+\_\+\+Node $>$ \mbox{\hyperlink{classengine_1_1_renderer___system_a6573865c36c8b8c6e0f2ea7d8c3bbc27}{render\+\_\+node}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classengine_1_1_renderer___system_a21ed5f656f70c600a8a71452ad34f737}\label{classengine_1_1_renderer___system_a21ed5f656f70c600a8a71452ad34f737}} 
+\index{engine::Renderer\_System@{engine::Renderer\_System}!Renderer\_System@{Renderer\_System}}
+\index{Renderer\_System@{Renderer\_System}!engine::Renderer\_System@{engine::Renderer\_System}}
+\doxysubsubsection{\texorpdfstring{Renderer\_System()}{Renderer\_System()}}
+{\footnotesize\ttfamily engine\+::\+Renderer\+\_\+\+System\+::\+Renderer\+\_\+\+System (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classengine_1_1_window}{Window}} \&}]{window }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classengine_1_1_renderer___system_a9b6ed09c52fc0f19630032b7d91ac40d}\label{classengine_1_1_renderer___system_a9b6ed09c52fc0f19630032b7d91ac40d}} 
+\index{engine::Renderer\_System@{engine::Renderer\_System}!````~Renderer\_System@{$\sim$Renderer\_System}}
+\index{````~Renderer\_System@{$\sim$Renderer\_System}!engine::Renderer\_System@{engine::Renderer\_System}}
+\doxysubsubsection{\texorpdfstring{$\sim$Renderer\_System()}{~Renderer\_System()}}
+{\footnotesize\ttfamily engine\+::\+Renderer\+\_\+\+System\+::$\sim$\+Renderer\+\_\+\+System (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classengine_1_1_renderer___system_a03b2d94ed1991dddca610c934564cbf9}\label{classengine_1_1_renderer___system_a03b2d94ed1991dddca610c934564cbf9}} 
+\index{engine::Renderer\_System@{engine::Renderer\_System}!add\_render\_component@{add\_render\_component}}
+\index{add\_render\_component@{add\_render\_component}!engine::Renderer\_System@{engine::Renderer\_System}}
+\doxysubsubsection{\texorpdfstring{add\_render\_component()}{add\_render\_component()}}
+{\footnotesize\ttfamily void engine\+::\+Renderer\+\_\+\+System\+::add\+\_\+render\+\_\+component (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classengine_1_1_render___component}{Render\+\_\+\+Component}} $\ast$}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classengine_1_1_renderer___system_afce4c522536386495ff05af2a8cf3aa4}\label{classengine_1_1_renderer___system_afce4c522536386495ff05af2a8cf3aa4}} 
+\index{engine::Renderer\_System@{engine::Renderer\_System}!run@{run}}
+\index{run@{run}!engine::Renderer\_System@{engine::Renderer\_System}}
+\doxysubsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily void engine\+::\+Renderer\+\_\+\+System\+::run (\begin{DoxyParamCaption}\item[{float}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classengine_1_1_task_a96c72c2a1eed7ca7094755cc717c88d8}{engine\+::\+Task}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classengine_1_1_renderer___system_a52a438c8949f10ee2dd732dfba0a3c19}\label{classengine_1_1_renderer___system_a52a438c8949f10ee2dd732dfba0a3c19}} 
+\index{engine::Renderer\_System@{engine::Renderer\_System}!render\_components@{render\_components}}
+\index{render\_components@{render\_components}!engine::Renderer\_System@{engine::Renderer\_System}}
+\doxysubsubsection{\texorpdfstring{render\_components}{render\_components}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{classengine_1_1_render___component}{Render\+\_\+\+Component}}$\ast$$>$ engine\+::\+Renderer\+\_\+\+System\+::render\+\_\+components}
+
+\mbox{\Hypertarget{classengine_1_1_renderer___system_a6573865c36c8b8c6e0f2ea7d8c3bbc27}\label{classengine_1_1_renderer___system_a6573865c36c8b8c6e0f2ea7d8c3bbc27}} 
+\index{engine::Renderer\_System@{engine::Renderer\_System}!render\_node@{render\_node}}
+\index{render\_node@{render\_node}!engine::Renderer\_System@{engine::Renderer\_System}}
+\doxysubsubsection{\texorpdfstring{render\_node}{render\_node}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$ glt\+::\+Render\+\_\+\+Node $>$ engine\+::\+Renderer\+\_\+\+System\+::render\+\_\+node}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+headers/\mbox{\hyperlink{renderer__system_8hpp}{renderer\+\_\+system.\+hpp}}\end{DoxyCompactItemize}

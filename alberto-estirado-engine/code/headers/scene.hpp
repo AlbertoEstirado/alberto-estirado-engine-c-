@@ -20,6 +20,7 @@
 #include <render_component.hpp>
 #include <control_system.hpp>
 #include <colision_system.hpp>
+#include <memory>
 
 #pragma once
 
@@ -42,15 +43,15 @@ namespace engine
 
 		STATE state;										//< State of the scene
 
-		std::map<Id, Entity*> entities;						//< List of all the entities that belong to the scene, each entity has an Id to identify them
+		std::map<Id, Entity * > entities;					//< List of all the entities that belong to the scene, each entity has an Id to identify them
 		
 	public:
 
-		Dispatcher		* dispatcher		= nullptr;		//< Menssage system
-		Renderer_System	* renderer_system	= nullptr;		//< Pointer of the render system 
-		Control_System	* control_system	= nullptr;		//< Pointer of the control system
-		Colision_System	* colision_system	= nullptr;		//< Pointor of the colision system
-
+		std::unique_ptr <Dispatcher>		 dispatcher;			//< Menssage system
+		std::unique_ptr <Renderer_System>	 renderer_system;		//< Pointer of the render system 
+		std::unique_ptr <Control_System>	 control_system;		//< Pointer of the control system
+		std::unique_ptr <Colision_System>	 colision_system;		//< Pointor of the colision system
+		
 		std::string name;									//< Name of the scene
 		std::string path;									//< Path where the xml file persist
 	
@@ -102,7 +103,7 @@ namespace engine
 		/*
 		* Getter of the dispatcher
 		*/
-		Dispatcher* get_dispatcher();
+		Dispatcher& get_dispatcher();
 
 		/*
 		* Returns the entity with the same id
@@ -110,6 +111,7 @@ namespace engine
 		*/
 		Entity * get_entity(const std::string &);
 
+		void reset_transforms();
 		void parse_transform(rapidxml::xml_node<>*, Entity*);
 		void parse_box_collider_component(rapidxml::xml_node<>*, Entity*);
 		void parse_node_component(rapidxml::xml_node<>*, Entity*);

@@ -43,6 +43,8 @@ namespace engine
 		Transform(Entity* e);
 		Transform(Entity* e, float x, float y, float z, Transform* newParent = nullptr);
 		Transform(Entity* e, Matrix44 t, Transform* newParent = nullptr);
+
+		void set_transform_from_Matrix(Matrix44 t);
 		
 		/*
 		* Set the entity parent

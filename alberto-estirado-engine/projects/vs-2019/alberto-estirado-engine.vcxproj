@@ -33,8 +33,8 @@
     <ClCompile Include="..\..\code\sources\system.cpp" />
     <ClCompile Include="..\..\code\sources\transform.cpp" />
     <ClCompile Include="..\..\code\sources\update.cpp" />
-    <ClCompile Include="..\..\code\sources\main.cpp" />
     <ClCompile Include="..\..\code\sources\window.cpp" />
+    <ClCompile Include="..\..\code\sources\winmain.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\code\headers\box_collider_component.hpp" />
@@ -46,7 +46,6 @@
     <ClInclude Include="..\..\code\headers\control_system.hpp" />
     <ClInclude Include="..\..\code\headers\declarations.hpp" />
     <ClInclude Include="..\..\code\headers\dispatcher.hpp" />
-    <ClInclude Include="..\..\code\headers\enemie_behaviour_controller.hpp" />
     <ClInclude Include="..\..\code\headers\entity.hpp" />
     <ClInclude Include="..\..\code\headers\input_system.hpp" />
     <ClInclude Include="..\..\code\headers\kernel.hpp" />
@@ -55,7 +54,6 @@
     <ClInclude Include="..\..\code\headers\light_component.hpp" />
     <ClInclude Include="..\..\code\headers\mesh_component.hpp" />
     <ClInclude Include="..\..\code\headers\message.hpp" />
-    <ClInclude Include="..\..\code\headers\player_movement_controller.hpp" />
     <ClInclude Include="..\..\code\headers\read_input.hpp" />
     <ClInclude Include="..\..\code\headers\render.hpp" />
     <ClInclude Include="..\..\code\headers\renderer_system.hpp" />
@@ -81,13 +79,13 @@
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v142</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
@@ -125,6 +123,13 @@
       <AdditionalLibraryDirectories>..\..\..\libraries\windows\sdl2-vs\lib\x64;..\..\..\libraries\windows\opengl-toolkit\lib\x64</AdditionalLibraryDirectories>
       <AdditionalDependencies>SDL2.lib;sdl2main.lib;Setupapi.lib;imm32.lib;winmm.lib;opengl32.lib;version.lib;opengl-toolkit-debug.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>true</LinkLibraryDependencies>
+    </ProjectReference>
+    <Lib>
+      <AdditionalDependencies>SDL2d.lib;opengl-toolkit-debug.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>../../../libraries\windows\opengl-toolkit\lib\x64;../../../libraries\windows\sdl2-vs\lib\x64</AdditionalLibraryDirectories>
+    </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -144,6 +149,13 @@
       <AdditionalLibraryDirectories>..\..\..\libraries\windows\sdl2-vs\lib\x64;..\..\..\libraries\windows\opengl-toolkit\lib\x64</AdditionalLibraryDirectories>
       <AdditionalDependencies>SDL2.lib;sdl2main.lib;Setupapi.lib;imm32.lib;winmm.lib;opengl32.lib;version.lib;opengl-toolkit-release.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>true</LinkLibraryDependencies>
+    </ProjectReference>
+    <Lib>
+      <AdditionalDependencies>opengl-toolkit-release.lib;SDL2.lib;SDL2main.lib;winmm.lib;version.lib;imm32.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>../../../../libraries\windows\opengl-toolkit\lib\x64; ../../../../libraries\windows\sdl2-vs\lib\x64</AdditionalLibraryDirectories>
+    </Lib>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

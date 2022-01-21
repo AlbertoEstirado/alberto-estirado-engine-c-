@@ -1,2 +1,4 @@
-C:\Users\Alberto\Desktop\alberto-estirado-engine-c++\alberto-estirado-engine\projects\vs-2019\x64\Debug\alberto-estirado-engine.exe
 C:\Users\Alberto\Desktop\alberto-estirado-engine-c++\alberto-estirado-engine\projects\vs-2019\x64\Debug\alberto-estirado-engine.pdb
+C:\Users\Alberto\Desktop\alberto-estirado-engine-c++\alberto-estirado-engine\projects\vs-2019\x64\Debug\alberto-estirado-engine.lib
+C:\Users\Alberto\Desktop\EntregaMotores\Demo\projects\vs2019\x64\Debug\alberto-estirado-engine.pdb
+C:\Users\Alberto\Desktop\EntregaMotores\alberto-estirado-engine-c++\alberto-estirado-engine\projects\vs-2019\x64\Debug\alberto-estirado-engine.pdb

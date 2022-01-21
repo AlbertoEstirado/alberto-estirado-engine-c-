@@ -40,11 +40,14 @@ namespace engine
 
 		for (auto & component : render_components)
 		{
-			if(component->entity->get_transform()->active)
+			if(component)
 			{
-				Matrix44 transform_matrix = component->entity->get_transform()->get_transform_matrix();
-				//component->entity->transform->print_transform();
-				component->get_node().set_transformation(transform_matrix);
+				if (component->entity->get_transform()->active)
+				{
+					Matrix44 transform_matrix = component->entity->get_transform()->get_transform_matrix();
+					//component->entity->transform->print_transform();
+					component->get_node().set_transformation(transform_matrix);
+				}
 			}
 		}
 

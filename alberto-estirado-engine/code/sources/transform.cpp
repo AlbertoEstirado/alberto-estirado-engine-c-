@@ -62,6 +62,13 @@ namespace engine
 		entity = e;
 		set_parent(newParent);
 		
+		set_transform_from_Matrix(t);
+
+		//print_transform();
+	}
+
+	void Transform::set_transform_from_Matrix(Matrix44 t)
+	{
 		//Position
 		position.x = t[0][0];
 		position.y = t[0][1];
@@ -74,8 +81,6 @@ namespace engine
 		scale.x = t[2][0];
 		scale.y = t[2][1];
 		scale.z = t[2][2];
-
-		//print_transform();
 	}
 	
 }

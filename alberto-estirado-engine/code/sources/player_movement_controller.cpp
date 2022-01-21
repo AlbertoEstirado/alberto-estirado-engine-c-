@@ -25,15 +25,15 @@ namespace engine
 		dir[1] = 0;
 
 		//Add listeners to the current scene dispatcher
-		entity->scene->get_dispatcher()->add_listener("w_keydown", *this);
-		entity->scene->get_dispatcher()->add_listener("a_keydown", *this);
-		entity->scene->get_dispatcher()->add_listener("s_keydown", *this);
-		entity->scene->get_dispatcher()->add_listener("d_keydown", *this);
-
-		entity->scene->get_dispatcher()->add_listener("w_keyup", *this);
-		entity->scene->get_dispatcher()->add_listener("a_keyup", *this);
-		entity->scene->get_dispatcher()->add_listener("s_keyup", *this);
-		entity->scene->get_dispatcher()->add_listener("d_keyup", *this);
+		entity->scene->get_dispatcher().add_listener("w_keydown", *this);
+		entity->scene->get_dispatcher().add_listener("a_keydown", *this);
+		entity->scene->get_dispatcher().add_listener("s_keydown", *this);
+		entity->scene->get_dispatcher().add_listener("d_keydown", *this);
+									   
+		entity->scene->get_dispatcher().add_listener("w_keyup", *this);
+		entity->scene->get_dispatcher().add_listener("a_keyup", *this);
+		entity->scene->get_dispatcher().add_listener("s_keyup", *this);
+		entity->scene->get_dispatcher().add_listener("d_keyup", *this);
 	}
 
 	void Payer_Movement_Controller::update()

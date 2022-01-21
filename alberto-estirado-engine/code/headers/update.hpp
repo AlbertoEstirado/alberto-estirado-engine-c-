@@ -20,6 +20,10 @@ namespace engine
 
 	public:
 
+		/*
+		* It will create the task and it will be automatically added to the kernel
+		* @param priority
+		*/
 		Update(int priority) : Task(priority)
 		{
 			this->priority = priority;

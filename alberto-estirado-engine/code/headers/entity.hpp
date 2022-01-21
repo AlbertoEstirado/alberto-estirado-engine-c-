@@ -15,7 +15,6 @@
 
 #include <vector>
 #include <iostream>
-
 #include "component.hpp"
 
 #pragma once
@@ -24,6 +23,7 @@ namespace engine
 {
 	class Transform;
 	class Scene;
+	
 
 	class Entity
 	{
@@ -70,10 +70,36 @@ namespace engine
 		//	{
 		//		if (dynamic_cast<component*>(component[i]))
 		//		{
-		//			return component[i];
+		//			return dynamic_cast<component*>(component[i]);
 		//		}
 		//	}
+		//
+		//	return nullptr;
 		//}
+
+
+		//vector< shared_ptr< Component > > components;
+		//
+		
+		template< typename T >
+		T* get_component()
+		{
+			for (auto& component : components)
+			{
+				auto casted_component = dynamic_cast<T*>(component/*.get()*/);
+		
+				if (casted_component)
+				{
+					return casted_component;
+				}
+			}
+		
+			return nullptr;
+		}
+		//
+		//
+		//Collider_Component* collider = entity->get_component<Collider_Component>();
+
 	};
 }
 

@@ -33,9 +33,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\code\sources\main.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\code\sources\render.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -62,12 +59,6 @@
     </ClCompile>
     <ClCompile Include="..\..\code\sources\entity.cpp">
       <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\code\sources\renderer_system.cpp">
-      <Filter>Resource Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\code\sources\system.cpp">
-      <Filter>Resource Files</Filter>
     </ClCompile>
     <ClCompile Include="..\..\code\sources\box_collider_component.cpp">
       <Filter>Source Files</Filter>
@@ -105,6 +96,15 @@
     <ClCompile Include="..\..\code\sources\render_component.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\code\sources\winmain.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\sources\renderer_system.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\code\sources\system.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\code\headers\box_collider_component.hpp">
@@ -132,9 +132,6 @@
       <Filter>Header Files\Other</Filter>
     </ClInclude>
     <ClInclude Include="..\..\code\headers\controller.hpp">
-      <Filter>Header Files\Controllers</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\code\headers\enemie_behaviour_controller.hpp">
       <Filter>Header Files\Controllers</Filter>
     </ClInclude>
     <ClInclude Include="..\..\code\headers\input_system.hpp">
@@ -166,9 +163,6 @@
     </ClInclude>
     <ClInclude Include="..\..\code\headers\keyboard.hpp">
       <Filter>Header Files\Other</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\code\headers\player_movement_controller.hpp">
-      <Filter>Header Files\Controllers</Filter>
     </ClInclude>
     <ClInclude Include="..\..\code\headers\transform.hpp">
       <Filter>Header Files\Components</Filter>

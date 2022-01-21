@@ -58,6 +58,8 @@ namespace engine
 			return this->priority < other.priority;
 		}
 
+		virtual ~Task()= default;
+
 	};
 
 }

@@ -40,6 +40,8 @@ namespace engine
 				task->run(0);
 			}
 		} while (running);
+
+		end();
 	}
 
 	void Kernel::end()

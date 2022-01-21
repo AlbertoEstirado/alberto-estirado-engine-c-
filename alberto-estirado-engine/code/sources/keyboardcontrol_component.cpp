@@ -22,10 +22,10 @@ namespace engine
 	{
 		entity = e;
 
-		entity->scene->get_dispatcher()->add_listener("w", *this);
-		entity->scene->get_dispatcher()->add_listener("a", *this);
-		entity->scene->get_dispatcher()->add_listener("s", *this);
-		entity->scene->get_dispatcher()->add_listener("d", *this);
+		entity->scene->get_dispatcher().add_listener("w", *this);
+		entity->scene->get_dispatcher().add_listener("a", *this);
+		entity->scene->get_dispatcher().add_listener("s", *this);
+		entity->scene->get_dispatcher().add_listener("d", *this);
 	}
 
 	void Keyboardcontrol_Component::receptor(Message& message)

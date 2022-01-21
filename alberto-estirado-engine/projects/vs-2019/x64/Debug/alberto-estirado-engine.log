@@ -1,3 +1,39 @@
-﻿  scene.cpp
-C:\Users\Alberto\Desktop\alberto-estirado-engine-c++\alberto-estirado-engine\code\sources\scene.cpp(225): warning C4715: 'engine::Scene::get_entity': no todas las rutas de acceso de control devuelven un valor
-  alberto-estirado-engine.vcxproj -> C:\Users\Alberto\Desktop\alberto-estirado-engine-c++\alberto-estirado-engine\projects\vs-2019\x64\Debug\alberto-estirado-engine.exe
+﻿  box_collider_component.cpp
+  camera_component.cpp
+  colision_system.cpp
+  enemie_behaviour_controller.cpp
+C:\Users\Alberto\Desktop\EntregaMotores\alberto-estirado-engine-c++\alberto-estirado-engine\code\sources\enemie_behaviour_controller.cpp(25,15): warning C4305: '=': truncamiento de 'double' a 'float'
+  entity.cpp
+  keyboardcontrol_component.cpp
+  light_component.cpp
+  mesh_component.cpp
+  player_movement_controller.cpp
+C:\Users\Alberto\Desktop\EntregaMotores\alberto-estirado-engine-c++\alberto-estirado-engine\code\sources\player_movement_controller.cpp(23,15): warning C4305: '=': truncamiento de 'double' a 'float'
+C:\Users\Alberto\Desktop\EntregaMotores\alberto-estirado-engine-c++\alberto-estirado-engine\code\sources\player_movement_controller.cpp(46,24): warning C4305: '+=': truncamiento de 'double' a 'T'
+          with
+          [
+              T=float
+          ]
+C:\Users\Alberto\Desktop\EntregaMotores\alberto-estirado-engine-c++\alberto-estirado-engine\code\sources\player_movement_controller.cpp(47,24): warning C4305: '+=': truncamiento de 'double' a 'T'
+          with
+          [
+              T=float
+          ]
+C:\Users\Alberto\Desktop\EntregaMotores\alberto-estirado-engine-c++\alberto-estirado-engine\code\sources\player_movement_controller.cpp(51,25): warning C4305: '+=': truncamiento de 'double' a 'T'
+          with
+          [
+              T=float
+          ]
+  read_input.cpp
+  render.cpp
+  render_component.cpp
+  renderer_system.cpp
+  scene.cpp
+  scene_manager.cpp
+  transform.cpp
+  update.cpp
+  window.cpp
+C:\Users\Alberto\Desktop\EntregaMotores\alberto-estirado-engine-c++\alberto-estirado-engine\code\sources\window.cpp(43,146): warning C4267: 'argumento': conversión de 'size_t' a 'int'; posible pérdida de datos
+  Generando código...
+C:\Users\Alberto\Desktop\EntregaMotores\alberto-estirado-engine-c++\alberto-estirado-engine\code\sources\scene.cpp(254): warning C4715: 'engine::Scene::get_entity': no todas las rutas de acceso de control devuelven un valor
+  alberto-estirado-engine.vcxproj -> C:\Users\Alberto\Desktop\EntregaMotores\Demo\projects\vs2019\x64\Debug\alberto-estirado-engine.lib

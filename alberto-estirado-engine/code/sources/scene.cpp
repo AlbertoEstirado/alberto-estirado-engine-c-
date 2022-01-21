@@ -20,8 +20,6 @@
 #include <camera_component.hpp>
 #include <keyboardcontrol_component.hpp>
 #include <mesh_component.hpp>
-#include <player_movement_controller.hpp>
-#include <enemie_behaviour_controller.hpp>
 #include <box_collider_component.hpp>
 #include <Render_Node.hpp>
 
@@ -39,39 +37,15 @@ namespace engine
 
 		Scene_manager::instance().add_scene(this);
 
-		renderer_system = new Renderer_System(window);
-		control_system = new Control_System();
-		dispatcher = new Dispatcher();
-		colision_system = new Colision_System();
+		renderer_system.reset(new Renderer_System(window));
+		control_system.reset(new Control_System);
+		dispatcher.reset(new Dispatcher);
+		colision_system.reset(new Colision_System);
 	}
 
 	void Scene::reload()
 	{
-		state = UNINITIALIZED;
-
-		renderer_system->render_node.reset(new glt::Render_Node);
-
-		//for (auto& e : entities)
-		//{
-		//	for (auto& c : e.second->components)
-		//	{
-		//		delete c;
-		//	}
-		//	e.second->components.clear();
-		//	delete e.second;
-		//}
-		entities.clear();
-
-
-		delete control_system;
-		delete dispatcher;
-		delete colision_system;
-
-		control_system = new Control_System();
-		dispatcher = new Dispatcher();
-		colision_system = new Colision_System();
-
-		load_scene();
+		reset_transforms();
 	}
 
 	void Scene::load_scene()
@@ -92,9 +66,7 @@ namespace engine
 
 		//Start reading the document
 		xml_node<>* pRoot = doc.first_node();
-		xml_attribute<>* pAttr = doc.first_node()->first_attribute("id");
-		std::string strValue = pAttr->value();
-
+		
 		for (xml_node<>* entity = pRoot->first_node()->first_node();
 			entity; entity = entity->next_sibling())
 		{
@@ -112,6 +84,62 @@ namespace engine
 		}
 
 		awake();
+	}
+
+	void Scene::reset_transforms()
+	{
+		//Load the xml file
+		xml_document<> doc;
+		ifstream file(path);
+		stringstream buffer;
+		buffer << file.rdbuf();
+		file.close();
+		std::string content(buffer.str());
+
+		//Parse the document
+		doc.parse<0>(&content[0]);
+
+		//Start reading the document
+		xml_node<>* pRoot = doc.first_node();
+
+		for (xml_node<>* entity = pRoot->first_node()->first_node();
+			entity; entity = entity->next_sibling())
+		{
+			//Get id entity
+			xml_attribute<>* pAttr = entity->first_attribute("id");
+			std::string strValue = pAttr->value();
+
+			Entity * e = get_entity(strValue);
+
+			for (xml_node<>* component = entity->first_node();
+				component; component = component->next_sibling())
+			{
+				xml_attribute<>* cAttr = component->first_attribute("id");
+				std::string strCValue = cAttr->value();
+
+				//Reset transform
+				if (strCValue == "transform")
+				{
+					Matrix44 transform;
+
+					//Position
+					transform[0][0] = std::stof(component->first_node()->first_node()->value());
+					transform[0][1] = std::stof(component->first_node()->first_node()->next_sibling()->value());
+					transform[0][2] = std::stof(component->first_node()->last_node()->value());
+					//Rotation
+					transform[1][0] = std::stof(component->first_node()->next_sibling()->first_node()->value());
+					transform[1][1] = std::stof(component->first_node()->next_sibling()->first_node()->next_sibling()->value());
+					transform[1][2] = std::stof(component->first_node()->next_sibling()->last_node()->value());
+					//Scale
+					transform[2][0] = std::stof(component->last_node()->first_node()->value());
+					transform[2][1] = std::stof(component->last_node()->first_node()->next_sibling()->value());
+					transform[2][2] = std::stof(component->last_node()->last_node()->value());
+
+					e->get_transform()->set_transform_from_Matrix(transform);
+				}
+			}
+
+		}
 	}
 
 	void Scene::parse_node_component(xml_node<>* xml_entity, Entity* newEntity)
@@ -142,14 +170,6 @@ namespace engine
 			else if (strCValue == "keyboardcontrol_component")
 			{
 				newEntity->add_component(new Keyboardcontrol_Component(newEntity));
-			}
-			else if (strCValue == "player_movement_controller")
-			{
-				control_system->add_controller(new Payer_Movement_Controller(newEntity));
-			}
-			else if (strCValue == "enemie_behaviour_controller")
-			{
-				control_system->add_controller(new Enemie_Behaviour_Controller(newEntity));
 			}
 			else if (strCValue == "box_collider_component")
 			{
@@ -214,7 +234,7 @@ namespace engine
 		entities.insert(std::pair<Id, Entity*>(new_entity->id, new_entity));
 	}
 
-	Entity * Scene::get_entity(const std::string & id)
+	Entity* Scene::get_entity(const std::string & id)
 	{
 		for (auto& e : entities)
 		{
@@ -245,8 +265,8 @@ namespace engine
 	}
 
 
-	Dispatcher* Scene::get_dispatcher()
+	Dispatcher& Scene::get_dispatcher()
 	{
-		return dispatcher;
+		return *dispatcher;
 	}
 }
