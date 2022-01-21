@@ -20,6 +20,7 @@ namespace engine
 {
 	void Colision_System::run(float time = 0)
 	{
+		//Actualize all collider positions
 		for (size_t i = 0; i < scene_dynamic_colliders.size(); i++)
 		{
 			Transform* t = scene_dynamic_colliders[i]->entity->get_transform();
@@ -28,6 +29,7 @@ namespace engine
 			scene_dynamic_colliders[i]->y = t->get_position_z() - scene_dynamic_colliders[i]->height / 2;
 		}
 
+		//Check dynamic colliders with all colliders
 		for (size_t i = 0; i < scene_dynamic_colliders.size(); i++)
 		{
 			for (size_t j = i+1; j < scene_colliders.size(); j++)

@@ -30,11 +30,14 @@ using namespace std;
 
 namespace engine
 {
-	Scene::Scene(const std::string & name, Window & window)
+	Scene::Scene(const std::string & name, const std::string & path, Window & window)
 	{
 		this->name = name;
+		this->path = path;
+
 		state = UNINITIALIZED;
-		std::cout << "New scene has been created: " << name << std::endl;
+
+		//std::cout << "New scene has been created: " << name << std::endl;
 		Scene_manager::instance().add_scene(this);
 
 		renderer_system = new Renderer_System(window);
@@ -65,7 +68,7 @@ namespace engine
 		state = LOADING;
 
 		xml_document<> doc;
-		ifstream file("../../code/xml/sample-scene.xml");//fstream::binary?
+		ifstream file(path); 
 		stringstream buffer;
 		buffer << file.rdbuf();
 		file.close();
@@ -74,22 +77,21 @@ namespace engine
 
 		xml_node<>* pRoot = doc.first_node();
 
-		cout << "Name of my first node is: " << doc.first_node()->name() << "\n";
+		//cout << "Name of my first node is: " << doc.first_node()->name() << "\n";
 
 		xml_attribute<>* pAttr = doc.first_node()->first_attribute("id");
 		std::string strValue = pAttr->value();
 
-		cout << "Id of my first node is: " << strValue << "\n";
+		//cout << "Id of my first node is: " << strValue << "\n";
+		//cout << "first node: " << pRoot->first_node()->name() << "\n";
 
-
-		cout << "first node: " << pRoot->first_node()->name() << "\n";
 		for (xml_node<>* entity = pRoot->first_node()->first_node();
 			entity; entity = entity->next_sibling())
 		{
 			xml_attribute<>* pAttr = entity->first_attribute("id");
 			std::string strValue = pAttr->value();
 
-			cout << "**** " << entity->name() << "  id:" << strValue << "\n";
+			//cout << "**** " << entity->name() << "  id:" << strValue << "\n";
 
 			Entity* newEntity = new Entity(strValue, this);
 			
@@ -98,12 +100,9 @@ namespace engine
 			add_entity(newEntity);
 		}
 
-		cout << "numero de entidades añadidas: " << entities.size() << endl;
+		//cout << "numero de entidades añadidas: " << entities.size() << endl;
 
-		for (auto& e : entities)
-		{
-			cout << "         " << e.first << endl;
-		}
+		
 
 		awake();
 	}
@@ -115,8 +114,8 @@ namespace engine
 		{
 			xml_attribute<>* cAttr = component->first_attribute("id");
 			std::string strCValue = cAttr->value();
-			cout << "	**** " << component->name() << "  id:" << strCValue;
-			cout << "value :" << component->value() << "\n";
+			//cout << "	**** " << component->name() << "  id:" << strCValue;
+			//cout << "value :" << component->value() << "\n";
 
 			if (strCValue == "transform")
 			{
@@ -168,17 +167,17 @@ namespace engine
 		transform[0][0] = std::stof(component->first_node()->first_node()->value());
 		transform[0][1] = std::stof(component->first_node()->first_node()->next_sibling()->value());
 		transform[0][2] = std::stof(component->first_node()->last_node()->value());
-		std::cout << "position: " << transform[0][0] <<"," << transform[0][1] << "," << transform[0][2] << std::endl;
+		//std::cout << "position: " << transform[0][0] <<"," << transform[0][1] << "," << transform[0][2] << std::endl;
 		//Rotation
 		transform[1][0] = std::stof(component->first_node()->next_sibling()->first_node()->value());
 		transform[1][1] = std::stof(component->first_node()->next_sibling()->first_node()->next_sibling()->value());
 		transform[1][2] = std::stof(component->first_node()->next_sibling()->last_node()->value());
-		std::cout << "rotation: " << transform[1][0] << "," << transform[1][1] << "," << transform[1][2] << std::endl;
+		//std::cout << "rotation: " << transform[1][0] << "," << transform[1][1] << "," << transform[1][2] << std::endl;
 		//Scale
 		transform[2][0] = std::stof(component->last_node()->first_node()->value());
 		transform[2][1] = std::stof(component->last_node()->first_node()->next_sibling()->value());
 		transform[2][2] = std::stof(component->last_node()->last_node()->value());
-		std::cout << "scale: " << transform[2][0] << "," << transform[2][1] << "," << transform[2][2] << std::endl;
+		//std::cout << "scale: " << transform[2][0] << "," << transform[2][1] << "," << transform[2][2] << std::endl;
 
 		if (parent)
 			newEntity->add_transform(new Transform(newEntity, transform, parent->get_transform()));

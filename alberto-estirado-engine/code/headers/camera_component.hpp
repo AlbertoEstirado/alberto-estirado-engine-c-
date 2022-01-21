@@ -25,10 +25,18 @@ namespace engine
 
 	public:
 
-		std::shared_ptr< glt::Camera > camera = nullptr;
+		std::shared_ptr< glt::Camera > camera = nullptr; 			//< Pointer to the camera
 
+		/*
+		* Set the refernce of the owner and a reference of the renderer system
+		* @param entity
+		* @param renderer system
+		*/
 		Camera_Component(Entity* e, Renderer_System&);
 
+		/*
+		* Returns the node that persist in the camera
+		*/
 		glt::Node& get_node() override
 		{
 			return *camera;

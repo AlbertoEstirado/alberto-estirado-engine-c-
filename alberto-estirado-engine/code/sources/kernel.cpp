@@ -25,17 +25,18 @@ namespace engine
         for (auto task : tasks)
         {
             task->initialize();
-			std::cout << task->priority;
         }
 	}
 
 	void Kernel::execute()
 	{
-		//do while
-		for(auto task : tasks)
+		do 
 		{
-			task->run(0);
-		}
+			for (auto task : tasks)
+			{
+				task->run(0);
+			}
+		} while (running);
 	}
 
 	void Kernel::end()

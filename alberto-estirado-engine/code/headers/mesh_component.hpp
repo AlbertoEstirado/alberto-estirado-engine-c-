@@ -26,10 +26,19 @@ namespace engine
 
 	public:
 
-		std::shared_ptr< glt::Model > model = nullptr;
+		std::shared_ptr< glt::Model > model = nullptr;			//< Pointer to the model
 
+		/*
+		* Set the refernce of the owner, path os the obj and a reference of the renderer system
+		* @param entity
+		* @param path
+		* @param renderer system
+		*/
 		Mesh_Component(Entity* e, const std::string&, Renderer_System&);
 
+		/*
+		* Returns the node that persist in the model
+		*/
 		glt::Node & get_node() override
 		{
 			return *model;

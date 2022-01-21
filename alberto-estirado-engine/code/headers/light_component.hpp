@@ -26,10 +26,18 @@ namespace engine
 
 	public:
 
-		std::shared_ptr< glt::Light > light = nullptr;
+		std::shared_ptr< glt::Light > light = nullptr;			//< Pointer to the light
 
+		/*
+		* Set the refernce of the owner and a reference of the renderer system
+		* @param entity
+		* @param renderer system
+		*/
 		Light_Component(Entity* e, Renderer_System&);
 
+		/*
+		* Returns the node that persist in the light
+		*/
 		glt::Node& get_node() override
 		{
 			return *light;

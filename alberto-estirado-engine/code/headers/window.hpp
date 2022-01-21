@@ -23,15 +23,15 @@ namespace engine
 
 	public:
 
-		bool exit;
+		bool exit;								//< Bool that close the window
 
 		size_t width = 0;
-		size_t height = 0;
+		size_t height = 0;				
 
-		SDL_Window	* window = nullptr;
-		SDL_Surface	* surface = nullptr;
+		SDL_Window	* window = nullptr;			//< Sld window
+		SDL_Surface	* surface = nullptr;		//< Sdl surface
 		
-		SDL_GLContext gl_context;
+		SDL_GLContext gl_context;				//< OpenGl contex
 
 		Window(const std::string& title, size_t  width, size_t height, bool fullscreen = false);
 		

@@ -24,7 +24,7 @@ namespace engine
 		//	virtual void on_colision(Box_Collider_Component & a, Box_Collider_Component & b) = 0;
 		//};
 	
-		float x, y, width, height;
+		float x, y, width, height;		//< Square of the collider
 
 		Box_Collider_Component(Entity* e ,float, float, Type t);
 

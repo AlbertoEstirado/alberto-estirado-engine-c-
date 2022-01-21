@@ -13,7 +13,7 @@
                     <x>0.8</x><y>0.8</y><z>0.8</z>
                 </scale>
             </component>
-            <component id="mesh_component">../../assets/sphere.obj</component>
+            <component id="mesh_component">../../assets/models/sphere.obj</component>
             <component id="player_movement_controller"></component>
             <component id="box_collider_component">
                 <scale_x>1</scale_x>
@@ -61,7 +61,7 @@
                     <x>0.5</x><y>0.5</y><z>0.5</z>
                 </scale>
             </component>
-            <component id="mesh_component">../../assets/sphere.obj</component>
+            <component id="mesh_component">../../assets/models/sphere.obj</component>
         </entity>
         <entity id="moon1">
             <component id="transform" parent="player">
@@ -75,7 +75,7 @@
                     <x>0.3</x><y>0.3</y><z>0.3</z>
                 </scale>
             </component>
-            <component id="mesh_component">../../assets/sphere.obj</component>
+            <component id="mesh_component">../../assets/models/sphere.obj</component>
         </entity>
         <entity id="moon2">
             <component id="transform" parent="moon">
@@ -89,7 +89,7 @@
                     <x>0.25</x><y>0.25</y><z>0.25</z>
                 </scale>
             </component>
-            <component id="mesh_component">../../assets/sphere.obj</component>
+            <component id="mesh_component">../../assets/models/sphere.obj</component>
         </entity>
         <entity id="floor">
             <component id="transform">
@@ -103,7 +103,7 @@
                     <x>12</x><y>1</y><z>12</z>
                 </scale>
             </component>
-            <component id="mesh_component">../../assets/cube.obj</component>
+            <component id="mesh_component">../../assets/models/cube.obj</component>
         </entity>
         <entity id="enemie">
             <component id="transform">
@@ -117,7 +117,7 @@
                     <x>0.5</x><y>0.5</y><z>0.5</z>
                 </scale>
             </component>
-            <component id="mesh_component">../../assets/stanford-bunny.obj</component>
+            <component id="mesh_component">../../assets/models/stanford-bunny.obj</component>
             <component id="enemie_behaviour_controller"></component>
             <component id="box_collider_component">
                 <scale_x>0.5</scale_x>
@@ -137,7 +137,7 @@
                     <x>0.5</x><y>0.5</y><z>0.5</z>
                 </scale>
             </component>
-            <component id="mesh_component">../../assets/stanford-bunny.obj</component>
+            <component id="mesh_component">../../assets/models/stanford-bunny.obj</component>
             <component id="enemie_behaviour_controller"></component>
             <component id="box_collider_component">
                 <scale_x>0.5</scale_x>
@@ -157,7 +157,7 @@
                     <x>0.5</x><y>0.5</y><z>0.5</z>
                 </scale>
             </component>
-            <component id="mesh_component">../../assets/stanford-bunny.obj</component>
+            <component id="mesh_component">../../assets/models/stanford-bunny.obj</component>
             <component id="enemie_behaviour_controller"></component>
             <component id="box_collider_component">
                 <scale_x>0.5</scale_x>
@@ -177,7 +177,7 @@
                     <x>0.5</x><y>0.5</y><z>0.5</z>
                 </scale>
             </component>
-            <component id="mesh_component">../../assets/stanford-bunny.obj</component>
+            <component id="mesh_component">../../assets/models/stanford-bunny.obj</component>
             <component id="enemie_behaviour_controller"></component>
             <component id="box_collider_component">
                 <scale_x>0.5</scale_x>
@@ -197,7 +197,7 @@
                     <x>1</x><y>0.5</y><z>12</z>
                 </scale>
             </component>
-            <component id="mesh_component">../../assets/cube.obj</component>
+            <component id="mesh_component">../../assets/models/cube.obj</component>
         </entity>
         <entity id="wall1">
             <component id="transform">
@@ -211,7 +211,7 @@
                     <x>1</x><y>0.5</y><z>12</z>
                 </scale>
             </component>
-            <component id="mesh_component">../../assets/cube.obj</component>
+            <component id="mesh_component">../../assets/models/cube.obj</component>
         </entity>
         <entity id="wall2">
             <component id="transform">
@@ -225,7 +225,7 @@
                     <x>12</x><y>0.5</y><z>1</z>
                 </scale>
             </component>
-            <component id="mesh_component">../../assets/cube.obj</component>
+            <component id="mesh_component">../../assets/models/cube.obj</component>
         </entity>
     </entities>
 </scene>

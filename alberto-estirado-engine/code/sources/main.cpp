@@ -40,18 +40,11 @@ int main(int, char**)
 
     Kernel::instance().initialization();
 
-    //Window * window = new Window("engine", 800, 600);
-    //window->enable_vsync();
-
-    Scene* main_scene = new Scene("main_scene", *window);
+    Scene* main_scene = new Scene("main_scene", "../../assets/xml/sample-scene.xml" , *window);
 
     Scene_manager::instance().run_scene(main_scene);
 
-    do
-    {
-        Kernel::instance().execute();
-
-    } while (Kernel::instance().running);
+    Kernel::instance().execute();
 
     Kernel::instance().end();
     

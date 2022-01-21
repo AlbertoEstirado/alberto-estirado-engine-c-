@@ -27,8 +27,17 @@ namespace engine
 		std::vector<Box_Collider_Component*> scene_dynamic_colliders;		//< Colliders that will move, these are the colliders for which we will check collisions
 
 		Colision_System() = default;
-
+		
+		/*
+		* Update all collision positions and then we check them
+		* @param time
+		*/
 		void run(float) override;
+		
+		/*
+		* Add a collider to the list, if is static it will be only added to scene_colliders	
+		* @param box_collider_component
+		*/
 		void add_collider(Box_Collider_Component*);
 
 		~Colision_System() {};

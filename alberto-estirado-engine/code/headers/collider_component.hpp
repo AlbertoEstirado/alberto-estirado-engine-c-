@@ -20,13 +20,14 @@ namespace engine
 	class Collider_Component: public Component
 	{
 	public:
-		enum Type
+
+		enum Type					//< Enum of the possible types of the collider
 		{
 			STATIC,
 			DYNAMIC
 		};
 
-		Type type;
+		Type type;					//< Collider type
 
 
 		//virtual void on_collider_enter(Collider_Component* other) = 0;

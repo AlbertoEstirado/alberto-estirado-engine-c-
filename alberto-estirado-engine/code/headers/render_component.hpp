@@ -23,7 +23,7 @@ namespace engine
 	{
 	public:
 
-		virtual glt::Node& get_node() = 0;
+		virtual glt::Node& get_node() = 0;			//< Reference to the node so we can get it on the system
 		
 	};
 }
