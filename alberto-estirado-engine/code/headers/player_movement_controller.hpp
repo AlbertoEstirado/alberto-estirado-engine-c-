@@ -15,11 +15,11 @@
 #include <controller.hpp>
 #include <entity.hpp>
 #include <dispatcher.hpp>
-
+#include <collision_handler.hpp>
 
 namespace engine
 {
-	class Payer_Movement_Controller: public Controller, public Dispatcher::Listener
+	class Payer_Movement_Controller: public Controller, public Dispatcher::Listener, public Collision_Handler
 	{
 	public:
 
@@ -28,9 +28,9 @@ namespace engine
 
 		Payer_Movement_Controller(Entity* e);
 		
-
 		void update() override;
 		void receptor(Message& message) override;
+		void on_collision(Box_Collider_Component& other) override;
 
 	};
 

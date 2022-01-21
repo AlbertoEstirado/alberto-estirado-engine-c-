@@ -90,11 +90,6 @@ namespace engine
 		void render();
 
 		/*
-		* Reset all systems, clear all entities and load scene from the xml file
-		*/
-		void reload();
-
-		/*
 		* We add to the map a new entity
 		* @param Entity
 		*/

@@ -43,11 +43,6 @@ namespace engine
 		collision_system.reset(new Collision_System);
 	}
 
-	void Scene::reload()
-	{
-		reset_transforms();
-	}
-
 	void Scene::load_scene()
 	{
 		//Start loading the scene
@@ -226,7 +221,9 @@ namespace engine
 			type = engine::Collider_Component::Type::STATIC;
 		}
 
-		collision_system->add_collider(new Box_Collider_Component(newEntity, scale_x, scale_z, type));
+		Box_Collider_Component* box_collider = new Box_Collider_Component(newEntity, scale_x, scale_z, type);
+		newEntity->add_component(box_collider);
+		collision_system->add_collider(box_collider);
 	}
 
 	void Scene::add_entity(Entity * new_entity)

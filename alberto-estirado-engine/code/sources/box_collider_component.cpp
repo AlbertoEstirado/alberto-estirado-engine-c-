@@ -22,9 +22,9 @@ namespace engine
 	Box_Collider_Component::Box_Collider_Component(Entity* e, float scale_x, float scale_z, engine::Collider_Component::Type type = STATIC)
 	{
 		//Initialice all variables
-
 		entity = e;
 		this->type = type;
+		collision_handler = nullptr;
 
 		Transform* t = entity->get_transform();
 
@@ -54,10 +54,17 @@ namespace engine
 		{
 			std::cout << entity->id << " im colliding with: " << other->entity->id << std::endl;
 			//on_collider_enter(other);
+			if(collision_handler)
+				collision_handler->on_collision(*other);
 			//c_h->on_colision(this, other);
-			Scene_manager::instance().current_scene->reload();
+			//Scene_manager::instance().current_scene->reset_transforms();
 		}
 
+	}
+
+	void Box_Collider_Component::add_collision_handler(Collision_Handler* c)
+	{
+		collision_handler = c;
 	}
 
 }

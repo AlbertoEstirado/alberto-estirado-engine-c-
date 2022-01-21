@@ -10,13 +10,15 @@
 * estiradoalberto@gmail.com
 */
 
+#pragma once
 
 namespace engine
 {
 	class Box_Collider_Component;
 
-	struct Collision_Handler
+	class Collision_Handler
 	{
-		virtual void on_colision(Box_Collider_Component& a, Box_Collider_Component& b) = 0;
+	public:
+		virtual void on_collision(Box_Collider_Component& other) = 0;
 	};
 }

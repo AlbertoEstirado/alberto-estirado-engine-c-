@@ -80,7 +80,6 @@ namespace engine
 
 		//vector< shared_ptr< Component > > components;
 		//
-		
 		template< typename T >
 		T* get_component()
 		{
@@ -96,7 +95,6 @@ namespace engine
 		
 			return nullptr;
 		}
-		//
 		//
 		//Collider_Component* collider = entity->get_component<Collider_Component>();
 

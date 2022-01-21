@@ -20,15 +20,14 @@ namespace engine
 	{
 	public:
 
-		Collision_Handler* on_colision;
+		Collision_Handler* collision_handler;
 	
 		float x, y, width, height;		//< Square of the collider
 
 		Box_Collider_Component(Entity* e ,float, float, Type t);
 
 		void im_colliding_with(Box_Collider_Component*);
-
-		//void on_collider_enter(Collider_Component* other)override {};
+		void add_collision_handler(Collision_Handler*);
 	};
 
 }
