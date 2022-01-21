@@ -50,7 +50,6 @@ namespace engine
 	void Entity::add_transform(Transform* new_component)
 	{
 		transform = new_component;
-		//components.push_back(new_component);
 	}
 
 	Transform * Entity::get_transform()

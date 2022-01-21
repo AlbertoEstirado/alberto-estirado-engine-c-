@@ -22,6 +22,7 @@ namespace engine
 
 	void Kernel::initialization()
 	{
+		//Initialize all task in order
         for (auto task : tasks)
         {
             task->initialize();
@@ -30,8 +31,10 @@ namespace engine
 
 	void Kernel::execute()
 	{
+		//While kernel is running
 		do 
 		{
+			//Run all task in order
 			for (auto task : tasks)
 			{
 				task->run(0);
@@ -41,6 +44,7 @@ namespace engine
 
 	void Kernel::end()
 	{
+		//End all task in order
 		for (auto task : tasks)
 		{
 			task->end();
@@ -49,6 +53,7 @@ namespace engine
 
 	void Kernel::add_task(Task * new_task)
 	{
+		// We add the task and order it based on its priority 
 		tasks.insert(new_task);
 	}
 

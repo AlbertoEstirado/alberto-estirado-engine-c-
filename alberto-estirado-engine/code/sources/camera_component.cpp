@@ -27,8 +27,10 @@ namespace engine
 
 		camera.reset(new Camera(20.f, 1.f, 50.f, 1.f));
 
+		//Add the camera to the render node of the system
 		render_system.render_node->add(entity->id, camera);
 		
+		//Add the camera to ther render system
 		render_system.add_render_component(this);
 	}
 

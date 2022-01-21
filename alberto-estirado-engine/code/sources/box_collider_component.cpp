@@ -21,17 +21,18 @@ namespace engine
 
 	Box_Collider_Component::Box_Collider_Component(Entity* e, float scale_x, float scale_z, engine::Collider_Component::Type type = STATIC)
 	{
+		//Initialice all variables
+
 		entity = e;
 		this->type = type;
 
 		Transform* t = entity->get_transform();
 
+		//Calculate a square base on the scale and position
 		x = t->get_position_x() - scale_x / 2;
 		y = t->get_position_z() - scale_z / 2;
 		width =scale_x;
 		height = scale_z;
-
-		std::cout << "col: [" << x << ", " << y << ", "<< width << ", " << height << "]"<< std::endl;
 	}
 
 	void Box_Collider_Component::im_colliding_with(Box_Collider_Component* other)
@@ -46,10 +47,7 @@ namespace engine
 		float bot2 = other->y;
 		float top2 = other->y + other->height;
 
-		//std::cout << "#################" << std::endl;
-		//std::cout << "col: [" << x << ", " << y << ", " << width << ", " << height << "]" << std::endl;
-		//std::cout << "col: [" << other->x << ", " << other->y << ", " << other->width << ", " << other->height << "]" << std::endl;
-		//std::cout << "#################" << std::endl;
+		//Check if they colliders are colliding
 
 		if ((right1 >= left2 && left1 <= right2 && top1 >= bot2 && bot1 <= top2) ||
 			(right2 >= left1 && left2 <= right1 && top2 >= bot1 && bot2 <= top1))

@@ -42,8 +42,7 @@ namespace engine
 	void Colision_System::add_collider(Box_Collider_Component* new_collider)
 	{
 
-		std::cout << "collider added" << std::endl;
-
+		//We check the type so we can added to the corresponding list
 		if(new_collider->type == engine::Collider_Component::Type::DYNAMIC)
 		{
 			scene_colliders.push_back(new_collider);

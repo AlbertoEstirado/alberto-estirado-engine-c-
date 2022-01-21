@@ -37,9 +37,7 @@ namespace engine
 		dir.z = target->get_position_z() - my_transform->get_position_z();
 	
 		dir = glm::normalize(dir);
-	
-		//std::cout << "Dir: [" << dir.x << "," << dir.z << "]" << std::endl;
-	
+		
 		my_transform->position.x += speed * dir.x;
 		my_transform->position.z += speed * dir.z;
 	}

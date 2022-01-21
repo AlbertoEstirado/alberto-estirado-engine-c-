@@ -23,7 +23,7 @@ namespace engine
 	public:
 
 		/**
-		 * @brief Listener struct for hearing messages
+		 * Struct to hear messages
 		 */
 		struct Listener
 		{
@@ -39,11 +39,9 @@ namespace engine
 	public:
 
 		/**
-		 * @brief Add a listener
-		 *
-		 * @param id The id of the message to hear from
-		 *
-		 * @param listener Listener that will listen the message
+		 * Add a listener
+		 * @param id 
+		 * @param listener
 		 */
 		void add_listener(std::string id, Listener& listener)
 		{
@@ -51,9 +49,8 @@ namespace engine
 		}
 
 		/**
-		 * @brief Remove a listener
-		 *
-		 * @param listener Listener that will be removed
+		 * Remove a listener
+		 * @param listener
 		 */
 		void remove_listener(Listener& listener)
 		{
@@ -68,10 +65,8 @@ namespace engine
 		}
 
 		/**
-		 * @brief Broadcast a message
-		 *
-		 * @param message The message to broadcast
-		 *
+		 * Broadcast a message
+		 * @param message 
 		 */
 		void multicast(Message& message)
 		{

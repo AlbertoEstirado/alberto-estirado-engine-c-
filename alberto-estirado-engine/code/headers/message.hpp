@@ -22,60 +22,54 @@ namespace engine
 	{
 
 	private:
-		std::string id_;
-		std::map<std::string, Variant> parameters_;
+		std::string id;
+		std::map<std::string, Variant> parameters;
 
 	public:
 
 		/**
-		 * @brief Message Constructor
-		 *
-		 * @param id The id of the message
+		 * Constructor
+		 * @param id 
 		 */
-		Message(const std::string& id) : id_(id)
+		Message(const std::string& id) : id(id)
 		{
 		}
 
 		/**
-		 * @brief Get a parameter from the message
-		 *
-		 * @param id The id of the message
+		 * Get a parameter from the message
+		 * @param id 
 		 */
 		Variant get_Variant(const std::string id)
 		{
-			return parameters_[id];
+			return parameters[id];
 		}
 
 		/**
-		 * @return The id of the message
-		 *
+		 * Getter of the id
 		 */
 		std::string get_Id()
 		{
-			return id_;
+			return id;
 		}
 
 		/**
 		 * @brief Add a parameter to the message
-		 *
-		 * @param id The id of the parameter
-		 *
-		 * @param value The value of the parameter
-		 *
+		 * @param id
+		 * @param value
 		 */
 		void add_Parameter(const std::string& id, const Variant& value)
 		{
-			parameters_[id] = value;
+			parameters[id] = value;
 		}
 
 		Variant& operator[](const std::string id)
 		{
-			return parameters_[id];
+			return parameters[id];
 		}
 
 		operator std::string() const
 		{
-			return id_;
+			return id;
 		}
 	};
 }
