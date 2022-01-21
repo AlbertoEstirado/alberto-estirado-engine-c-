@@ -39,8 +39,9 @@
   <ItemGroup>
     <ClInclude Include="..\..\code\headers\box_collider_component.hpp" />
     <ClInclude Include="..\..\code\headers\camera_component.hpp" />
-    <ClInclude Include="..\..\code\headers\colision_system.hpp" />
+    <ClInclude Include="..\..\code\headers\collision_system.hpp" />
     <ClInclude Include="..\..\code\headers\collider_component.hpp" />
+    <ClInclude Include="..\..\code\headers\collision_handler.hpp" />
     <ClInclude Include="..\..\code\headers\component.hpp" />
     <ClInclude Include="..\..\code\headers\controller.hpp" />
     <ClInclude Include="..\..\code\headers\control_system.hpp" />

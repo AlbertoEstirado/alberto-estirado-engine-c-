@@ -19,14 +19,14 @@ namespace engine
 {
 	class Box_Collider_Component;
 
-	class Colision_System: public System
+	class Collision_System: public System
 	{
 	public:
 
 		std::vector<Box_Collider_Component*> scene_colliders;				//< All colliders on the scene
 		std::vector<Box_Collider_Component*> scene_dynamic_colliders;		//< Colliders that will move, these are the colliders for which we will check collisions
 
-		Colision_System() = default;
+		Collision_System() = default;
 		
 		/*
 		* Update all collision positions and then we check them
@@ -40,7 +40,7 @@ namespace engine
 		*/
 		void add_collider(Box_Collider_Component*);
 
-		~Colision_System() {};
+		~Collision_System() {};
 
 
 	};

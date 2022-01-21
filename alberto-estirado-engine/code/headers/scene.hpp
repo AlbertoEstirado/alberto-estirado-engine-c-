@@ -19,7 +19,7 @@
 #include <dispatcher.hpp>
 #include <render_component.hpp>
 #include <control_system.hpp>
-#include <colision_system.hpp>
+#include <collision_system.hpp>
 #include <memory>
 
 #pragma once
@@ -50,7 +50,7 @@ namespace engine
 		std::unique_ptr <Dispatcher>		 dispatcher;			//< Menssage system
 		std::unique_ptr <Renderer_System>	 renderer_system;		//< Pointer of the render system 
 		std::unique_ptr <Control_System>	 control_system;		//< Pointer of the control system
-		std::unique_ptr <Colision_System>	 colision_system;		//< Pointor of the colision system
+		std::unique_ptr <Collision_System>	 collision_system;		//< Pointor of the colision system
 		
 		std::string name;									//< Name of the scene
 		std::string path;									//< Path where the xml file persist

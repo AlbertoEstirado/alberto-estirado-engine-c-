@@ -12,6 +12,7 @@
 #pragma once
 
 #include <collider_component.hpp>
+#include <collision_handler.hpp>
 
 namespace engine
 {
@@ -19,12 +20,7 @@ namespace engine
 	{
 	public:
 
-		struct Collision_Handler
-		{
-			virtual void on_colision(Box_Collider_Component & a, Box_Collider_Component & b) = 0;
-		};
-
-		Collision_Handler* c_h;
+		Collision_Handler* on_colision;
 	
 		float x, y, width, height;		//< Square of the collider
 

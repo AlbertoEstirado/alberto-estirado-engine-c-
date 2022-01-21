@@ -40,7 +40,7 @@ namespace engine
 		renderer_system.reset(new Renderer_System(window));
 		control_system.reset(new Control_System);
 		dispatcher.reset(new Dispatcher);
-		colision_system.reset(new Colision_System);
+		collision_system.reset(new Collision_System);
 	}
 
 	void Scene::reload()
@@ -226,7 +226,7 @@ namespace engine
 			type = engine::Collider_Component::Type::STATIC;
 		}
 
-		colision_system->add_collider(new Box_Collider_Component(newEntity, scale_x, scale_z, type));
+		collision_system->add_collider(new Box_Collider_Component(newEntity, scale_x, scale_z, type));
 	}
 
 	void Scene::add_entity(Entity * new_entity)
@@ -256,7 +256,7 @@ namespace engine
 	void Scene::update(float time)
 	{
 		control_system->run(time);
-		colision_system->run(time);
+		collision_system->run(time);
 	}
 
 	void Scene::render()

@@ -10,7 +10,7 @@
 * estiradoalberto@gmail.com
 */
 
-#include <colision_system.hpp>
+#include <collision_system.hpp>
 #include <collider_component.hpp>
 #include <box_collider_component.hpp>
 #include <transform.hpp>
@@ -18,7 +18,7 @@
 
 namespace engine
 {
-	void Colision_System::run(float time = 0)
+	void Collision_System::run(float time = 0)
 	{
 		//Actualize all collider positions
 		for (size_t i = 0; i < scene_dynamic_colliders.size(); i++)
@@ -40,7 +40,7 @@ namespace engine
 		}
 	}
 
-	void Colision_System::add_collider(Box_Collider_Component* new_collider)
+	void Collision_System::add_collider(Box_Collider_Component* new_collider)
 	{
 
 		//We check the type so we can added to the corresponding list

@@ -113,9 +113,6 @@
     <ClInclude Include="..\..\code\headers\camera_component.hpp">
       <Filter>Header Files\Components</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\code\headers\colision_system.hpp">
-      <Filter>Header Files\Systems</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\code\headers\collider_component.hpp">
       <Filter>Header Files\Components</Filter>
     </ClInclude>
@@ -193,6 +190,12 @@
     </ClInclude>
     <ClInclude Include="..\..\code\headers\scene_manager.hpp">
       <Filter>Header Files\Other</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\code\headers\collision_handler.hpp">
+      <Filter>Header Files\Other</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\code\headers\collision_system.hpp">
+      <Filter>Header Files\Systems</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -22,7 +22,12 @@ namespace engine
 	public:
 
 		Window* window;
-
+		
+		/*
+		* It will create the task and it will be automatically added to the kernel
+		* @param priority
+		* @param window
+		*/
 		Read_input(int priority, Window* window) : Task(priority)
 		{
 			this->window = window;
