@@ -24,7 +24,6 @@ namespace engine
 
 	void System::add_component(Component * new_component)
 	{
-		std::cout << "se ha añadido un componente de: "<< new_component->entity->id << std::endl;
 		components.push_back(new_component);
 	}
 

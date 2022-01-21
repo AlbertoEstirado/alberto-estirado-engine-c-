@@ -36,7 +36,6 @@ namespace engine
 		else
 		{
 			current_scene = scenes[0];
-			std::cout << current_scene->get_name();
 		}
 	}
 

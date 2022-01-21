@@ -41,8 +41,6 @@ namespace engine
 		active = true;
 		entity = e;
 		set_parent(newParent);
-		if(newParent)
-			std::cout << e->id <<" parent: " << newParent->entity->id << std::endl;
 
 		//Position
 		position.x = x;
@@ -63,8 +61,6 @@ namespace engine
 		active = true;
 		entity = e;
 		set_parent(newParent);
-		if (newParent)
-			std::cout << e->id << " parent: " << newParent->entity->id << std::endl;
 		
 		//Position
 		position.x = t[0][0];
@@ -79,7 +75,7 @@ namespace engine
 		scale.y = t[2][1];
 		scale.z = t[2][2];
 
-		print_transform();
+		//print_transform();
 	}
 	
 }

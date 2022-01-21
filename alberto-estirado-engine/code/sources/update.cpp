@@ -18,8 +18,6 @@ namespace engine
 	
 	void Update::run(float time)
 	{
-		//std::cout << "update   -   priority: " << this->priority << std::endl;
-
 		Scene_manager::instance().current_scene->update(time);
 	}
 }

@@ -37,7 +37,6 @@ namespace engine
 
 		state = UNINITIALIZED;
 
-		//std::cout << "New scene has been created: " << name << std::endl;
 		Scene_manager::instance().add_scene(this);
 
 		renderer_system = new Renderer_System(window);
@@ -48,9 +47,21 @@ namespace engine
 
 	void Scene::reload()
 	{
+		state = UNINITIALIZED;
+
 		renderer_system->render_node.reset(new glt::Render_Node);
 
+		//for (auto& e : entities)
+		//{
+		//	for (auto& c : e.second->components)
+		//	{
+		//		delete c;
+		//	}
+		//	e.second->components.clear();
+		//	delete e.second;
+		//}
 		entities.clear();
+
 
 		delete control_system;
 		delete dispatcher;
@@ -65,44 +76,40 @@ namespace engine
 
 	void Scene::load_scene()
 	{
+		//Start loading the scene
 		state = LOADING;
 
+		//Load the xml file
 		xml_document<> doc;
 		ifstream file(path); 
 		stringstream buffer;
 		buffer << file.rdbuf();
 		file.close();
 		std::string content(buffer.str());
+
+		//Parse the document
 		doc.parse<0>(&content[0]);
 
+		//Start reading the document
 		xml_node<>* pRoot = doc.first_node();
-
-		//cout << "Name of my first node is: " << doc.first_node()->name() << "\n";
-
 		xml_attribute<>* pAttr = doc.first_node()->first_attribute("id");
 		std::string strValue = pAttr->value();
-
-		//cout << "Id of my first node is: " << strValue << "\n";
-		//cout << "first node: " << pRoot->first_node()->name() << "\n";
 
 		for (xml_node<>* entity = pRoot->first_node()->first_node();
 			entity; entity = entity->next_sibling())
 		{
+			//Get id entity
 			xml_attribute<>* pAttr = entity->first_attribute("id");
 			std::string strValue = pAttr->value();
 
-			//cout << "**** " << entity->name() << "  id:" << strValue << "\n";
-
+			//Create a new entity
 			Entity* newEntity = new Entity(strValue, this);
 			
 			parse_node_component(entity, newEntity);
 			
+			//Add the entity to the scene
 			add_entity(newEntity);
 		}
-
-		//cout << "numero de entidades añadidas: " << entities.size() << endl;
-
-		
 
 		awake();
 	}
@@ -114,9 +121,8 @@ namespace engine
 		{
 			xml_attribute<>* cAttr = component->first_attribute("id");
 			std::string strCValue = cAttr->value();
-			//cout << "	**** " << component->name() << "  id:" << strCValue;
-			//cout << "value :" << component->value() << "\n";
 
+			//Parse the different components and we add them to the entity
 			if (strCValue == "transform")
 			{
 				parse_transform(component, newEntity);
@@ -157,7 +163,6 @@ namespace engine
 		Entity* parent = nullptr;
 		if (component->last_attribute("parent"))
 		{
-			cout << component->last_attribute("parent")->value() << endl;
 			parent = get_entity(component->last_attribute("parent")->value());
 		}
 
@@ -167,17 +172,14 @@ namespace engine
 		transform[0][0] = std::stof(component->first_node()->first_node()->value());
 		transform[0][1] = std::stof(component->first_node()->first_node()->next_sibling()->value());
 		transform[0][2] = std::stof(component->first_node()->last_node()->value());
-		//std::cout << "position: " << transform[0][0] <<"," << transform[0][1] << "," << transform[0][2] << std::endl;
 		//Rotation
 		transform[1][0] = std::stof(component->first_node()->next_sibling()->first_node()->value());
 		transform[1][1] = std::stof(component->first_node()->next_sibling()->first_node()->next_sibling()->value());
 		transform[1][2] = std::stof(component->first_node()->next_sibling()->last_node()->value());
-		//std::cout << "rotation: " << transform[1][0] << "," << transform[1][1] << "," << transform[1][2] << std::endl;
 		//Scale
 		transform[2][0] = std::stof(component->last_node()->first_node()->value());
 		transform[2][1] = std::stof(component->last_node()->first_node()->next_sibling()->value());
 		transform[2][2] = std::stof(component->last_node()->last_node()->value());
-		//std::cout << "scale: " << transform[2][0] << "," << transform[2][1] << "," << transform[2][2] << std::endl;
 
 		if (parent)
 			newEntity->add_transform(new Transform(newEntity, transform, parent->get_transform()));

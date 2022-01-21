@@ -74,6 +74,7 @@ namespace engine
 	{
 		SDL_Event event;
 
+		//Get the event from sdl
 		while (SDL_PollEvent(&event) > 0)
 		{
 			if (event.type == SDL_QUIT)
@@ -82,13 +83,16 @@ namespace engine
 				Kernel::instance().stop_kernel();
 			}
 
+			//We send a message to the scene dispatcher
 			if(event.type == SDL_KEYDOWN)
 			{
+				//Create the message
 				Message* new_input_message = new Message(Keyboard::instance().sdlk_to_string(event.key.keysym.sym) + "_keydown");
 				Scene_manager::instance().current_scene->dispatcher->multicast(*new_input_message);
 			}
 			if (event.type == SDL_KEYUP)
 			{
+				//Create the message
 				Message* new_input_message = new Message(Keyboard::instance().sdlk_to_string(event.key.keysym.sym) + "_keyup");
 				Scene_manager::instance().current_scene->dispatcher->multicast(*new_input_message);
 			}

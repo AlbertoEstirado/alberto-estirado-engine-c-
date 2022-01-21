@@ -22,13 +22,10 @@ namespace engine
 	class Component
 	{
 	protected:
-
-		virtual ~Component() = default;
-
 	public:
 
 		Entity* entity = nullptr;
-
+		virtual ~Component() = default;
 	};
 
 }
