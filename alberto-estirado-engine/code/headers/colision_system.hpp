@@ -23,8 +23,8 @@ namespace engine
 	{
 	public:
 
-		std::vector<Box_Collider_Component*> scene_colliders;
-		std::vector<Box_Collider_Component*> scene_dynamic_colliders;
+		std::vector<Box_Collider_Component*> scene_colliders;				//< All colliders on the scene
+		std::vector<Box_Collider_Component*> scene_dynamic_colliders;		//< Colliders that will move, these are the colliders for which we will check collisions
 
 		Colision_System() = default;
 

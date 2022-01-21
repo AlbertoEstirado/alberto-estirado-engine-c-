@@ -13,6 +13,8 @@
 #include <box_collider_component.hpp>
 #include <entity.hpp>
 #include <transform.hpp>
+#include <scene_manager.hpp>
+#include <scene.hpp>
 
 namespace engine
 {
@@ -54,6 +56,7 @@ namespace engine
 		{
 			std::cout << entity->id << " im colliding with: " << other->entity->id << std::endl;
 			//on_collider_enter(other);
+			Scene_manager::instance().current_scene->reload();
 		}
 
 	}

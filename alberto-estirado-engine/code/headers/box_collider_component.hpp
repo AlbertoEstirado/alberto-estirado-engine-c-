@@ -18,6 +18,11 @@ namespace engine
 	class Box_Collider_Component : public Collider_Component
 	{
 	public:
+
+		//struct Collidion_Handler
+		//{
+		//	virtual void on_colision(Box_Collider_Component & a, Box_Collider_Component & b) = 0;
+		//};
 	
 		float x, y, width, height;
 

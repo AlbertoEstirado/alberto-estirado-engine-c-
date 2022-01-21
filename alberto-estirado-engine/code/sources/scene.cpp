@@ -23,7 +23,7 @@
 #include <player_movement_controller.hpp>
 #include <enemie_behaviour_controller.hpp>
 #include <box_collider_component.hpp>
-
+#include <Render_Node.hpp>
 
 using namespace rapidxml;
 using namespace std;
@@ -41,6 +41,23 @@ namespace engine
 		control_system = new Control_System();
 		dispatcher = new Dispatcher();
 		colision_system = new Colision_System();
+	}
+
+	void Scene::reload()
+	{
+		renderer_system->render_node.reset(new glt::Render_Node);
+
+		entities.clear();
+
+		delete control_system;
+		delete dispatcher;
+		delete colision_system;
+
+		control_system = new Control_System();
+		dispatcher = new Dispatcher();
+		colision_system = new Colision_System();
+
+		load_scene();
 	}
 
 	void Scene::load_scene()
@@ -214,22 +231,18 @@ namespace engine
 	}
 
 	void Scene::start(){}
+
 	void Scene::update(float time)
 	{
 		control_system->run(time);
 		colision_system->run(time);
 	}
-	void Scene::read_input(){}
 
 	void Scene::render()
 	{
 		renderer_system->run(0);
 	}
 
-	void Scene::save_scene()
-	{
-
-	}
 
 	Dispatcher* Scene::get_dispatcher()
 	{

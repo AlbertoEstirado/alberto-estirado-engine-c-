@@ -42,15 +42,16 @@ namespace engine
 		t->position.x += speed * dir[0];
 		t->position.z += speed * dir[1];
 
-		t->rotation.y += 0.01;
-		t->rotation.z += 0.01;
+		t->rotation.y += 0.02;
+		t->rotation.z += 0.02;
+
+		Transform* t2 = Scene_manager::instance().current_scene->get_entity("moon")->get_transform();
+
+		t2->rotation.z += 0.05;
 	}
 
 	void Payer_Movement_Controller::receptor(Message& message)
 	{
-
-		
-
 		if (message.get_Id() == "w_keydown")
 		{
 			dir[1] = -1;

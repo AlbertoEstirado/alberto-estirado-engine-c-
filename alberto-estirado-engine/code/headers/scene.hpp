@@ -60,9 +60,8 @@ namespace engine
 		void awake();
 		void start();
 		void update(float time);
-		void read_input();
 		void render();
-		void save_scene();
+		void reload();
 		Dispatcher* get_dispatcher();
 		void add_entity(Entity *);
 		Entity * get_entity(const std::string &);

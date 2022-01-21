@@ -10,7 +10,7 @@
                     <x>0</x><y>0</y><z>0</z>
                 </rotation>
                 <scale>
-                    <x>1</x><y>1</y><z>1</z>
+                    <x>0.8</x><y>0.8</y><z>0.8</z>
                 </scale>
             </component>
             <component id="mesh_component">../../assets/sphere.obj</component>
@@ -52,7 +52,7 @@
         <entity id="moon">
             <component id="transform" parent="player">
                 <position>
-                    <x>1</x><y>0</y><z>0</z>
+                    <x>0.8</x><y>0</y><z>0</z>
                 </position>
                 <rotation>
                     <x>0</x><y>0</y><z>0</z>
@@ -63,10 +63,24 @@
             </component>
             <component id="mesh_component">../../assets/sphere.obj</component>
         </entity>
+        <entity id="moon1">
+            <component id="transform" parent="player">
+                <position>
+                    <x>-0.7</x><y>0.3</y><z>0</z>
+                </position>
+                <rotation>
+                    <x>0</x><y>0</y><z>0</z>
+                </rotation>
+                <scale>
+                    <x>0.3</x><y>0.3</y><z>0.3</z>
+                </scale>
+            </component>
+            <component id="mesh_component">../../assets/sphere.obj</component>
+        </entity>
         <entity id="moon2">
             <component id="transform" parent="moon">
                 <position>
-                    <x>1</x><y>0.5</y><z>0</z>
+                    <x>0.8</x><y>0.3</y><z>0</z>
                 </position>
                 <rotation>
                     <x>0</x><y>0</y><z>0</z>

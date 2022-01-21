@@ -63,6 +63,17 @@ namespace engine
 		**/
 		Transform* get_transform();
 
+		//template<class T>
+		//T * get_component(T* component)
+		//{
+		//	for (size_t i = 0; i < components[i]; i++)
+		//	{
+		//		if (dynamic_cast<component*>(component[i]))
+		//		{
+		//			return component[i];
+		//		}
+		//	}
+		//}
 	};
 }
 
