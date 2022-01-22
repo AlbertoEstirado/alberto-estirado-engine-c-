@@ -23,7 +23,6 @@ namespace engine
 		{
 			controllers[i]->update();
 		}
-	
 	}
 
 	void Control_System::add_controller(Controller* new_controller)

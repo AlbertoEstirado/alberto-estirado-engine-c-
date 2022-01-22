@@ -22,7 +22,6 @@ namespace engine
 
 	void Scene_manager::add_scene(Scene* newscene)
 	{
-		//scenes.insert(std::pair<Id, Scene*>(newscene->get_name(), newscene));
 		scenes.push_back(newscene);
 	}
 

@@ -19,7 +19,7 @@ namespace engine
 
 	void Read_input::run(float time)
 	{
-		//Scene_manager::instance().current_scene->read_input();
+		//Read the inputs from the current window
 		window->handle_events();
 	}
 }

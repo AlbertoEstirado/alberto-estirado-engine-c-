@@ -75,9 +75,6 @@
     <ClCompile Include="..\..\code\sources\enemie_behaviour_controller.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\code\sources\input_system.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\code\sources\keyboard.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -130,9 +127,6 @@
     </ClInclude>
     <ClInclude Include="..\..\code\headers\controller.hpp">
       <Filter>Header Files\Controllers</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\code\headers\input_system.hpp">
-      <Filter>Header Files\Systems</Filter>
     </ClInclude>
     <ClInclude Include="..\..\code\headers\keyboardcontrol_component.hpp">
       <Filter>Header Files\Components</Filter>

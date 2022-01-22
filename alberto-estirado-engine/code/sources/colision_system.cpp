@@ -35,7 +35,7 @@ namespace engine
 			for (size_t j = i+1; j < scene_colliders.size(); j++)
 			{
 				scene_dynamic_colliders[i]->im_colliding_with(scene_colliders[j]);
-				//scene_colliders[j]->im_colliding_with(scene_dynamic_colliders[i]);
+				scene_colliders[j]->im_colliding_with(scene_dynamic_colliders[i]);
 			}
 		}
 	}

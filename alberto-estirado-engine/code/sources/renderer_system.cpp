@@ -25,7 +25,6 @@ namespace engine
 	Renderer_System::Renderer_System(Window& w)
 	{
 		window = &w;
-		//render_node = nullptr;
 		render_node.reset(new Render_Node);
 	}
 	
@@ -38,14 +37,16 @@ namespace engine
 		
 		glViewport(0, 0, width, height);
 
+		//Go throw the all render components
 		for (auto & component : render_components)
 		{
 			if(component)
 			{
+				//Check if the entity is active
 				if (component->entity->get_transform()->active)
 				{
+					//Update transform values
 					Matrix44 transform_matrix = component->entity->get_transform()->get_transform_matrix();
-					//component->entity->transform->print_transform();
 					component->get_node().set_transformation(transform_matrix);
 				}
 			}

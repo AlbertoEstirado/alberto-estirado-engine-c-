@@ -52,12 +52,10 @@ namespace engine
 		if ((right1 >= left2 && left1 <= right2 && top1 >= bot2 && bot1 <= top2) ||
 			(right2 >= left1 && left2 <= right1 && top2 >= bot1 && bot2 <= top1))
 		{
-			std::cout << entity->id << " im colliding with: " << other->entity->id << std::endl;
-			//on_collider_enter(other);
+			//If it as a collision handler it will run the function on_collision
 			if(collision_handler)
 				collision_handler->on_collision(*other);
-			//c_h->on_colision(this, other);
-			//Scene_manager::instance().current_scene->reset_transforms();
+			
 		}
 
 	}

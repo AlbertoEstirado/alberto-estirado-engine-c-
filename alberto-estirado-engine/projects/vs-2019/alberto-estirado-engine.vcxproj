@@ -17,7 +17,6 @@
     <ClCompile Include="..\..\code\sources\control_system.cpp" />
     <ClCompile Include="..\..\code\sources\enemie_behaviour_controller.cpp" />
     <ClCompile Include="..\..\code\sources\entity.cpp" />
-    <ClCompile Include="..\..\code\sources\input_system.cpp" />
     <ClCompile Include="..\..\code\sources\kernel.cpp" />
     <ClCompile Include="..\..\code\sources\keyboard.cpp" />
     <ClCompile Include="..\..\code\sources\keyboardcontrol_component.cpp" />
@@ -48,7 +47,6 @@
     <ClInclude Include="..\..\code\headers\declarations.hpp" />
     <ClInclude Include="..\..\code\headers\dispatcher.hpp" />
     <ClInclude Include="..\..\code\headers\entity.hpp" />
-    <ClInclude Include="..\..\code\headers\input_system.hpp" />
     <ClInclude Include="..\..\code\headers\kernel.hpp" />
     <ClInclude Include="..\..\code\headers\keyboard.hpp" />
     <ClInclude Include="..\..\code\headers\keyboardcontrol_component.hpp" />

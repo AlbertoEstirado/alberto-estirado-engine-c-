@@ -204,14 +204,16 @@ namespace engine
 
 	void Scene::parse_box_collider_component(xml_node<>* component, Entity* newEntity)
 	{
-
+		//Get scale in the xml
 		float scale_x = std::stof(component->first_node()->value());
 		float scale_z = std::stof(component->first_node()->next_sibling()->value());
 
+		//Get the type of the collider
 		std::string s_type = component->last_node()->value();
 
 		engine::Collider_Component::Type type;
 
+		//Base on the type, it will be added in differnet lists
 		if(s_type == "dynamic")
 		{
 			type = engine::Collider_Component::Type::DYNAMIC;
@@ -252,12 +254,14 @@ namespace engine
 
 	void Scene::update(float time)
 	{
+		//We run all the systems that need to be running
 		control_system->run(time);
 		collision_system->run(time);
 	}
 
 	void Scene::render()
 	{
+		//Run the render system
 		renderer_system->run(0);
 	}
 

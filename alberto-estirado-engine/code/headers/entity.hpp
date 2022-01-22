@@ -63,29 +63,15 @@ namespace engine
 		**/
 		Transform* get_transform();
 
-		//template<class T>
-		//T * get_component(T* component)
-		//{
-		//	for (size_t i = 0; i < components[i]; i++)
-		//	{
-		//		if (dynamic_cast<component*>(component[i]))
-		//		{
-		//			return dynamic_cast<component*>(component[i]);
-		//		}
-		//	}
-		//
-		//	return nullptr;
-		//}
-
-
-		//vector< shared_ptr< Component > > components;
-		//
+		/*
+		* Returns the component of the indicated type in case the entity contains it
+		**/
 		template< typename T >
 		T* get_component()
 		{
 			for (auto& component : components)
 			{
-				auto casted_component = dynamic_cast<T*>(component/*.get()*/);
+				auto casted_component = dynamic_cast<T*>(component);
 		
 				if (casted_component)
 				{
@@ -95,8 +81,7 @@ namespace engine
 		
 			return nullptr;
 		}
-		//
-		//Collider_Component* collider = entity->get_component<Collider_Component>();
+		
 
 	};
 }
