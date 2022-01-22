@@ -38,28 +38,34 @@ namespace engine
 			return kernel;
 		}
 
-		std::set<Task*, Task::Compare> tasks;  //< Reference to all tasks ordered based on their priority
+		std::set<Task*, Task::Compare> tasks;   //< Reference to all tasks ordered based on their priority
 
 		bool running = true;
 
 		Kernel();
 
-		/*
-		* Initialization of all tasks
+		/**
+		* @brief Initialization of all tasks
 		*/
 		void initialization();
-		/*
-		* Run all tasks
+
+		/**
+		* @brief Run all tasks
 		*/
 		void execute();
-		/*
-		* End of all tasks
+
+		/**
+		* @brief End of all tasks
 		*/
 		void end();
 
+		/**
+		* @brief Change running to false
+		*/
 		void stop_kernel();
-		/*
-		* Add a new task to kernel
+
+		/**
+		* @brief Add a new task to kernel
 		* @param Task
 		*/
 		void add_task(Task*);

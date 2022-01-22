@@ -26,6 +26,9 @@ namespace engine
 
 		Entity* entity = nullptr;
 
+		/**
+		* @brief Run behaviours of the entity
+		*/
 		virtual void update() = 0;
 	};
 

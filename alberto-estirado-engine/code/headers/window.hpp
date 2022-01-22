@@ -36,12 +36,12 @@ namespace engine
 		Window(const std::string& title, size_t  width, size_t height, bool fullscreen = false);
 		
  		/**
-         * Function called before destroying the window
-         * */
+         * @brief Function called before destroying the window
+         */
 		void end			();
 		/**
-         * Function where we handle all input events
-         * */
+         * @brief Function where we handle all input events
+         */
 		void handle_events	();
 
 		void enable_vsync	();

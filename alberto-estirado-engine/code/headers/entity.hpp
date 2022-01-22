@@ -39,33 +39,35 @@ namespace engine
 
 		Entity();
 		Entity(std::string& id, Scene* scene);
-		/*
-		* Entity constructor, needs an id and a transform
+
+		/**
+		* @brief Entity constructor, needs an id and a transform
 		* @param id
 		* @param transform
-		**/
+		*/
 		Entity(std::string & id, Transform* transform);
 		Entity(std::string & id);
 
-		/*
-		* Functition to add new components to the list
+		/**
+		* @brief Functition to add new components to the list
 		* @param new_component
-		**/
+		*/
 		void add_component(Component* new_component);
-		/*
-		* Functition to establish a transform
+
+		/**
+		* @brief Functition to establish a transform
 		* @param new_component
-		**/
+		*/
 		void add_transform(Transform* new_component);
 		
-		/*
-		* Returns the transform entity
-		**/
+		/**
+		* @brief Returns the transform entity
+		*/
 		Transform* get_transform();
 
-		/*
-		* Returns the component of the indicated type in case the entity contains it
-		**/
+		/**
+		* @brief Returns the component of the indicated type in case the entity contains it
+		*/
 		template< typename T >
 		T* get_component()
 		{

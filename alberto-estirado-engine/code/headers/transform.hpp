@@ -38,7 +38,6 @@ namespace engine
 		Transform* parent;			//< Pointer to other transform
 
 		bool active;				//< Variable that establishes if this entity is active
-		//Transform();
 
 		Transform(Entity* e);
 		Transform(Entity* e, float x, float y, float z, Transform* newParent = nullptr);
@@ -46,8 +45,8 @@ namespace engine
 
 		void set_transform_from_Matrix(Matrix44 t);
 		
-		/*
-		* Set the entity parent
+		/**
+		* @brief Set the entity parent
 		* @param newParent
 		*/
 		void set_parent(Transform * newParent)
@@ -55,8 +54,8 @@ namespace engine
 			parent = newParent;
 		}
 
-		/*
-		* Function to activate or deactivate the transform
+		/**
+		* @brief Function to activate or deactivate the transform
 		* @param state
 		*/
 		void set_active(bool state)
@@ -64,8 +63,8 @@ namespace engine
 			active = state;
 		}
 		
-		/*
-		* Function that calculates the position matrix based on its position, rotation, scale and parent
+		/**
+		* @brief Function that calculates the position matrix based on its position, rotation, scale and parent
 		*/
 		Matrix44 get_transform_matrix()
 		{

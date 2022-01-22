@@ -41,8 +41,8 @@ namespace engine
 		void add_scene(Scene* newscene);
 		void initialize();
 		
-		/*
-		* Will change current_scene to a new scene
+		/**
+		* @brief Will change current_scene to a new scene
 		* @param scene
 		*/
 		void run_scene(Scene* scene);

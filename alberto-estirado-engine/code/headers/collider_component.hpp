@@ -17,7 +17,7 @@
 
 namespace engine
 {
-	class Collider_Component: public Component
+	class Collider_Component : public Component
 	{
 	public:
 
@@ -29,8 +29,6 @@ namespace engine
 
 		Type type;					//< Collider type
 
-
-		//virtual void on_collider_enter(Collider_Component* other) = 0;
 	};
 
 }

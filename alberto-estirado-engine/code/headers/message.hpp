@@ -27,16 +27,10 @@ namespace engine
 
 	public:
 
-		/**
-		 * Constructor
-		 * @param id 
-		 */
-		Message(const std::string& id) : id(id)
-		{
-		}
+		Message(const std::string& id) : id(id){}
 
 		/**
-		 * Get a parameter from the message
+		 * @brief Get a parameter from the message
 		 * @param id 
 		 */
 		Variant get_Variant(const std::string id)
@@ -45,7 +39,7 @@ namespace engine
 		}
 
 		/**
-		 * Getter of the id
+		 * @brief Get id
 		 */
 		std::string get_Id()
 		{

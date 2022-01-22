@@ -26,7 +26,16 @@ namespace engine
 
 		Box_Collider_Component(Entity* e ,float, float, Type t);
 
+		/**
+		* @brief This function receives a collider and checks if it is colliding with it, if so it will call the collision handler
+		* @param Box_Collider_Component
+		*/
 		void im_colliding_with(Box_Collider_Component*);
+
+		/**
+		* @brief Set collision handler
+		* @param Collision_Handler
+		*/
 		void add_collision_handler(Collision_Handler*);
 	};
 
